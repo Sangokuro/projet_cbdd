@@ -188,7 +188,7 @@ namespace projet_cbdd {
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-			projetcbdd::Personnel^ f4 = gcnew projetcbdd::Personnel;
+			projet_cbdd::Personnel^ f4 = gcnew projet_cbdd::Personnel;
 			f4->ShowDialog();
 }
 };

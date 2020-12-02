@@ -19,7 +19,7 @@ namespace NS_Svc {
             return ds;
         }
 
-        int NS_Svc::CL_svc_gestionpersonnel1::ajouter(String^ nom_personnel, String^ prenom_personnel, String^ nom_superieur, String^ adresse_personnel, String^ code_postal, String^ ville, DateTime^ date_embauche)
+        int NS_Svc::CL_svc_gestionpersonnel1::ajouter(String^ nom_personnel, String^ prenom_personnel, String^ nom_superieur, String^ adresse_personnel, int code_postal, String^ ville, DateTime^ date_embauche)
         {
             int id_personnel;
             //référence null
@@ -30,7 +30,8 @@ namespace NS_Svc {
             this->personnel->setcodepostal(code_postal);
             this->personnel->setville(ville);
             this->personnel->setdateembauche(date_embauche);
-
+            
+            
 
             id_personnel = this->cad->actionRowsID(this->personnel->INSERT());//manque id superieure
 
@@ -41,7 +42,7 @@ namespace NS_Svc {
             return id_personnel;
         }
 
-        void NS_Svc::CL_svc_gestionpersonnel1::modifier(int id_personnel, String^ nom_personnel, String^ prenom_personnel, String^ nom_superieur, String^ adresse_personnel, String^ code_postal, String^ ville, DateTime^ date_embauche, int id_personnel_dirige)
+        void NS_Svc::CL_svc_gestionpersonnel1::modifier(int id_personnel, String^ nom_personnel, String^ prenom_personnel, String^ nom_superieur, String^ adresse_personnel, int code_postal, String^ ville, DateTime^ date_embauche, int id_personnel_dirige)
         {
             this->personnel->setIDpersonnel(id_personnel);
             this->personnel->setNompersonnel(nom_personnel);
@@ -56,10 +57,9 @@ namespace NS_Svc {
             this->cad->actionRows(this->personnel->UPDATE());
         }
 
-        void NS_Svc::CL_svc_gestionpersonnel1::supprimer(int id_personnel, int id_personnel_dirige)
+        void NS_Svc::CL_svc_gestionpersonnel1::supprimer(int id_personnel)
         {
             this->personnel->setIDpersonnel(id_personnel);
-            this->personnel->setIDpersonnelsuperieure(id_personnel_dirige);
 
             this->cad->actionRows(this->personnel->DELETE());
         }

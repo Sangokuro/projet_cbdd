@@ -241,6 +241,7 @@ namespace projet_cbdd {
 			this->txt_message->Name = L"txt_message";
 			this->txt_message->Size = System::Drawing::Size(343, 85);
 			this->txt_message->TabIndex = 17;
+			this->txt_message->TextChanged += gcnew System::EventHandler(this, &Client::txt_message_TextChanged);
 			// 
 			// label4
 			// 
@@ -263,7 +264,6 @@ namespace projet_cbdd {
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(326, 218);
 			this->dataGridView1->TabIndex = 2;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Client::dataGridView1_CellContentClick);
 			this->dataGridView1->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &Client::dataGridView1_CellContentClick);
 			// 
 			// txt_commande
@@ -446,5 +446,7 @@ namespace projet_cbdd {
 	}
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void txt_message_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
