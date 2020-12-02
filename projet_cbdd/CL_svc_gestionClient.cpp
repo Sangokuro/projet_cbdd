@@ -1,4 +1,4 @@
-
+#include "CL_CAD.h"
 #include "CL_svc_gestionClient.h"
 
 namespace NS_Svc {
@@ -7,7 +7,7 @@ namespace NS_Svc {
 		this->cad = gcnew NS_Composants::CL_CAD();
 		this->personne = gcnew NS_Composants::CL_map_TBCLIENT();
 		this->ds = gcnew Data::DataSet();
-		this->teste = gcnew test1();
+		this->TestClient2 = gcnew TestClient1();
 	}
 
 	DataSet^ CL_svc_gestionClient::listePersonnel(String^ dataTableName)

@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="ClientTeste.cpp" />
     <ClCompile Include="CL_CAD.cpp" />
     <ClCompile Include="CL_map_TBCLIENT.cpp" />
     <ClCompile Include="CL_map_TBCOMMANDE.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="Client.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ClientTeste.h" />
     <ClInclude Include="CL_CAD.h" />
     <ClInclude Include="CL_map_TBCLIENT.h" />
     <ClInclude Include="CL_map_TBCOMMANDE.h" />
@@ -156,10 +158,10 @@
     <ClInclude Include="Facture.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TestClient.h" />
     <ClInclude Include="Personnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="test.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
