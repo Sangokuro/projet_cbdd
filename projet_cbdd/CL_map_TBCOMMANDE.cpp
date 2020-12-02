@@ -7,8 +7,8 @@ namespace NS_Composants {
 		this->date_commande = "01/01/1999";
 		this->date_livraison = "01/01/1999";
 		this->date_paiement = "01/01/1999";
-		this->moyen_paiement = "01/01/1999";
-		this->reference_commande = "Vide";
+		this->moyen_paiement = "VIDE";
+		this->reference_commande = "VIDE";
 		this->id_client = -1;
 		this->id_facture = -1;
 	}
@@ -24,8 +24,7 @@ namespace NS_Composants {
 		return "INSERT INTO Commande " +
 			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande) " +
 			"VALUES('" + this->getdateCommande() + "', '" + this->getdateLivraison() + "', '" + this->getdatePaiement() + "', '" + this->getmoyenPaiement() + "', '" + this->getreferenceCommande()
-			+ "' " + /*"(SELECT id_Client FROM Client WHERE nom_client='Rabie'),(SELECT id_facture FROM Facture WHERE code_postal=33440)" + ")*/");" +
-			"INSERT INTO Facture(nom_societe,adresse_societe,code_postal,ville,numero_service_client) VALUES('a','b',1,'d',10);";
+			+ "' "  /*"(SELECT id_Client FROM Client WHERE nom_client='Rabie'),(SELECT id_facture FROM Facture WHERE code_postal=33440)" + ")*/ + ");SELECT @@IDENTITY;";
 
 	}
 

@@ -22,7 +22,8 @@ namespace NS_Composants {
     {
         return "INSERT INTO Personnel " +
             "(nom_personnel,prenom_personnel ,nom_superieur, adresse_personnel,code_postal,ville,date_embauche) " +
-            "VALUES('" + this->getNompersonnel() + "', '" + this->getPrenompersonnel() + "', '" + this->getNomsuperieure() + "', '" + this->getAdressepersonnel() + "', '" + this->getcodepostal() + "', '" + this->getville() + "', '" + this->getdateembauche() + "');SELECT @@IDENTITY;";
+            "VALUES('" + this->getNompersonnel() + "', '" + this->getPrenompersonnel() + "', '" + this->getNomsuperieure() + "', '" + this->getAdressepersonnel() +
+            "', '" + this->getcodepostal() + "', '" + this->getville() + "', '" + this->getdateembauche() + "');SELECT @@IDENTITY;";
     }
 
     String^ NS_Composants::CL_map_TBpersonnel1::UPDATE(void)

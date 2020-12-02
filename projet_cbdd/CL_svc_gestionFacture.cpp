@@ -4,7 +4,7 @@ namespace NS_Svc {
 	CL_svc_gestionFacture::CL_svc_gestionFacture(void)
 	{
 		this->cad = gcnew NS_Composants::CL_CAD();
-		this->facture = gcnew NS_Composants::CL_map_TBCOMMANDE();
+		this->facture = gcnew NS_Composants::CL_map_TBFACTURE();
 		this->ds = gcnew Data::DataSet();
 	}
 
@@ -15,32 +15,30 @@ namespace NS_Svc {
 		return ds;
 	}
 
-	int CL_svc_gestionFacture::ajouter(String^ nom, String^ adresse, String^ code, String^ ville, String^ num, int idcommande, int idclient)
+	int CL_svc_gestionFacture::ajouter(String^ nom, String^ adresse, int code, String^ ville, float num, int idcommande)
 	{
 		int id_personne;
 		//référence null
-		this->facture->setdateCommande(nom);
-		this->facture->setdateLivraison(adresse);
-		this->facture->setdatePaiement(code);
-		this->facture->setmoyenPaiement(ville);
-		this->facture->setreferenceCommande(num);
-		this->facture->setidClient(idcommande);
-		this->facture->setidFacture(idclient);
+		this->facture->setnomsociete(nom);
+		this->facture->setadressesociete(adresse);
+		this->facture->setcodepostal(code);
+		this->facture->setville(ville);
+		this->facture->setnumeroserviceclient(num);
+		this->facture->setidcommande(idcommande);
 		id_personne = this->cad->actionRowsID(this->facture->INSERT());
 
 		return id_personne;
 	}
 
-	void CL_svc_gestionFacture::modifier(int id_facture, String^ nom, String^ adresse, String^ code, String^ ville, String^ num, int idcommande, int idclient)
+	void CL_svc_gestionFacture::modifier(int id_facture, String^ nom, String^ adresse, int code, String^ ville, float num, int idcommande)
 	{
 		this->facture->setID(id_facture);
-		this->facture->setdateCommande(nom);
-		this->facture->setdateLivraison(adresse);
-		this->facture->setdatePaiement(code);
-		this->facture->setmoyenPaiement(ville);
-		this->facture->setreferenceCommande(num);
-		this->facture->setidClient(idcommande);
-		this->facture->setidFacture(idclient);
+		this->facture->setnomsociete(nom);
+		this->facture->setadressesociete(adresse);
+		this->facture->setcodepostal(code);
+		this->facture->setville(ville);
+		this->facture->setnumeroserviceclient(num);
+		this->facture->setidcommande(idcommande);
 
 		this->cad->actionRows(this->facture->UPDATE());
 	}

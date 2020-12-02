@@ -30,9 +30,14 @@ namespace NS_Svc {
 		this->commande->setidFacture(idfacture);
 		id_commande = this->cad->actionRowsID(this->commande->INSERT());
 
-		NS_Svc::CL_svc_gestionFacture^ processusFacture;
-		processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
+		//NS_Svc::CL_svc_gestionFacture^ processusFacture;
+		//processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
 		
+
+		projet_cbdd::Facture^ f2 = gcnew projet_cbdd::Facture(id_commande);
+		f2->ShowDialog();
+
+
 		return id_commande;
 		
 	}
