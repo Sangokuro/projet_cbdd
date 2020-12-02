@@ -241,6 +241,7 @@ namespace projet_cbdd {
 			this->txt_message->Name = L"txt_message";
 			this->txt_message->Size = System::Drawing::Size(343, 85);
 			this->txt_message->TabIndex = 17;
+			this->txt_message->TextChanged += gcnew System::EventHandler(this, &Client::txt_message_TextChanged);
 			// 
 			// label4
 			// 
@@ -445,5 +446,7 @@ namespace projet_cbdd {
 	}
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void txt_message_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

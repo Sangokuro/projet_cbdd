@@ -1,7 +1,7 @@
 #pragma once
 #include"CL_svc_gestionpersonnel.h"
 
-namespace projetcbdd {
+namespace projet_cbdd {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -57,9 +57,15 @@ namespace projetcbdd {
 
 
 
+	private: NS_Svc::CL_svc_gestionpersonnel1^ processusPersonnel;
 
-
-
+	private: Data::DataSet^ ds;
+	private: Data::DataSet^ ds2;
+	private: int index;
+	private: String^ mode;
+	
+	
+	private: System::Windows::Forms::TextBox^ txt_message;
 
 
 
@@ -274,6 +280,7 @@ namespace projetcbdd {
 			this->button1->TabIndex = 18;
 			this->button1->Text = L"Nouveau";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Personnel::button1_Click);
 			// 
 			// button2
 			// 
@@ -283,6 +290,7 @@ namespace projetcbdd {
 			this->button2->TabIndex = 19;
 			this->button2->Text = L"Modifier";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Personnel::button2_Click);
 			// 
 			// button3
 			// 
@@ -292,6 +300,7 @@ namespace projetcbdd {
 			this->button3->TabIndex = 20;
 			this->button3->Text = L"Supprimer";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Personnel::button3_Click);
 			// 
 			// button4
 			// 
@@ -301,6 +310,7 @@ namespace projetcbdd {
 			this->button4->TabIndex = 21;
 			this->button4->Text = L"Enregistrer";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Personnel::button4_Click);
 			// 
 			// dataGridView1
 			// 
@@ -321,6 +331,7 @@ namespace projetcbdd {
 			this->button5->TabIndex = 23;
 			this->button5->Text = L"<<";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Personnel::button5_Click);
 			// 
 			// button6
 			// 
@@ -330,6 +341,7 @@ namespace projetcbdd {
 			this->button6->TabIndex = 24;
 			this->button6->Text = L"<";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Personnel::button6_Click);
 			// 
 			// button7
 			// 
@@ -339,6 +351,7 @@ namespace projetcbdd {
 			this->button7->TabIndex = 25;
 			this->button7->Text = L">";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &Personnel::button7_Click);
 			// 
 			// button8
 			// 
@@ -348,6 +361,7 @@ namespace projetcbdd {
 			this->button8->TabIndex = 26;
 			this->button8->Text = L">>";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &Personnel::button8_Click);
 			// 
 			// label10
 			// 
@@ -365,6 +379,7 @@ namespace projetcbdd {
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(341, 115);
 			this->textBox10->TabIndex = 28;
+			this->textBox10->TextChanged += gcnew System::EventHandler(this, &Personnel::textBox10_TextChanged);
 			// 
 			// Personnel
 			// 
@@ -410,13 +425,130 @@ namespace projetcbdd {
 		}
 #pragma endregion
 
+			//s'éxécute au démarrage
+	private: System::Void FRM_Principal_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->mode = "RIEN";
+		this->ds = gcnew Data::DataSet();
+		this->processusPersonnel = gcnew NS_Svc::CL_svc_gestionpersonnel1();
+		this->loadData(this->index);
+		loadDataGridView();
+		this->txt_message->Text = "Data chargées";
+
+		this->index = 0;
+	}
+		private: void loadData(int index) {
+			this->ds->Clear();
+			//si exception ici il faut remplir la table
+			this->ds = this->processusPersonnel->listePersonnel("liste");
+			this->id_personnel_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+			this->nom_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+			this->prenom_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+			this->nom_superieur_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+			this->adresse_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[4]);
+			this->code_postal_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[5]);
+			this->ville_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[6]);
+			this->date_embauche_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[7]);
+			this->id_superieur_txt->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[8]);
+		}
+			   
+		 private: void loadDataGridView() {
+				   this->dataGridView1->DataSource = this->processusPersonnel->listePersonnel("liste2");
+				   this->dataGridView1->DataMember = "liste2";
+			   }
+
 	private: System::Void Personnel_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->index = 0;
+	this->loadData(this->index);
+	this->txt_message->Text = "Enregistrement n°:" + (this->index + 1);
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index > 0) {
+		this->index--;
+		//charge une collection précédemment enregistré avec savedata
+		this->loadData(this->index);
+		this->txt_message->Text = "Enregistrement n°:" + (this->index + 1);
+	}
+
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index < this->ds->Tables["liste"]->Rows->Count - 1) {
+		this->index++;
+		//urilise la fonction plus en haut
+		this->loadData(this->index);
+		this->txt_message->Text = "Enregistrement n°:" + (this->index + 1);
+	}
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->index = this->ds->Tables["liste"]->Rows->Count - 1;
+	this->loadData(this->index);
+	this->txt_message->Text = "Enregistrement n°:" + (this->index + 1);
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->id_personnel_txt->Clear();
+	this->nom_txt->Clear();
+	this->prenom_txt->Clear();
+	this->nom_superieur_txt->Clear();
+	this->adresse_txt->Clear();
+	this->code_postal_txt->Clear();
+	this->ville_txt->Clear();
+	this->date_embauche_txt->Clear();
+	this->id_superieur_txt->Clear();
+	this->mode = "nouv";
+	this->txt_message->Text = "Veuillez saisir les information de la nouvelle personne et enregistrer";
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "maj";
+	this->txt_message->Text = "Veuillez modifier les information de la nouvelle courante et enregistrer.";
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "sup";
+	this->txt_message->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
+}
+
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->mode == "nouv")
+	{
+		int Id;
+		//utilise le nom et le prénom entré pour faire un id
+		Id = this->processusPersonnel->ajouter(this->nom_txt->Text, this->prenom_txt->Text, this->nom_superieur_txt->Text, this->adresse_txt->Text, Convert::ToInt32(this->code_postal_txt->Text), this->ville_txt->Text, Convert::ToDateTime(this->date_embauche_txt->Text));
+		this->txt_message->Text = "L'ID généré est le : " + Id + ". ";
+	}
+
+	else if (this->mode == "maj")
+	{
+		this->processusPersonnel->modifier(Convert::ToInt32(this->id_personnel_txt->Text), this->nom_txt->Text, this->prenom_txt->Text, this->nom_superieur_txt->Text, this->adresse_txt->Text, Convert::ToInt32(this->code_postal_txt->Text), this->ville_txt->Text, Convert::ToDateTime(this->date_embauche_txt->Text), Convert::ToInt32(this->id_superieur_txt->Text));
+
+	}
+	else if (this->mode == "sup")
+	{
+		this->processusPersonnel->supprimer(Convert::ToInt32(this->id_personnel_txt->Text));
+	}
+	this->index = 0;
+	this->loadData(this->index);
+	this->loadDataGridView();
+	this->txt_message->Text += "Traitement terminé.";
+}
+
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+	//int a=this->dataGridView1->CurrentRow->Index;
+	int a = e->RowIndex;
+	//this->txt_idPersonne->Text = a.ToString();
+	this->index = a;
+	this->loadData(this->index);
+	//Form1.DataGridView1.Item(y, x).Value
+}
+
+private: System::Void textBox10_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
-}
+};
+

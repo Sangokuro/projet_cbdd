@@ -73,7 +73,7 @@ namespace NS_Composants {
         }
     }
 
-    void NS_Composants::CL_map_TBpersonnel1::setcodepostal(String^)
+    void NS_Composants::CL_map_TBpersonnel1::setcodepostal(int)
     {
         if (code_postal != "") {
             this->code_postal = code_postal;

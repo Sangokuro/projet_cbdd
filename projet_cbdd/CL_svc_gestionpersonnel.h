@@ -14,9 +14,9 @@ namespace NS_Svc {
 	public:
 		CL_svc_gestionpersonnel1(void);
 		DataSet^ listePersonnel(String^);
-		int ajouter(String^, String^, String^, String^, String^, String^, DateTime^);
-		void modifier(int, String^, String^, String^, String^, String^, String^, DateTime^, int);
-		void supprimer(int,int);
+		int ajouter(String^, String^, String^, String^, int, String^, DateTime^);
+		void modifier(int, String^, String^, String^, String^, int, String^, DateTime^, int);
+		void supprimer(int);
 	};
 
 
