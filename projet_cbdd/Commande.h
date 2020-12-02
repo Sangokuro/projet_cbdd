@@ -1,5 +1,6 @@
 #pragma once
 #include "CL_svc_gestionCommande.h"
+#include"Facture.h"
 
 namespace projet_cbdd {
 

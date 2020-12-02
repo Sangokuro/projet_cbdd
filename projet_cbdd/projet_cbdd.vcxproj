@@ -131,6 +131,7 @@
     <ClCompile Include="CL_svc_gestionCommande.cpp" />
     <ClCompile Include="CL_svc_gestionFacture.cpp" />
     <ClCompile Include="Commande.cpp" />
+    <ClCompile Include="Facture.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,9 @@
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Facture.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="test.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
@@ -158,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Commande.resx">
       <DependentUpon>Commande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facture.resx">
+      <DependentUpon>Facture.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
