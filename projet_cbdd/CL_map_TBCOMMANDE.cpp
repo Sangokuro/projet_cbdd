@@ -4,9 +4,6 @@ namespace NS_Composants {
 	CL_map_TBCOMMANDE::CL_map_TBCOMMANDE(void)
 	{
 		this->id_commande = -1;
-		this->date_commande = "01/01/1999";
-		this->date_livraison = "01/01/1999";
-		this->date_paiement = "01/01/1999";
 		this->moyen_paiement = "VIDE";
 		this->reference_commande = "VIDE";
 		this->id_client = -1;
@@ -27,7 +24,7 @@ namespace NS_Composants {
 			this->getreferenceCommande() + "' " + ");SELECT @@IDENTITY;";
 	}
 
-	String^ CL_map_TBCOMMANDE::UPDATE(void)
+	String^ CL_map_TBCOMMANDE::UPDATE1(void)
 	{
 		return "UPDATE Commande " +
 			"SET date_commande = '" + this->getdateCommande() + "', date_livraison = '" + this->getdateLivraison() + "', date_paiement = '" + this->getdatePaiement() + "', moyen_paiement = '" + this->getmoyenPaiement() +
@@ -48,38 +45,32 @@ namespace NS_Composants {
 		}
 	}
 
-	void CL_map_TBCOMMANDE::setdateCommande(String^ commande)
+	void CL_map_TBCOMMANDE::setdateCommande(DateTime^ datecom)
 	{
-		if (commande != "") {
-			this->date_commande = commande;
+			this->date_commande = datecom;
+	}
+
+	void CL_map_TBCOMMANDE::setdateLivraison(DateTime^ dateliv)
+	{
+			this->date_livraison = dateliv;
+	}
+
+	void CL_map_TBCOMMANDE::setdatePaiement(DateTime^ datepaie)
+	{
+			this->date_paiement = datepaie;
+	}
+
+	void CL_map_TBCOMMANDE::setmoyenPaiement(String^ moypaie)
+	{
+		if (moypaie != "") {
+			this->moyen_paiement = moypaie;
 		}
 	}
 
-	void CL_map_TBCOMMANDE::setdateLivraison(String^ commande)
+	void CL_map_TBCOMMANDE::setreferenceCommande(String^ refcom)
 	{
-		if (commande != "") {
-			this->date_livraison = commande;
-		}
-	}
-
-	void CL_map_TBCOMMANDE::setdatePaiement(String^ commande)
-	{
-		if (commande != "") {
-			this->date_paiement = commande;
-		}
-	}
-
-	void CL_map_TBCOMMANDE::setmoyenPaiement(String^ commande)
-	{
-		if (commande != "") {
-			this->moyen_paiement = commande;
-		}
-	}
-
-	void CL_map_TBCOMMANDE::setreferenceCommande(String^ commande)
-	{
-		if (commande != "") {
-			this->reference_commande = commande;
+		if (refcom != "") {
+			this->reference_commande = refcom;
 		}
 	}
 
@@ -102,17 +93,17 @@ namespace NS_Composants {
 		return this->id_client;
 	}
 
-	String^ CL_map_TBCOMMANDE::getdateCommande(void)
+	DateTime^ CL_map_TBCOMMANDE::getdateCommande(void)
 	{
 		return this->date_commande;
 	}
 
-	String^ CL_map_TBCOMMANDE::getdateLivraison(void)
+	DateTime^ CL_map_TBCOMMANDE::getdateLivraison(void)
 	{
 		return this->date_livraison;
 	}
 
-	String^ CL_map_TBCOMMANDE::getdatePaiement(void)
+	DateTime^ CL_map_TBCOMMANDE::getdatePaiement(void)
 	{
 		return this->date_paiement;
 	}

@@ -6,9 +6,9 @@ namespace NS_Composants {
 	{
 	private:
 		int id_commande;
-		String^ date_commande;
-		String^ date_livraison;
-		String^ date_paiement;
+		DateTime^ date_commande;
+		DateTime^ date_livraison;
+		DateTime^ date_paiement;
 		String^ moyen_paiement;
 		String^ reference_commande;
 		int id_client;
@@ -19,21 +19,21 @@ namespace NS_Composants {
 		CL_map_TBCOMMANDE(void);
 		String^ SELECT(void);
 		String^ INSERT(void);
-		String^ UPDATE(void);
+		String^ UPDATE1(void);
 		String^ DELETE(void);
 		void setID(int);
-		void setdateCommande(String^);
-		void setdateLivraison(String^);
-		void setdatePaiement(String^);
+		void setdateCommande(DateTime^);
+		void setdateLivraison(DateTime^);
+		void setdatePaiement(DateTime^);
 		void setmoyenPaiement(String^);
 		void setreferenceCommande(String^);
 		void setidClient(int);
 		void setidFacture(int);
 
 		int getId(void);
-		String^ getdateCommande(void);
-		String^ getdateLivraison(void);
-		String^ getdatePaiement(void);
+		DateTime^ getdateCommande(void);
+		DateTime^ getdateLivraison(void);
+		DateTime^ getdatePaiement(void);
 		String^ getmoyenPaiement(void);
 		String^ getreferenceCommande(void);
 		int getidClient(void);
