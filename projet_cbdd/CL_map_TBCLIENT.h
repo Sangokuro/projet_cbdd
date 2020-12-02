@@ -19,6 +19,7 @@ namespace NS_Composants {
 		String^ INSERT(void);
 		String^ UPDATE(void);
 		String^ DELETE(void);
+		String^ JointureCommandeClient(void);
 		void setID(int);
 		void setPrenom(String^);
 		void setDateNaissance(DateTime^);

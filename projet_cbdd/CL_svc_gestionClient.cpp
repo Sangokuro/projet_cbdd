@@ -28,8 +28,8 @@ namespace NS_Svc {
 		this->personne->setDateNaissance(datenaissance);
 		this->personne->setDatePremierAchat(datepremierachat);
 		id_personne = this->cad->actionRowsID(this->personne->INSERT());
-
 		return id_personne;
+	
 	}
 
 	void CL_svc_gestionClient::modifier(int id_personne, String^ nom, String^ prenom, DateTime^ datenaissance, DateTime^ datepremierachat)

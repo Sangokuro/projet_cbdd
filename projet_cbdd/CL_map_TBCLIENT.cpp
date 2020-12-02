@@ -35,6 +35,13 @@ namespace NS_Composants {
 			"WHERE(id_client=" + this->getId() + ");";
 	}
 
+	String^ CL_map_TBCLIENT::JointureCommandeClient(void)
+	{
+		return "SELECT * FROM Commande INNER JOIN Client on Commande.id_client = Client.id_client WHERE Client.id_client = " + this->getId() + "";
+	}
+
+
+
 	void CL_map_TBCLIENT::setID(int id_personne)
 	{
 		if (id_personne > 0) {
