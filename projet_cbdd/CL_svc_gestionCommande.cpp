@@ -1,5 +1,6 @@
 #include "CL_svc_gestionCommande.h"
 #include "CL_svc_gestionFacture.h"
+#include"Facture.h"
 
 namespace NS_Svc {
 	CL_svc_gestionCommande::CL_svc_gestionCommande(void)
@@ -31,8 +32,9 @@ namespace NS_Svc {
 
 		NS_Svc::CL_svc_gestionFacture^ processusFacture;
 		processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
-
+		
 		return id_commande;
+		
 	}
 
 	void CL_svc_gestionCommande::modifier(int id_personne, String^ date1, String^ date2, String^ date3, String^ paiement, String^ reference, int idclient, int idfacture)

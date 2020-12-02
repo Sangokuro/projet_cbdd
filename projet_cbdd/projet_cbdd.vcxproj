@@ -135,6 +135,7 @@
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Facture.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Personnel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -155,6 +156,9 @@
     <ClInclude Include="Facture.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Personnel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="test.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
@@ -172,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel.resx">
+      <DependentUpon>Personnel.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

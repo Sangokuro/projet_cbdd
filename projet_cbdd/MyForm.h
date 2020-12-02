@@ -1,6 +1,7 @@
 #pragma once
 #include "Client.h"
 #include "Commande.h"
+#include"Facture.h"
 
 namespace projet_cbdd {
 
