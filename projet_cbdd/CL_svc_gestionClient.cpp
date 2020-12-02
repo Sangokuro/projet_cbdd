@@ -29,7 +29,7 @@ namespace NS_Svc {
 		this->personne->setDatePremierAchat(datepremierachat);
 		id_personne = this->cad->actionRowsID(this->personne->INSERT());
 		
-		/*this->teste->comparerstring2(this->personne->INSERT(), "INSERT INTO Client " +
+		/*this->TestClient2->comparerstring2(this->personne->INSERT(), "INSERT INTO Client " +
 			"(nom_client, prenom_client, date_naissance, date_premier_achat) " +
 			"VALUES('Benzema', '" + this->personne->getPrenom() + "', '" + this->personne->getDateNaissance() + "', '" + this->personne->getDatePremierAchat() + "');SELECT @@IDENTITY;");*/
 
