@@ -263,7 +263,7 @@ namespace projet_cbdd {
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(326, 218);
 			this->dataGridView1->TabIndex = 2;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Client::dataGridView1_CellContentClick);
+			this->dataGridView1->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &Client::dataGridView1_CellContentClick);
 			// 
 			// txt_commande
 			// 
@@ -433,12 +433,13 @@ namespace projet_cbdd {
 	}
 
 
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		int a = this->dataGridView1->CurrentRow->Index;
-		//this->txt_idPersonne->Text = a.ToString();
-		this->index = a;
-		this->loadData(this->index);
-		//Form1.DataGridView1.Item(y, x).Value
+	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) {
+		 //int a=this->dataGridView1->CurrentRow->Index;
+		 int a = e->RowIndex;
+		 //this->txt_idPersonne->Text = a.ToString();
+		 this->index = a;
+		 this->loadData(this->index);
+		 //Form1.DataGridView1.Item(y, x).Value
 	}
 	};
 }
