@@ -36,6 +36,11 @@ namespace projet_cbdd {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
 	protected:
 
 	private:
@@ -52,23 +57,79 @@ namespace projet_cbdd {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(268, 440);
+			this->button1->Location = System::Drawing::Point(32, 349);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(152, 43);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"Gestion Client";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(219, 349);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(152, 43);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Gestion Commande";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(399, 349);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(152, 43);
+			this->button3->TabIndex = 2;
+			this->button3->Text = L"Gestion Stock";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(32, 439);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(152, 41);
+			this->button4->TabIndex = 3;
+			this->button4->Text = L"Gestion Statistique";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(219, 439);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(152, 41);
+			this->button5->TabIndex = 4;
+			this->button5->Text = L"Gestion Personnel";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(399, 439);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(152, 41);
+			this->button6->TabIndex = 5;
+			this->button6->Text = L"Facture";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(641, 505);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
@@ -83,5 +144,7 @@ namespace projet_cbdd {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
