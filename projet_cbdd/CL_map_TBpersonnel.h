@@ -48,3 +48,7 @@ namespace NS_Composants {
 
 
 }
+
+ref class CL_map_TBpersonnel
+{
+};

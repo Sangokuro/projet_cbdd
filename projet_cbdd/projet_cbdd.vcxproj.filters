@@ -48,6 +48,12 @@
     <ClCompile Include="Facture.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="CL_svc_gestionpersonnel.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_map_TBpersonnel.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -85,6 +91,12 @@
     </ClInclude>
     <ClInclude Include="Facture.h">
       <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionpersonnel.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_map_TBpersonnel.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

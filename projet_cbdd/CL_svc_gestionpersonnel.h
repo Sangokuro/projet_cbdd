@@ -24,3 +24,7 @@ namespace NS_Svc {
 
 }
 
+ref class CL_svc_gestionpersonnel
+{
+};
+

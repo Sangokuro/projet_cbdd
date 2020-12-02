@@ -127,9 +127,11 @@
     <ClCompile Include="CL_map_TBCLIENT.cpp" />
     <ClCompile Include="CL_map_TBCOMMANDE.cpp" />
     <ClCompile Include="CL_map_TBFACTURE.cpp" />
+    <ClCompile Include="CL_map_TBpersonnel.cpp" />
     <ClCompile Include="CL_svc_gestionClient.cpp" />
     <ClCompile Include="CL_svc_gestionCommande.cpp" />
     <ClCompile Include="CL_svc_gestionFacture.cpp" />
+    <ClCompile Include="CL_svc_gestionpersonnel.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Facture.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -142,9 +144,11 @@
     <ClInclude Include="CL_map_TBCLIENT.h" />
     <ClInclude Include="CL_map_TBCOMMANDE.h" />
     <ClInclude Include="CL_map_TBFACTURE.h" />
+    <ClInclude Include="CL_map_TBpersonnel.h" />
     <ClInclude Include="CL_svc_gestionClient.h" />
     <ClInclude Include="CL_svc_gestionCommande.h" />
     <ClInclude Include="CL_svc_gestionFacture.h" />
+    <ClInclude Include="CL_svc_gestionpersonnel.h" />
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
