@@ -1,4 +1,5 @@
 #include "CL_svc_gestionCommande.h"
+#include "CL_svc_gestionFacture.h"
 
 namespace NS_Svc {
 	CL_svc_gestionCommande::CL_svc_gestionCommande(void)
@@ -17,7 +18,7 @@ namespace NS_Svc {
 
 	int CL_svc_gestionCommande::ajouter(String^ date1, String^ date2, String^ date3, String^ paiement, String^ reference, int idclient, int idfacture)
 	{
-		int id_personne;
+		int id_commande;
 		//référence null
 		this->commande->setdateCommande(date1);
 		this->commande->setdateLivraison(date2);
@@ -26,9 +27,12 @@ namespace NS_Svc {
 		this->commande->setreferenceCommande(reference);
 		this->commande->setidClient(idclient);
 		this->commande->setidFacture(idfacture);
-		id_personne = this->cad->actionRowsID(this->commande->INSERT());
+		id_commande = this->cad->actionRowsID(this->commande->INSERT());
 
-		return id_personne;
+		NS_Svc::CL_svc_gestionFacture^ processusFacture;
+		processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
+
+		return id_commande;
 	}
 
 	void CL_svc_gestionCommande::modifier(int id_personne, String^ date1, String^ date2, String^ date3, String^ paiement, String^ reference, int idclient, int idfacture)

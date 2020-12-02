@@ -22,9 +22,11 @@ namespace NS_Composants {
 	String^ CL_map_TBCOMMANDE::INSERT(void)
 	{
 		return "INSERT INTO Commande " +
-			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande,id_client,id_facture) " +
+			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande) " +
 			"VALUES('" + this->getdateCommande() + "', '" + this->getdateLivraison() + "', '" + this->getdatePaiement() + "', '" + this->getmoyenPaiement() + "', '" + this->getreferenceCommande()
-			+ "', '" + this->getidClient() + "', '" + getidFacture() + "');SELECT @@IDENTITY;";
+			+ "' " + /*"(SELECT id_Client FROM Client WHERE nom_client='Rabie'),(SELECT id_facture FROM Facture WHERE code_postal=33440)" + ")*/");" +
+			"INSERT INTO Facture(nom_societe,adresse_societe,code_postal,ville,numero_service_client) VALUES('a','b',1,'d',10);";
+
 	}
 
 	String^ CL_map_TBCOMMANDE::UPDATE(void)
