@@ -1,0 +1,21 @@
+#pragma once
+#include "CL_CAD.h"
+#include "CL_map_TBCOMMANDE.h"
+
+namespace NS_Svc {
+
+	ref class CL_svc_gestionCommande
+	{
+	private:
+		NS_Composants::CL_CAD^ cad;
+		NS_Composants::CL_map_TBCOMMANDE^ commande;
+		DataSet^ ds;
+	public:
+		CL_svc_gestionCommande(void);
+		DataSet^ listeCommande(String^);
+		int ajouter(String^, String^, String^, String^, String^, int, int);
+		void modifier(int, String^, String^, String^, String^, String^, int, int);
+		void supprimer(int);
+	};
+
+}
