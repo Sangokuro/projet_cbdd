@@ -3,34 +3,33 @@
 NS_Composants::CL_map_TBFACTURE::CL_map_TBFACTURE(void)
 {
     this->id_facture = -1;
-    this->nom_societe = "01/01/1999";
-    this->adresse_societe = "01/01/1999";
-    this->code_postal = "01/01/1999";
-    this->ville = "01/01/1999";
-    this->numero_service_client = "Vide";
+    this->nom_societe = "VIDE";
+    this->adresse_societe = "VIDE";
+    this->code_postal = -1;
+    this->ville = "VIDE";
+    this->numero_service_client = -1;
     this->id_commande = -1;
-    this->id_client = -1;
 }
 
 String^ NS_Composants::CL_map_TBFACTURE::SELECT(void)
 {
-    return "SELECT id_facture,nom_societe,adresse_societe,code_postal,ville,numero_service_client,id_commande,id_client " +
+    return "SELECT id_facture,nom_societe,adresse_societe,code_postal,ville,numero_service_client,id_commande " +
         "FROM Facture;";
 }
 
 String^ NS_Composants::CL_map_TBFACTURE::INSERT(void)
 {
     return "INSERT INTO Facture " +
-        "(nom_societe,adresse_societe,code_postal,ville,numero_service_client,id_commande,id_client) " +
+        "(nom_societe,adresse_societe,code_postal,ville,numero_service_client, id_commande) " +
         "VALUES('" + this->getnomsociete() + "', '" + this->getadressesociete() + "', '" + this->getcodepostal() + "', '" + this->getville() + "', '" + this->getnumeroserviceclient()
-        + "', '" + this->getidcommande() + "', '" + getidclient() + "');SELECT @@IDENTITY;";
+        + "', '" + this->getidcommande() + "');SELECT @@IDENTITY;";
 }
 
 String^ NS_Composants::CL_map_TBFACTURE::UPDATE(void)
 {
     return "UPDATE Client " +
         "SET nom_societe = '" + this->getnomsociete() + "', adresse_societe = '" + this->getadressesociete() + "', code_postal = '" + this->getcodepostal() + "', ville = '" + this->getville() +
-        "', numero_service_client = '" + this->getnumeroserviceclient() + "', id_commande = '" + this->getidcommande() + "', id_client = '" + this->getidclient() + "' " +
+        "', numero_service_client = '" + this->getnumeroserviceclient() + "', id_commande = '" + this->getidcommande() + "' " +
         "WHERE(id_facture = " + this->getId() + ");";
 }
 
@@ -61,9 +60,9 @@ void NS_Composants::CL_map_TBFACTURE::setadressesociete(String^ facture)
     }
 }
 
-void NS_Composants::CL_map_TBFACTURE::setcodepostal(String^ facture)
+void NS_Composants::CL_map_TBFACTURE::setcodepostal(int facture)
 {
-    if (facture != "") {
+    if (facture > 0) {
         this->code_postal = facture;
     }
 }
@@ -75,9 +74,9 @@ void NS_Composants::CL_map_TBFACTURE::setville(String^ facture)
     }
 }
 
-void NS_Composants::CL_map_TBFACTURE::setnumeroserviceclient(String^ facture)
+void NS_Composants::CL_map_TBFACTURE::setnumeroserviceclient(float facture)
 {
-    if (facture != "") {
+    if (facture > 0) {
         this->numero_service_client = facture;
     }
 }
@@ -89,12 +88,6 @@ void NS_Composants::CL_map_TBFACTURE::setidcommande(int id_commande)
     }
 }
 
-void NS_Composants::CL_map_TBFACTURE::setidclient(int id_client)
-{
-    if (id_client > 0) {
-        this->id_client = id_client;
-    }
-}
 
 int NS_Composants::CL_map_TBFACTURE::getId(void)
 {
@@ -111,7 +104,7 @@ String^ NS_Composants::CL_map_TBFACTURE::getadressesociete(void)
     return this->adresse_societe;
 }
 
-String^ NS_Composants::CL_map_TBFACTURE::getcodepostal(void)
+int NS_Composants::CL_map_TBFACTURE::getcodepostal(void)
 {
     return this->code_postal;
 }
@@ -121,7 +114,7 @@ String^ NS_Composants::CL_map_TBFACTURE::getville(void)
     return this->ville;
 }
 
-String^ NS_Composants::CL_map_TBFACTURE::getnumeroserviceclient(void)
+float NS_Composants::CL_map_TBFACTURE::getnumeroserviceclient(void)
 {
     return this->numero_service_client;
 }
@@ -129,9 +122,4 @@ String^ NS_Composants::CL_map_TBFACTURE::getnumeroserviceclient(void)
 int NS_Composants::CL_map_TBFACTURE::getidcommande(void)
 {
     return this->id_commande;
-}
-
-int NS_Composants::CL_map_TBFACTURE::getidclient(void)
-{
-    return this->id_client;
 }

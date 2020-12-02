@@ -7,8 +7,8 @@ namespace NS_Composants {
 		this->date_commande = "01/01/1999";
 		this->date_livraison = "01/01/1999";
 		this->date_paiement = "01/01/1999";
-		this->moyen_paiement = "01/01/1999";
-		this->reference_commande = "Vide";
+		this->moyen_paiement = "VIDE";
+		this->reference_commande = "VIDE";
 		this->id_client = -1;
 		this->id_facture = -1;
 	}
@@ -23,15 +23,13 @@ namespace NS_Composants {
 	{
 		return "INSERT INTO Commande " +
 			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande) " +
-			"VALUES('" + this->getdateCommande() + "', '" + this->getdateLivraison() + "', '" + this->getdatePaiement() + "', '" + this->getmoyenPaiement() + "', '" + this->getreferenceCommande()
-			+ "' " + /*"(SELECT id_Client FROM Client WHERE nom_client='Rabie'),(SELECT id_facture FROM Facture WHERE code_postal=33440)" + ")*/");" +
-			"INSERT INTO Facture(nom_societe,adresse_societe,code_postal,ville,numero_service_client) VALUES('a','b',1,'d',10);";
-
+			"VALUES('" + this->getdateCommande() + "', '" + this->getdateLivraison() + "', '" + this->getdatePaiement() + "', '" + this->getmoyenPaiement() + "', '" +
+			this->getreferenceCommande() + "' " + ");SELECT @@IDENTITY;";
 	}
 
 	String^ CL_map_TBCOMMANDE::UPDATE(void)
 	{
-		return "UPDATE Client " +
+		return "UPDATE Commande " +
 			"SET date_commande = '" + this->getdateCommande() + "', date_livraison = '" + this->getdateLivraison() + "', date_paiement = '" + this->getdatePaiement() + "', moyen_paiement = '" + this->getmoyenPaiement() +
 			"', reference_commande = '" + this->getreferenceCommande() + "', id_client = '" + this->getidClient() + "', id_facture = '" + this->getidFacture() + "' " +
 			"WHERE(id_commande = " + this->getId() + ");";

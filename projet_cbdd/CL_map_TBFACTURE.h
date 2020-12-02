@@ -8,11 +8,10 @@ namespace NS_Composants {
 		int id_facture;
 		String^ nom_societe;
 		String^ adresse_societe;
-		String^ code_postal;
+		int code_postal;
 		String^ ville;
-		String^ numero_service_client;
+		float numero_service_client;
 		int id_commande;
-		int id_client;
 
 
 	public:
@@ -24,20 +23,18 @@ namespace NS_Composants {
 		void setID(int);
 		void setnomsociete(String^);
 		void setadressesociete(String^);
-		void setcodepostal(String^);
+		void setcodepostal(int);
 		void setville(String^);
-		void setnumeroserviceclient(String^);
+		void setnumeroserviceclient(float);
 		void setidcommande(int);
-		void setidclient(int);
 
 		int getId(void);
 		String^ getnomsociete(void);
 		String^ getadressesociete(void);
-		String^ getcodepostal(void);
+		int getcodepostal(void);
 		String^ getville(void);
-		String^ getnumeroserviceclient(void);
+		float getnumeroserviceclient(void);
 		int getidcommande(void);
-		int getidclient(void);
 	};
 
 }

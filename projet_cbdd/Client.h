@@ -192,7 +192,6 @@ namespace projet_cbdd {
 			this->txt_idPersonne->Name = L"txt_idPersonne";
 			this->txt_idPersonne->Size = System::Drawing::Size(196, 22);
 			this->txt_idPersonne->TabIndex = 11;
-			this->txt_idPersonne->TextChanged += gcnew System::EventHandler(this, &Client::txt_idPersonne_TextChanged);
 			// 
 			// txt_nom
 			// 
@@ -242,6 +241,7 @@ namespace projet_cbdd {
 			this->txt_message->Name = L"txt_message";
 			this->txt_message->Size = System::Drawing::Size(343, 85);
 			this->txt_message->TabIndex = 17;
+			this->txt_message->TextChanged += gcnew System::EventHandler(this, &Client::txt_message_TextChanged);
 			// 
 			// label4
 			// 
@@ -446,7 +446,7 @@ namespace projet_cbdd {
 	}
 	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void txt_idPersonne_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void txt_message_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

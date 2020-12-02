@@ -26,7 +26,7 @@ namespace NS_Composants {
 		void setPrenompersonnel(String^);
 		void setNomsuperieure(String^);
 		void setAdressepersonnel(String^);
-		void setcodepostal(String^);
+		void setcodepostal(int);
 		void setville(String^);
 		void setdateembauche(DateTime^);
 		void setIDpersonnelsuperieure(int);

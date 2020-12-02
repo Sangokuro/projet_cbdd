@@ -17,7 +17,7 @@ namespace NS_Svc {
 		return ds;
 	}
 
-	int CL_svc_gestionCommande::ajouter(String^ date1, String^ date2, String^ date3, String^ paiement, String^ reference, int idclient, int idfacture)
+	int CL_svc_gestionCommande::ajouter(String^ date1, String^ date2, String^ date3, String^ paiement, String^ reference)
 	{
 		int id_commande;
 		//référence null
@@ -26,18 +26,28 @@ namespace NS_Svc {
 		this->commande->setdatePaiement(date3);
 		this->commande->setmoyenPaiement(paiement);
 		this->commande->setreferenceCommande(reference);
-		this->commande->setidClient(idclient);
-		this->commande->setidFacture(idfacture);
+		this->commande->setidClient(0);
+		this->commande->setidFacture(0);
 		id_commande = this->cad->actionRowsID(this->commande->INSERT());
 
-		NS_Svc::CL_svc_gestionFacture^ processusFacture;
-		processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
+		//NS_Svc::CL_svc_gestionFacture^ processusFacture;
+		//processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
+
+		int *id_facture;
+
+		projet_cbdd::Facture^ f2 = gcnew projet_cbdd::Facture(id_commande, id_facture);
+		f2->ShowDialog();
 		
+		this->commande->setID(id_commande);
+		this->commande->setmoyenPaiement("CB");
+		this->commande->setidFacture(*id_facture);
+		this->cad->actionRows(this->commande->UPDATE());
+
 		return id_commande;
 		
 	}
 
-	void CL_svc_gestionCommande::modifier(int id_personne, String^ date1, String^ date2, String^ date3, String^ paiement, String^ reference, int idclient, int idfacture)
+	void CL_svc_gestionCommande::modifier(int id_personne, String^ date1, String^ date2, String^ date3, String^ paiement, String^ reference)
 	{
 		this->commande->setID(id_personne);
 		this->commande->setdateCommande(date1);
@@ -45,8 +55,6 @@ namespace NS_Svc {
 		this->commande->setdatePaiement(date3);
 		this->commande->setmoyenPaiement(paiement);
 		this->commande->setreferenceCommande(reference);
-		this->commande->setidClient(idclient);
-		this->commande->setidFacture(idfacture);
 
 		this->cad->actionRows(this->commande->UPDATE());
 	}
