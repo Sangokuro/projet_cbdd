@@ -49,18 +49,17 @@ namespace NS_Composants {
 		}
 	}
 
-	void CL_map_TBCLIENT::setDateNaissance(String^ date)
+	void CL_map_TBCLIENT::setDateNaissance(DateTime^ date)
 	{
-		if (date != "") {
+		
 			this->date_naissance = date;
-		}
+		
 	}
 
-	void CL_map_TBCLIENT::setDatePremierAchat(String^ date)
+	void CL_map_TBCLIENT::setDatePremierAchat(DateTime^ date)
 	{
-		if (date != "") {
-			this->date_naissance = date;
-		}
+			this->date_premier_achat = date;
+		
 	}
 
 	void CL_map_TBCLIENT::setNom(String^ nom)
@@ -84,11 +83,11 @@ namespace NS_Composants {
 	{
 		return this->prenom;
 	}
-	String^ CL_map_TBCLIENT::getDateNaissance(void)
+	DateTime^ CL_map_TBCLIENT::getDateNaissance(void)
 	{
 		return this->date_naissance;
 	}
-	String^ CL_map_TBCLIENT::getDatePremierAchat(void)
+	DateTime^ CL_map_TBCLIENT::getDatePremierAchat(void)
 	{
 		return this->date_premier_achat;
 	}

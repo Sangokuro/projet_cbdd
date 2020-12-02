@@ -8,8 +8,8 @@ namespace NS_Composants {
 		int id_personne;
 		String^ nom;
 		String^ prenom;
-		String^ date_naissance;
-		String^ date_premier_achat;
+		DateTime^ date_naissance;
+		DateTime^ date_premier_achat;
 
 	public:
 		CL_map_TBCLIENT(void);
@@ -19,14 +19,14 @@ namespace NS_Composants {
 		String^ DELETE(void);
 		void setID(int);
 		void setPrenom(String^);
-		void setDateNaissance(String^);
-		void setDatePremierAchat(String^);
+		void setDateNaissance(DateTime^);
+		void setDatePremierAchat(DateTime^);
 		void setNom(String^);
 		int getId(void);
 		String^ getNom(void);
 		String^ getPrenom(void);
-		String^ getDateNaissance(void);
-		String^ getDatePremierAchat(void);
+		DateTime^ getDateNaissance(void);
+		DateTime^ getDatePremierAchat(void);
 	};
 
 }

@@ -55,9 +55,9 @@ namespace projetcbdd {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(451, 251);
+			this->button1->Location = System::Drawing::Point(295, 385);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(98, 38);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;

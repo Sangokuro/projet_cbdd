@@ -16,7 +16,7 @@ namespace NS_Svc {
 		return ds;
 	}
 
-	int CL_svc_gestionClient::ajouter(String^ nom, String^ prenom, String^ datenaissance, String^ datepremierachat)
+	int CL_svc_gestionClient::ajouter(String^ nom, String^ prenom, DateTime^ datenaissance, DateTime^ datepremierachat)
 	{
 		int id_personne;
 		//référence null
@@ -29,7 +29,7 @@ namespace NS_Svc {
 		return id_personne;
 	}
 
-	void CL_svc_gestionClient::modifier(int id_personne, String^ nom, String^ prenom, String^ datenaissance, String^ datepremierachat)
+	void CL_svc_gestionClient::modifier(int id_personne, String^ nom, String^ prenom, DateTime^ datenaissance, DateTime^ datepremierachat)
 	{
 		this->personne->setID(id_personne);
 		this->personne->setNom(nom);

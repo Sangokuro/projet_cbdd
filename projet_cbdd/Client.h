@@ -284,9 +284,10 @@ namespace projet_cbdd {
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(19, 153);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(131, 17);
+			this->label5->Size = System::Drawing::Size(149, 17);
 			this->label5->TabIndex = 21;
-			this->label5->Text = L"Date de commande";
+			this->label5->Text = L"Date du premier achat";
+			this->label5->Click += gcnew System::EventHandler(this, &Client::label5_Click);
 			// 
 			// label6
 			// 
@@ -297,7 +298,7 @@ namespace projet_cbdd {
 			this->label6->TabIndex = 22;
 			this->label6->Text = L"Date de naissance";
 			// 
-			// Form1
+			// Client
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -323,7 +324,7 @@ namespace projet_cbdd {
 			this->Controls->Add(this->modifButton);
 			this->Controls->Add(this->saveButton);
 			this->Controls->Add(this->newButton);
-			this->Name = L"Form1";
+			this->Name = L"Client";
 			this->Text = L"Form1";
 			this->Load += gcnew System::EventHandler(this, &Client::FRM_Principal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -414,13 +415,14 @@ namespace projet_cbdd {
 		{
 			int Id;
 			//utilise le nom et le prénom entré pour faire un id
-			Id = this->processusPersonnes->ajouter(this->txt_nom->Text, this->txt_prenom->Text, this->txt_naissance->Text, this->txt_commande->Text);
+			Id = this->processusPersonnes->ajouter(this->txt_nom->Text, this->txt_prenom->Text, Convert::ToDateTime(this->txt_naissance->Text), Convert::ToDateTime(this->txt_commande->Text));
 			this->txt_message->Text = "L'ID généré est le : " + Id + ". ";
 		}
+		
 		else if (this->mode == "maj")
 		{
-			this->processusPersonnes->modifier(Convert::ToInt32(this->txt_idPersonne->Text), this->txt_nom->Text, this->txt_prenom->Text, this->txt_naissance->Text, this->txt_commande->Text);
-
+			this->processusPersonnes->modifier(Convert::ToInt32(this->txt_idPersonne->Text), this->txt_nom->Text, this->txt_prenom->Text, Convert::ToDateTime(this->txt_naissance->Text), Convert::ToDateTime(this->txt_commande->Text));
+			
 		}
 		else if (this->mode == "sup")
 		{
@@ -441,5 +443,7 @@ namespace projet_cbdd {
 		 this->loadData(this->index);
 		 //Form1.DataGridView1.Item(y, x).Value
 	}
-	};
+	private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

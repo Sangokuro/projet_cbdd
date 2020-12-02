@@ -144,6 +144,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Commande.resx">
       <DependentUpon>Commande.h</DependentUpon>
     </EmbeddedResource>
