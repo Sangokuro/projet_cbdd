@@ -12,11 +12,10 @@ namespace NS_Svc {
 
 	DataSet^ CL_svc_gestionClient::listePersonnel(String^ dataTableName)
 	{
-		
 		//this->ds->Clear();
 		this->ds = this->cad->getRows(this->personne->SELECT(), dataTableName);
-		//this->teste->comprarerstring(this->personne->SELECT(), "SELECT id_client,nom_client,prenom_client,date_naissance,date_premier_achat " +
-			//"FROM Client;");
+		/*this->teste->comprarerstring(this->personne->SELECT(), "SELECT id_client,nom_client,prenom_client,date_naissance,date_premier_achat " +
+			"FROM Client;");*/
 		return ds;
 	}
 
@@ -29,6 +28,11 @@ namespace NS_Svc {
 		this->personne->setDateNaissance(datenaissance);
 		this->personne->setDatePremierAchat(datepremierachat);
 		id_personne = this->cad->actionRowsID(this->personne->INSERT());
+		
+		/*this->teste->comparerstring2(this->personne->INSERT(), "INSERT INTO Client " +
+			"(nom_client, prenom_client, date_naissance, date_premier_achat) " +
+			"VALUES('Benzema', '" + this->personne->getPrenom() + "', '" + this->personne->getDateNaissance() + "', '" + this->personne->getDatePremierAchat() + "');SELECT @@IDENTITY;");*/
+
 		return id_personne;
 	
 	}
@@ -42,11 +46,18 @@ namespace NS_Svc {
 		this->personne->setDatePremierAchat(datepremierachat);
 
 		this->cad->actionRows(this->personne->UPDATE());
+		/*this->teste->comparerstring1(this->personne->UPDATE(), "UPDATE Client " +
+			"SET nom_client = '" + this->personne->getNom() + "', prenom_client = 'rabie', date_naissance = '" + this->personne->getDateNaissance() + "', date_premier_achat = '" + this->personne->getDatePremierAchat() + "' " +
+			"WHERE(id_client = " + this->personne->getId() + ");");*/
 	}
 
 	void CL_svc_gestionClient::supprimer(int id_personne)
 	{
 		this->personne->setID(id_personne);
 		this->cad->actionRows(this->personne->DELETE());
+		/*this->teste->comparerstring3(this->personne->DELETE(), "DELETE FROM Client " +
+			"WHERE(id_client=" + 14 + ");");*/
+
+
 	}
 }
