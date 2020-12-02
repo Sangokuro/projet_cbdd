@@ -7,6 +7,7 @@ namespace NS_Composants {
 		this->id_personne = -1;
 		this->nom = "RIEN";
 		this->prenom = "RIEN";
+		
 	}
 
 	String^ CL_map_TBCLIENT::SELECT(void)
