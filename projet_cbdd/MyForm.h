@@ -41,6 +41,8 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
 	protected:
 
 	private:
@@ -62,6 +64,8 @@ namespace projet_cbdd {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -120,11 +124,35 @@ namespace projet_cbdd {
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F));
+			this->label1->ForeColor = System::Drawing::Color::CornflowerBlue;
+			this->label1->Location = System::Drawing::Point(39, 30);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(572, 24);
+			this->label1->TabIndex = 6;
+			this->label1->Text = L"Bienvenue dans votre application qui gère votre base de données !";
+			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F));
+			this->label2->Location = System::Drawing::Point(198, 199);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(233, 24);
+			this->label2->TabIndex = 7;
+			this->label2->Text = L"Que souhaitez-vous faire \?";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(641, 505);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
@@ -135,6 +163,7 @@ namespace projet_cbdd {
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -146,5 +175,7 @@ namespace projet_cbdd {
 	}
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
