@@ -13,8 +13,8 @@ namespace NS_Svc {
 	public:
 		CL_svc_gestionClient(void);
 		DataSet^ listePersonnel(String^);
-		int ajouter(String^, String^, String^, String^);
-		void modifier(int, String^, String^, String^, String^);
+		int ajouter(String^, String^, DateTime^, DateTime^);
+		void modifier(int, String^, String^, DateTime^, DateTime^);
 		void supprimer(int);
 	};
 
