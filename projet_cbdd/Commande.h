@@ -490,8 +490,7 @@ namespace projet_cbdd {
 		}
 		else if (this->mode == "maj")
 		{
-			this->processusCommande->modifier(Convert::ToInt32(this->txt_idCommande->Text),this->txt_dateCommande->Text, this->txt_dateLivraison->Text,
-				this->txt_datePaiement->Text, this->txt_moyenPaiement->Text, this->txt_refCommande->Text);
+			this->processusCommande->modifier(Convert::ToInt32(this->txt_idCommande->Text),this->txt_dateCommande->Text, this->txt_dateLivraison->Text,this->txt_datePaiement->Text, this->txt_moyenPaiement->Text, this->txt_refCommande->Text);
 
 		}
 		else if (this->mode == "sup")

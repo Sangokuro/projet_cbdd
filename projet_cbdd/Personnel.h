@@ -216,6 +216,7 @@ namespace projet_cbdd {
 			this->id_personnel_txt->Name = L"id_personnel_txt";
 			this->id_personnel_txt->Size = System::Drawing::Size(100, 22);
 			this->id_personnel_txt->TabIndex = 9;
+			this->id_personnel_txt->TextChanged += gcnew System::EventHandler(this, &Personnel::id_personnel_txt_TextChanged);
 			// 
 			// nom_txt
 			// 
@@ -550,6 +551,8 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 private: System::Void textBox10_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void message_txt_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void id_personnel_txt_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 };
