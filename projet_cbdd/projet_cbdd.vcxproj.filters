@@ -57,9 +57,6 @@
     <ClCompile Include="Personnel.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="ClientTeste.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -103,9 +100,6 @@
     </ClInclude>
     <ClInclude Include="Personnel.h">
       <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientTeste.h">
-      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="TestClient.h">
       <Filter>Fichiers d%27en-tête</Filter>
