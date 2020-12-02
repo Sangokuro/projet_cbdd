@@ -1,7 +1,7 @@
 #pragma once
 #include "CL_CAD.h"
 #include "CL_map_TBCLIENT.h"
-#include "test.h"
+#include "ClientTeste.h"
 namespace NS_Svc {
 
 	ref class CL_svc_gestionClient

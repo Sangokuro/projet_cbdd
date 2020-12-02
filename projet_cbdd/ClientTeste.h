@@ -1,6 +1,6 @@
 #pragma once
-#ifndef test
-#define test
+#ifndef ClientTeste
+#define ClientTeste
 using namespace System::ComponentModel;
 using namespace System::Collections;
 using namespace System::Windows::Forms;
@@ -12,7 +12,7 @@ public:
 	/*void comprarerstring(String^ comparer, String^ affirmer, String^ nom) {
 		if (comparer == affirmer)
 		{
-			MessageBox::Show("Selection bien effectue , affichage : "+nom );
+			MessageBox::Show("Selection bien effectue "+nom );
 		}
 		else
 		{
@@ -57,5 +57,5 @@ public:
 		}
 	}
 };
-#endif // !test
+#endif // !ClientTeste
 

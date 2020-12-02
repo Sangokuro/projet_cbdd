@@ -1,6 +1,6 @@
 #pragma once
 using namespace System;
-#include "test.h"
+#include "ClientTeste.h"
 
 namespace NS_Composants {
 	ref class CL_map_TBCLIENT
