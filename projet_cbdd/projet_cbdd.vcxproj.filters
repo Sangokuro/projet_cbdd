@@ -53,5 +53,8 @@
     <ClInclude Include="Commande.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

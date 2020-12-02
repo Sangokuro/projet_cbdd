@@ -139,6 +139,7 @@
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="test.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

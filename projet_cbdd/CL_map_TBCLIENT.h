@@ -1,5 +1,6 @@
 #pragma once
 using namespace System;
+#include "test.h"
 
 namespace NS_Composants {
 	ref class CL_map_TBCLIENT
@@ -10,6 +11,7 @@ namespace NS_Composants {
 		String^ prenom;
 		DateTime^ date_naissance;
 		DateTime^ date_premier_achat;
+		test1^ teste;
 
 	public:
 		CL_map_TBCLIENT(void);
