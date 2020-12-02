@@ -92,8 +92,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
-      <EntryPointSymbol>WinMain</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -125,9 +123,8 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CL_CAD.cpp" />
     <ClCompile Include="CL_map_TBCLIENT.cpp" />
-    <ClCompile Include="CL_map_TBCOMMANDE.cpp" />
     <ClCompile Include="CL_svc_gestionClient.cpp" />
-    <ClCompile Include="CL_svc_gestionCommande.cpp" />
+    <ClCompile Include="Commande.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -136,14 +133,18 @@
     </ClInclude>
     <ClInclude Include="CL_CAD.h" />
     <ClInclude Include="CL_map_TBCLIENT.h" />
-    <ClInclude Include="CL_map_TBCOMMANDE.h" />
     <ClInclude Include="CL_svc_gestionClient.h" />
-    <ClInclude Include="CL_svc_gestionCommande.h" />
+    <ClInclude Include="Commande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Commande.resx">
+      <DependentUpon>Commande.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
