@@ -65,7 +65,7 @@ namespace projet_cbdd {
 	private: String^ mode;
 	
 	
-	private: System::Windows::Forms::TextBox^ txt_message;
+	
 
 
 
@@ -79,7 +79,9 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::TextBox^ textBox10;
+	private: System::Windows::Forms::TextBox^ txt_message;
+
+
 
 	private:
 		/// <summary>
@@ -122,7 +124,7 @@ namespace projet_cbdd {
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->txt_message = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -372,21 +374,21 @@ namespace projet_cbdd {
 			this->label10->TabIndex = 27;
 			this->label10->Text = L"Message";
 			// 
-			// textBox10
+			// txt_message
 			// 
-			this->textBox10->Location = System::Drawing::Point(243, 337);
-			this->textBox10->Multiline = true;
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(341, 115);
-			this->textBox10->TabIndex = 28;
-			this->textBox10->TextChanged += gcnew System::EventHandler(this, &Personnel::textBox10_TextChanged);
+			this->txt_message->Location = System::Drawing::Point(244, 337);
+			this->txt_message->Multiline = true;
+			this->txt_message->Name = L"txt_message";
+			this->txt_message->Size = System::Drawing::Size(315, 115);
+			this->txt_message->TabIndex = 28;
+			this->txt_message->TextChanged += gcnew System::EventHandler(this, &Personnel::message_txt_TextChanged);
 			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1185, 464);
-			this->Controls->Add(this->textBox10);
+			this->Controls->Add(this->txt_message);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button7);
@@ -546,6 +548,8 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 }
 
 private: System::Void textBox10_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void message_txt_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 };
