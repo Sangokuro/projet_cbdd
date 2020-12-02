@@ -11,10 +11,10 @@ namespace projet_cbdd {
 	using namespace System::Drawing;
 
 
-	public ref class Client : public System::Windows::Forms::Form
+	public ref class Commande : public System::Windows::Forms::Form
 	{
 	public:
-		Client(void)
+		Commande(void)
 		{
 			InitializeComponent();
 
@@ -22,7 +22,7 @@ namespace projet_cbdd {
 
 	protected:
 
-		~Client()
+		~Commande()
 		{
 			if (components)
 			{
@@ -124,7 +124,7 @@ namespace projet_cbdd {
 			this->newButton->TabIndex = 0;
 			this->newButton->Text = L"Nouveau";
 			this->newButton->UseVisualStyleBackColor = true;
-			this->newButton->Click += gcnew System::EventHandler(this, &Client::newButton_Click);
+			this->newButton->Click += gcnew System::EventHandler(this, &Commande::newButton_Click);
 			// 
 			// saveButton
 			// 
@@ -134,7 +134,7 @@ namespace projet_cbdd {
 			this->saveButton->TabIndex = 3;
 			this->saveButton->Text = L"ENREGISTRER";
 			this->saveButton->UseVisualStyleBackColor = true;
-			this->saveButton->Click += gcnew System::EventHandler(this, &Client::saveButton_Click);
+			this->saveButton->Click += gcnew System::EventHandler(this, &Commande::saveButton_Click);
 			// 
 			// modifButton
 			// 
@@ -144,7 +144,7 @@ namespace projet_cbdd {
 			this->modifButton->TabIndex = 4;
 			this->modifButton->Text = L"Modifier";
 			this->modifButton->UseVisualStyleBackColor = true;
-			this->modifButton->Click += gcnew System::EventHandler(this, &Client::modifButton_Click);
+			this->modifButton->Click += gcnew System::EventHandler(this, &Commande::modifButton_Click);
 			// 
 			// deleteButton
 			// 
@@ -154,7 +154,7 @@ namespace projet_cbdd {
 			this->deleteButton->TabIndex = 5;
 			this->deleteButton->Text = L"Supprimer";
 			this->deleteButton->UseVisualStyleBackColor = true;
-			this->deleteButton->Click += gcnew System::EventHandler(this, &Client::deleteButton_Click);
+			this->deleteButton->Click += gcnew System::EventHandler(this, &Commande::deleteButton_Click);
 			// 
 			// beginButton
 			// 
@@ -164,7 +164,7 @@ namespace projet_cbdd {
 			this->beginButton->TabIndex = 6;
 			this->beginButton->Text = L"<<";
 			this->beginButton->UseVisualStyleBackColor = true;
-			this->beginButton->Click += gcnew System::EventHandler(this, &Client::beginButton_Click);
+			this->beginButton->Click += gcnew System::EventHandler(this, &Commande::beginButton_Click);
 			// 
 			// endButton
 			// 
@@ -174,7 +174,7 @@ namespace projet_cbdd {
 			this->endButton->TabIndex = 8;
 			this->endButton->Text = L">>";
 			this->endButton->UseVisualStyleBackColor = true;
-			this->endButton->Click += gcnew System::EventHandler(this, &Client::endButton_Click);
+			this->endButton->Click += gcnew System::EventHandler(this, &Commande::endButton_Click);
 			// 
 			// nextButton
 			// 
@@ -184,7 +184,7 @@ namespace projet_cbdd {
 			this->nextButton->TabIndex = 9;
 			this->nextButton->Text = L">";
 			this->nextButton->UseVisualStyleBackColor = true;
-			this->nextButton->Click += gcnew System::EventHandler(this, &Client::nextButton_Click);
+			this->nextButton->Click += gcnew System::EventHandler(this, &Commande::nextButton_Click);
 			// 
 			// previousButton
 			// 
@@ -194,7 +194,7 @@ namespace projet_cbdd {
 			this->previousButton->TabIndex = 10;
 			this->previousButton->Text = L"<";
 			this->previousButton->UseVisualStyleBackColor = true;
-			this->previousButton->Click += gcnew System::EventHandler(this, &Client::previousButton_Click);
+			this->previousButton->Click += gcnew System::EventHandler(this, &Commande::previousButton_Click);
 			// 
 			// txt_idCommande
 			// 
@@ -255,7 +255,7 @@ namespace projet_cbdd {
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(326, 218);
 			this->dataGridView1->TabIndex = 2;
-			this->dataGridView1->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &Client::dataGridView1_CellContentClick);
+			this->dataGridView1->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &Commande::dataGridView1_CellContentClick);
 			// 
 			// txt_datePaiement
 			// 
@@ -341,9 +341,9 @@ namespace projet_cbdd {
 			this->Controls->Add(this->modifButton);
 			this->Controls->Add(this->saveButton);
 			this->Controls->Add(this->newButton);
-			this->Name = L"Client";
+			this->Name = L"Commande";
 			this->Text = L"Form1";
-			this->Load += gcnew System::EventHandler(this, &Client::FRM_Principal_Load);
+			this->Load += gcnew System::EventHandler(this, &Commande::FRM_Principal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
