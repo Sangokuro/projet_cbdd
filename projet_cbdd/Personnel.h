@@ -417,7 +417,7 @@ namespace projet_cbdd {
 			this->Controls->Add(this->label1);
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
-			this->Load += gcnew System::EventHandler(this, &Personnel::Personnel_Load);
+			this->Load += gcnew System::EventHandler(this, &Personnel::FRM_Principal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -457,8 +457,6 @@ namespace projet_cbdd {
 				   this->dataGridView1->DataMember = "liste2";
 			   }
 
-	private: System::Void Personnel_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
