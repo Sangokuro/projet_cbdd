@@ -12,10 +12,11 @@ namespace NS_Svc {
 
 	DataSet^ CL_svc_gestionClient::listePersonnel(String^ dataTableName)
 	{
+		
 		//this->ds->Clear();
 		this->ds = this->cad->getRows(this->personne->SELECT(), dataTableName);
-		this->teste->comprarerstring(this->personne->SELECT(), "SELECT id_client,nom_client,prenom_client,date_naissance,date_premier_achat " +
-			"FROM Client;");
+		//this->teste->comprarerstring(this->personne->SELECT(), "SELECT id_client,nom_client,prenom_client,date_naissance,date_premier_achat " +
+			//"FROM Client;");
 		return ds;
 	}
 
