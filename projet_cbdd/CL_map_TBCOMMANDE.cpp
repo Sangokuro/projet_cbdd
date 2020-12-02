@@ -15,7 +15,7 @@ namespace NS_Composants {
 
 	String^ CL_map_TBCOMMANDE::SELECT(void)
 	{
-		return "SELECT id_commande,date_commande,date_livraison,date_paiment,moyen_paiement,reference_commande,id_client,id_facture " +
+		return "SELECT id_commande,date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande,id_client,id_facture " +
 			"FROM Commande;";
 	}
 
@@ -30,8 +30,8 @@ namespace NS_Composants {
 	String^ CL_map_TBCOMMANDE::UPDATE(void)
 	{
 		return "UPDATE Client " +
-			"SET date_commande = '" + this->getdateCommande() + "', date_livraison = '" + this->getdateLivraison() + "' " + "', date_paiement = '" + this->getdatePaiement() + "' " + "', moyen_paiement = '" + this->getmoyenPaiement() + "' " +
-			"', reference_commande = '" + this->getreferenceCommande() + "' " + "', id_client = '" + this->getidClient() + "' " + "', id_facture = '" + this->getidFacture() + "' "
+			"SET date_commande = '" + this->getdateCommande() + "', date_livraison = '" + this->getdateLivraison() + "', date_paiement = '" + this->getdatePaiement() + "', moyen_paiement = '" + this->getmoyenPaiement() +
+			"', reference_commande = '" + this->getreferenceCommande() + "', id_client = '" + this->getidClient() + "', id_facture = '" + this->getidFacture() + "' " +
 			"WHERE(id_commande = " + this->getId() + ");";
 	}
 

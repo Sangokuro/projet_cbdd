@@ -1,5 +1,6 @@
 #pragma once
-#include"Client.h"
+#include "Client.h"
+#include "Commande.h"
 
 namespace projet_cbdd {
 
@@ -86,6 +87,7 @@ namespace projet_cbdd {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Gestion Commande";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// button3
 			// 
@@ -170,6 +172,10 @@ namespace projet_cbdd {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Client^ f2 = gcnew Client;
 			f2->ShowDialog();
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		Commande^ f3 = gcnew Commande;
+			f3->ShowDialog();
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
