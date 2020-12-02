@@ -410,28 +410,6 @@ namespace projetcbdd {
 		}
 #pragma endregion
 
-			//s'éxécute au démarrage
-	private: System::Void FRM_Principal_Load(System::Object^ sender, System::EventArgs^ e)
-	{
-		this->mode = "RIEN";
-		this->ds = gcnew Data::DataSet();
-		this->processusPersonnes = gcnew NS_Svc::CL_svc_gestionpersonnel1();
-		this->loadData(this->index);
-		loadDataGridView();
-		this->txt_message->Text = "Data chargées";
-
-		this->index = 0;
-	}
-		private: void loadData(int index) {
-			this->ds->Clear();
-			//si exception ici il faut remplir la table
-			this->ds = this->processusPersonnes->listePersonnel("liste");
-			this->txt_idPersonne->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[0]);
-			this->txt_nom->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[1]);
-			this->txt_prenom->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[2]);
-			this->txt_naissance->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[3]);
-			this->txt_commande->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[4]);
-		}
 	private: System::Void Personnel_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {

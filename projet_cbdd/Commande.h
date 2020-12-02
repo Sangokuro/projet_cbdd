@@ -485,13 +485,13 @@ namespace projet_cbdd {
 			int Id;
 			//utilise le nom et le prénom entré pour faire un id
 			Id = this->processusCommande->ajouter(this->txt_dateCommande->Text, this->txt_dateLivraison->Text,
-				this->txt_datePaiement->Text, this->txt_moyenPaiement->Text, this->txt_refCommande->Text,0,0);
+				this->txt_datePaiement->Text, this->txt_moyenPaiement->Text, this->txt_refCommande->Text);
 			this->txt_message->Text = "L'ID généré est le : " + Id + ". ";
 		}
 		else if (this->mode == "maj")
 		{
 			this->processusCommande->modifier(Convert::ToInt32(this->txt_idCommande->Text),this->txt_dateCommande->Text, this->txt_dateLivraison->Text,
-				this->txt_datePaiement->Text, this->txt_moyenPaiement->Text, this->txt_refCommande->Text, Convert::ToInt32(this->id_client_txt->Text), Convert::ToInt32(this->id_facture_txt->Text));
+				this->txt_datePaiement->Text, this->txt_moyenPaiement->Text, this->txt_refCommande->Text);
 
 		}
 		else if (this->mode == "sup")

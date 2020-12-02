@@ -23,14 +23,13 @@ namespace NS_Composants {
 	{
 		return "INSERT INTO Commande " +
 			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande) " +
-			"VALUES('" + this->getdateCommande() + "', '" + this->getdateLivraison() + "', '" + this->getdatePaiement() + "', '" + this->getmoyenPaiement() + "', '" + this->getreferenceCommande()
-			+ "' "  /*"(SELECT id_Client FROM Client WHERE nom_client='Rabie'),(SELECT id_facture FROM Facture WHERE code_postal=33440)" + ")*/ + ");SELECT @@IDENTITY;";
-
+			"VALUES('" + this->getdateCommande() + "', '" + this->getdateLivraison() + "', '" + this->getdatePaiement() + "', '" + this->getmoyenPaiement() + "', '" +
+			this->getreferenceCommande() + "' " + ");SELECT @@IDENTITY;";
 	}
 
 	String^ CL_map_TBCOMMANDE::UPDATE(void)
 	{
-		return "UPDATE Client " +
+		return "UPDATE Commande " +
 			"SET date_commande = '" + this->getdateCommande() + "', date_livraison = '" + this->getdateLivraison() + "', date_paiement = '" + this->getdatePaiement() + "', moyen_paiement = '" + this->getmoyenPaiement() +
 			"', reference_commande = '" + this->getreferenceCommande() + "', id_client = '" + this->getidClient() + "', id_facture = '" + this->getidFacture() + "' " +
 			"WHERE(id_commande = " + this->getId() + ");";

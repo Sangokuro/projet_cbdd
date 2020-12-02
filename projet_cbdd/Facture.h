@@ -14,15 +14,17 @@ namespace projet_cbdd {
 	public ref class Facture : public System::Windows::Forms::Form
 	{
 	public:
-		Facture(int idCommande)
+		Facture(int idCommande, int *idFacture)
 		{
 			this->idCommande = idCommande;
+			*idFacture = this->idFacture2;
 			InitializeComponent();
 
 		}
 
 	protected:
 		int idCommande;
+		int idFacture2;
 
 		~Facture()
 		{
@@ -405,6 +407,7 @@ namespace projet_cbdd {
 		//utilise le nom et le prénom entré pour faire un id
 		Id = this->processusFacture->ajouter(this->txt_nom->Text, this->txt_adresse->Text, Convert::ToInt32(this->txt_codepostale->Text), this->txt_ville->Text, Convert::ToInt32(this->txt_serviceclient->Text), Convert::ToInt32(this->idCommande));
 		this->txt_message->Text = "L'ID généré est le : " + Id + ". ";
+		this->idFacture2 = Id;
 	}
 
 
