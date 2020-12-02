@@ -9,10 +9,10 @@ using namespace System;
 ref class test1
 {
 public:
-	/*void comprarerstring(String^ comparer, String^ affirmer) {
+	/*void comprarerstring(String^ comparer, String^ affirmer, String^ nom) {
 		if (comparer == affirmer)
 		{
-			MessageBox::Show("Selection bien effectue");
+			MessageBox::Show("Selection bien effectue , affichage : "+nom );
 		}
 		else
 		{
