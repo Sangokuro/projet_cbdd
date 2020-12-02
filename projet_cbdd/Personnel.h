@@ -1,4 +1,5 @@
 #pragma once
+#include"CL_svc_gestionpersonnel.h"
 
 namespace projetcbdd {
 
@@ -57,9 +58,12 @@ namespace projetcbdd {
 			this->ClientSize = System::Drawing::Size(740, 493);
 			this->Name = L"Personnel";
 			this->Text = L"Personnel";
+			this->Load += gcnew System::EventHandler(this, &Personnel::Personnel_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void Personnel_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }

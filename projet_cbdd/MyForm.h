@@ -1,7 +1,9 @@
 #pragma once
 #include "Client.h"
 #include "Commande.h"
+#include"Personnel.h"
 #include"Facture.h"
+
 
 namespace projet_cbdd {
 
@@ -116,6 +118,7 @@ namespace projet_cbdd {
 			this->button5->TabIndex = 4;
 			this->button5->Text = L"Gestion Personnel";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// button6
 			// 
@@ -183,6 +186,10 @@ namespace projet_cbdd {
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+			projetcbdd::Personnel^ f4 = gcnew projetcbdd::Personnel;
+			f4->ShowDialog();
 }
 };
 }
