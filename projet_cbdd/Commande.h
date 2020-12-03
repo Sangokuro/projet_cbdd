@@ -88,6 +88,19 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ id_facture_txt;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::TextBox^ txt_quantite;
+
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::TextBox^ txt_nomArticle;
+	private: System::Windows::Forms::Label^ label13;
 
 
 
@@ -125,12 +138,24 @@ namespace projet_cbdd {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->id_facture_txt = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->txt_quantite = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->txt_nomArticle = (gcnew System::Windows::Forms::TextBox());
+			this->label13 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// newButton
 			// 
-			this->newButton->Location = System::Drawing::Point(263, 77);
+			this->newButton->Location = System::Drawing::Point(626, 282);
 			this->newButton->Name = L"newButton";
 			this->newButton->Size = System::Drawing::Size(79, 36);
 			this->newButton->TabIndex = 0;
@@ -140,7 +165,7 @@ namespace projet_cbdd {
 			// 
 			// saveButton
 			// 
-			this->saveButton->Location = System::Drawing::Point(348, 67);
+			this->saveButton->Location = System::Drawing::Point(747, 164);
 			this->saveButton->Name = L"saveButton";
 			this->saveButton->Size = System::Drawing::Size(129, 171);
 			this->saveButton->TabIndex = 3;
@@ -150,7 +175,7 @@ namespace projet_cbdd {
 			// 
 			// modifButton
 			// 
-			this->modifButton->Location = System::Drawing::Point(263, 135);
+			this->modifButton->Location = System::Drawing::Point(626, 370);
 			this->modifButton->Name = L"modifButton";
 			this->modifButton->Size = System::Drawing::Size(79, 36);
 			this->modifButton->TabIndex = 4;
@@ -160,7 +185,7 @@ namespace projet_cbdd {
 			// 
 			// deleteButton
 			// 
-			this->deleteButton->Location = System::Drawing::Point(263, 195);
+			this->deleteButton->Location = System::Drawing::Point(626, 437);
 			this->deleteButton->Name = L"deleteButton";
 			this->deleteButton->Size = System::Drawing::Size(79, 36);
 			this->deleteButton->TabIndex = 5;
@@ -170,7 +195,7 @@ namespace projet_cbdd {
 			// 
 			// beginButton
 			// 
-			this->beginButton->Location = System::Drawing::Point(375, 334);
+			this->beginButton->Location = System::Drawing::Point(915, 334);
 			this->beginButton->Name = L"beginButton";
 			this->beginButton->Size = System::Drawing::Size(57, 30);
 			this->beginButton->TabIndex = 6;
@@ -180,7 +205,7 @@ namespace projet_cbdd {
 			// 
 			// endButton
 			// 
-			this->endButton->Location = System::Drawing::Point(645, 334);
+			this->endButton->Location = System::Drawing::Point(1185, 334);
 			this->endButton->Name = L"endButton";
 			this->endButton->Size = System::Drawing::Size(57, 30);
 			this->endButton->TabIndex = 8;
@@ -190,7 +215,7 @@ namespace projet_cbdd {
 			// 
 			// nextButton
 			// 
-			this->nextButton->Location = System::Drawing::Point(572, 334);
+			this->nextButton->Location = System::Drawing::Point(1112, 334);
 			this->nextButton->Name = L"nextButton";
 			this->nextButton->Size = System::Drawing::Size(57, 30);
 			this->nextButton->TabIndex = 9;
@@ -200,7 +225,7 @@ namespace projet_cbdd {
 			// 
 			// previousButton
 			// 
-			this->previousButton->Location = System::Drawing::Point(470, 334);
+			this->previousButton->Location = System::Drawing::Point(1010, 334);
 			this->previousButton->Name = L"previousButton";
 			this->previousButton->Size = System::Drawing::Size(57, 30);
 			this->previousButton->TabIndex = 10;
@@ -241,7 +266,7 @@ namespace projet_cbdd {
 			// 
 			// txt_message
 			// 
-			this->txt_message->Location = System::Drawing::Point(375, 370);
+			this->txt_message->Location = System::Drawing::Point(924, 388);
 			this->txt_message->Multiline = true;
 			this->txt_message->Name = L"txt_message";
 			this->txt_message->Size = System::Drawing::Size(343, 85);
@@ -261,7 +286,7 @@ namespace projet_cbdd {
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(548, 77);
+			this->dataGridView1->Location = System::Drawing::Point(916, 20);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
@@ -360,11 +385,119 @@ namespace projet_cbdd {
 			this->id_facture_txt->TabIndex = 30;
 			this->id_facture_txt->Text = L"ID Facture";
 			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(299, 117);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(196, 22);
+			this->textBox2->TabIndex = 31;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(288, 183);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(196, 22);
+			this->textBox3->TabIndex = 32;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(288, 244);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(196, 22);
+			this->textBox4->TabIndex = 33;
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(288, 296);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(196, 22);
+			this->textBox5->TabIndex = 34;
+			// 
+			// txt_quantite
+			// 
+			this->txt_quantite->Location = System::Drawing::Point(288, 351);
+			this->txt_quantite->Name = L"txt_quantite";
+			this->txt_quantite->Size = System::Drawing::Size(196, 22);
+			this->txt_quantite->TabIndex = 35;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(296, 87);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(113, 17);
+			this->label3->TabIndex = 36;
+			this->label3->Text = L"Montant total HT";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(285, 163);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(121, 17);
+			this->label9->TabIndex = 37;
+			this->label9->Text = L"Montant total TVA";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(285, 221);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(121, 17);
+			this->label10->TabIndex = 38;
+			this->label10->Text = L"Montant total TTC";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(285, 269);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(79, 17);
+			this->label11->TabIndex = 39;
+			this->label11->Text = L"Prix special";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(285, 321);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(104, 17);
+			this->label12->TabIndex = 40;
+			this->label12->Text = L"Quantite article";
+			// 
+			// txt_nomArticle
+			// 
+			this->txt_nomArticle->Location = System::Drawing::Point(356, 444);
+			this->txt_nomArticle->Name = L"txt_nomArticle";
+			this->txt_nomArticle->Size = System::Drawing::Size(196, 22);
+			this->txt_nomArticle->TabIndex = 41;
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(353, 414);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(142, 17);
+			this->label13->TabIndex = 42;
+			this->label13->Text = L"Nom article concerné";
+			// 
 			// Commande
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(925, 456);
+			this->ClientSize = System::Drawing::Size(1313, 489);
+			this->Controls->Add(this->label13);
+			this->Controls->Add(this->txt_nomArticle);
+			this->Controls->Add(this->label12);
+			this->Controls->Add(this->label11);
+			this->Controls->Add(this->label10);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->txt_quantite);
+			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->id_facture_txt);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
@@ -487,13 +620,13 @@ namespace projet_cbdd {
 			int Id;
 			//utilise le nom et le prénom entré pour faire un id
 			Id = this->processusCommande->ajouter(Convert::ToDateTime(this->txt_dateCommande->Text), Convert::ToDateTime(this->txt_dateLivraison->Text),
-				Convert::ToDateTime(this->txt_datePaiement->Text), this->txt_moyenPaiement->Text, this->txt_refCommande->Text);
+				Convert::ToDateTime(this->txt_datePaiement->Text), this->txt_moyenPaiement->Text, this->txt_refCommande->Text, Convert::ToInt32(this->txt_quantite->Text), this->txt_nomArticle->Text);
 			this->txt_message->Text = "L'ID généré est le : " + Id + ". ";
 		}
 		else if (this->mode == "maj")
 		{
 			this->processusCommande->modifier(Convert::ToInt32(this->txt_idCommande->Text), Convert::ToDateTime(this->txt_dateCommande->Text), Convert::ToDateTime(this->txt_dateLivraison->Text),
-				Convert::ToDateTime(this->txt_datePaiement->Text), this->txt_moyenPaiement->Text, this->txt_refCommande->Text);
+				Convert::ToDateTime(this->txt_datePaiement->Text), this->txt_moyenPaiement->Text, Convert::ToInt32(this->txt_quantite->Text), this->txt_refCommande->Text);
 		}
 		else if (this->mode == "sup")
 		{
