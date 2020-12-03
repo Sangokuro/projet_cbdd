@@ -31,7 +31,7 @@ namespace NS_Composants {
 	String^ CL_map_TBSTOCK::DELETE(void)
 	{
 		return "DELETE FROM Article" +
-			"WHERE(id_article = " + this->getId() + ");";
+			" WHERE(id_article = " + this->getId() + ");";
 	}
 	void CL_map_TBSTOCK::setId(int id_article)
 	{
