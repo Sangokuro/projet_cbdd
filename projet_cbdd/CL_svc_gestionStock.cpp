@@ -25,7 +25,7 @@ namespace NS_Svc {
 		id_article = this->cad->actionRowsID(this->article->INSERT());
 		/*this->TestStock2->comparerstock1(this->article->INSERT(), "INSERT INTO Article " +
 			"(nom_article,nature_article,couleur_article) " +
-			"VALUES('horloge', '" + this->article->getNaturearticle() + "', '" + this->article->getCouleurarticle() + "');SELECT @@IDENTITY;");*/
+			"VALUES('" + this->article->getNomarticle()+ "', '" + this->article->getNaturearticle() + "', 'rouge');SELECT @@IDENTITY;");*/
 	
 		return id_article;
 	}
@@ -45,5 +45,7 @@ namespace NS_Svc {
 	{
 		this->article->setId(id_article);
 		this->cad->actionRows(this->article->DELETE());
+		/*this->TestStock2->comparerstock3(this->article->DELETE(), "DELETE FROM Article" +
+			" WHERE(id_article = " + 14 + ");");*/
 	}
 }
