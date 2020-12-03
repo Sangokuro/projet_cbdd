@@ -38,7 +38,7 @@ namespace NS_Svc {
 
 		this->cad->actionRows(this->article->UPDATE());
 		/*this->TestStock2->comparerstock(this->article->UPDATE(), "UPDATE Article " +
-			"SET nom_article = '" + this->article->getNomarticle() + "', nature_article = '" + this->article->getNaturearticle() + "', couleur_article = 'rouge' " +
+			"SET nom_article = '" + this->article->getNomarticle() + "', nature_article = 'meuble', couleur_article = '" + this->article->getCouleurarticle() + "' " +
 			"WHERE(id_article = " + this->article->getId() + ");");*/
 	}
 	void CL_svc_gestionStock::supprimer(int id_article)
