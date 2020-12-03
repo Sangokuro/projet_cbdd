@@ -3,6 +3,7 @@
 #include "Commande.h"
 #include"Personnel.h"
 #include"Facture.h"
+#include"Stock.h"
 
 
 namespace projet_cbdd {
@@ -100,6 +101,7 @@ namespace projet_cbdd {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Gestion Stock";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
 			// button4
 			// 
@@ -190,6 +192,10 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 			projet_cbdd::Personnel^ f4 = gcnew projet_cbdd::Personnel;
 			f4->ShowDialog();
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		projet_cbdd::Stock^ f5 = gcnew projet_cbdd::Stock;
+		f5->ShowDialog();
 }
 };
 }

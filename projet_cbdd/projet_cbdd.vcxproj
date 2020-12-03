@@ -125,18 +125,22 @@
     <ClCompile Include="AdresseCommande.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CL_CAD.cpp" />
+    <ClCompile Include="CL_map_gestionStock.cpp" />
     <ClCompile Include="CL_map_TBCLIENT.cpp" />
     <ClCompile Include="CL_map_TBCOMMANDE.cpp" />
     <ClCompile Include="CL_map_TBFACTURE.cpp" />
     <ClCompile Include="CL_map_TBpersonnel.cpp" />
+    <ClCompile Include="CL_map_TBSTOCK.cpp" />
     <ClCompile Include="CL_svc_gestionClient.cpp" />
     <ClCompile Include="CL_svc_gestionCommande.cpp" />
     <ClCompile Include="CL_svc_gestionFacture.cpp" />
     <ClCompile Include="CL_svc_gestionpersonnel.cpp" />
+    <ClCompile Include="CL_svc_gestionStock.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Facture.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdresseCommande.h">
@@ -146,18 +150,24 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CL_CAD.h" />
+    <ClInclude Include="CL_map_gestionStock.h" />
     <ClInclude Include="CL_map_TBCLIENT.h" />
     <ClInclude Include="CL_map_TBCOMMANDE.h" />
     <ClInclude Include="CL_map_TBFACTURE.h" />
     <ClInclude Include="CL_map_TBpersonnel.h" />
+    <ClInclude Include="CL_map_TBSTOCK.h" />
     <ClInclude Include="CL_svc_gestionClient.h" />
     <ClInclude Include="CL_svc_gestionCommande.h" />
     <ClInclude Include="CL_svc_gestionFacture.h" />
     <ClInclude Include="CL_svc_gestionpersonnel.h" />
+    <ClInclude Include="CL_svc_gestionStock.h" />
     <ClInclude Include="Commande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Facture.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Stock.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TestClient.h" />
@@ -186,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
