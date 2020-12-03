@@ -1,5 +1,6 @@
 #pragma once
 using namespace System;
+#include "TestStock.h"
 
 namespace NS_Composants {
 	ref class CL_map_TBSTOCK
@@ -9,6 +10,7 @@ namespace NS_Composants {
 		String^ nom_article;
 		String^ nature_article;
 		String^ couleur_article;
+		TestStock1^ TestStock2;
 
 
 	public:

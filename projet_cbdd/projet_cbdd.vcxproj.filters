@@ -143,5 +143,8 @@
     <ClInclude Include="Catalogue.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
+    <ClInclude Include="TestStock.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

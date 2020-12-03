@@ -182,6 +182,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TestPersonnel.h" />
+    <ClInclude Include="TestStock.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdresseCommande.resx">
