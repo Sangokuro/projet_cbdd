@@ -1,4 +1,4 @@
-#include "CL_map_TBSTATISTIQUE.h"
+/*#include "CL_map_TBSTATISTIQUE.h"
 
 namespace NS_Composants {
     /**
@@ -66,6 +66,6 @@ namespace NS_Composants {
     {
         return "SELECT SUM(((Catalogue.Prix_HT*Catalogue.Taux_TVA*" + NTVA + "*Catalogue.Quantite_stock + (Catalogue.Prix_HT*" + TVA + "*Catalogue.Quantite_stock))*" + Marge + "*" + Reduc + "*" + Autre + ")) as Stats FROM Catalogue";
     }
-    }
-**/
+
+    **/
 }

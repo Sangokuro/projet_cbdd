@@ -3,7 +3,7 @@
 #include "CL_CAD.h"
 #include "CL_map_TBCOMMANDE.h"
 
-
+#include "TestCommande.h"
 namespace NS_Svc {
 
 	ref class CL_svc_gestionCommande
@@ -12,6 +12,7 @@ namespace NS_Svc {
 		NS_Composants::CL_CAD^ cad;
 		NS_Composants::CL_map_TBCOMMANDE^ commande;
 		DataSet^ ds;
+		TestCommande1^ TestCommande2;
 	public:
 		CL_svc_gestionCommande(void);
 		DataSet^ listeCommande(String^);
