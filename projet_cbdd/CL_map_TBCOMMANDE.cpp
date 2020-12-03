@@ -29,7 +29,7 @@ namespace NS_Composants {
 		return "UPDATE Commande " +
 			"SET date_commande = '" + this->getdateCommande() + "', date_livraison = '" + this->getdateLivraison() + "', date_paiement = '" + this->getdatePaiement() + "', moyen_paiement = '" + this->getmoyenPaiement() +
 			"', reference_commande = '" + this->getreferenceCommande() + "' "
-			"WHERE(id_commande = " + 20/*this->getId()*/ + ");";
+			"WHERE(id_commande = " + this->getId() + ");";
 	}
 
 	String^ CL_map_TBCOMMANDE::DELETE(void)

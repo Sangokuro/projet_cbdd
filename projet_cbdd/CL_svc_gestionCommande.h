@@ -14,7 +14,7 @@ namespace NS_Svc {
 		CL_svc_gestionCommande(void);
 		DataSet^ listeCommande(String^);
 		int ajouter(DateTime^, DateTime^, DateTime^, String^, String^);
-		void modifier(int, DateTime^, DateTime^, DateTime^, String^, String^); /////
+		void modifier(int, DateTime^, DateTime^, DateTime^, String^, String^);
 		void supprimer(int);
 	};
 

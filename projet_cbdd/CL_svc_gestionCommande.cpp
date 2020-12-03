@@ -33,15 +33,15 @@ namespace NS_Svc {
 		//NS_Svc::CL_svc_gestionFacture^ processusFacture;
 		//processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
 
-		//int *id_facture;
+		int *id_facture;
 
-		//projet_cbdd::Facture^ f2 = gcnew projet_cbdd::Facture(id_commande, id_facture);
-		//f2->ShowDialog();
+		projet_cbdd::Facture^ f2 = gcnew projet_cbdd::Facture(id_commande, id_facture);
+		f2->ShowDialog();
 		
-		//this->commande->setID(id_commande);
-		//this->commande->setmoyenPaiement("CB");
-		//this->commande->setidFacture(*id_facture);
-		//this->cad->actionRows(this->commande->UPDATE1());
+		this->commande->setIDcommande(id_commande);
+		this->commande->setmoyenPaiement("CB");
+		this->commande->setidFacture(*id_facture);
+		this->cad->actionRows(this->commande->UPDATE1());
 
 		return id_commande;
 		

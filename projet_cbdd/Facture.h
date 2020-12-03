@@ -405,7 +405,7 @@ namespace projet_cbdd {
 	private: System::Void saveButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		int Id;
 		//utilise le nom et le prénom entré pour faire un id
-		Id = this->processusFacture->ajouter(this->txt_nom->Text, this->txt_adresse->Text, Convert::ToInt32(this->txt_codepostale->Text), this->txt_ville->Text, Convert::ToInt32(this->txt_serviceclient->Text), Convert::ToInt32(this->idCommande));
+		Id = this->processusFacture->ajouter(this->txt_nom->Text, this->txt_adresse->Text, Convert::ToInt32(this->txt_codepostale->Text), this->txt_ville->Text, Convert::ToInt32(this->txt_serviceclient->Text), this->idCommande);
 		this->txt_message->Text = "L'ID généré est le : " + Id + ". ";
 		this->idFacture2 = Id;
 	}
