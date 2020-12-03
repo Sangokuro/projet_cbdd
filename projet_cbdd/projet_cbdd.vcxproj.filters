@@ -110,5 +110,8 @@
     <ClInclude Include="AdresseCommande.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
+    <ClInclude Include="TestPersonnel.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
