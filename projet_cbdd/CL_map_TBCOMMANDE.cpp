@@ -6,8 +6,8 @@ namespace NS_Composants {
 		this->id_commande = -1;
 		this->moyen_paiement = "VIDE";
 		this->reference_commande = "VIDE";
-		this->id_client = -1;
-		this->id_facture = -1;
+		this->id_client = 0;
+		this->id_facture = 0;
 	}
 
 	String^ CL_map_TBCOMMANDE::SELECT(void)
@@ -24,12 +24,19 @@ namespace NS_Composants {
 			this->getreferenceCommande() + "' " + ");SELECT @@IDENTITY;";
 	}
 
-	String^ CL_map_TBCOMMANDE::UPDATE1(void)
+	String^ CL_map_TBCOMMANDE::UPDATE(void)
 	{
 		return "UPDATE Commande " +
 			"SET date_commande = '" + this->getdateCommande() + "', date_livraison = '" + this->getdateLivraison() + "', date_paiement = '" + this->getdatePaiement() + "', moyen_paiement = '" + this->getmoyenPaiement() +
-			"', reference_commande = '" + this->getreferenceCommande() + "' "
-			"WHERE(id_commande = " + this->getId() + ");";
+			"', reference_commande = '" + this->getreferenceCommande() +/* "', id_client= " + this->getidClient() + ", id_facture=" + this->getidFacture() +*/
+			"' WHERE(id_commande = " + this->getId() + ");";
+	}
+
+	String^ CL_map_TBCOMMANDE::UPDATEIDfacture(void)
+	{
+		return "UPDATE Commande " +
+			"SET id_facture =" + this->getidFacture() +
+			" WHERE(id_commande = " + this->getId() + ");";
 	}
 
 	String^ CL_map_TBCOMMANDE::DELETE(void)

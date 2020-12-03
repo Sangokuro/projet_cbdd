@@ -19,7 +19,8 @@ namespace NS_Composants {
 		CL_map_TBCOMMANDE(void);
 		String^ SELECT(void);
 		String^ INSERT(void);
-		String^ UPDATE1(void);
+		String^ UPDATE(void);
+		String^ UPDATEIDfacture(void);
 		String^ DELETE(void);
 		void setIDcommande(int);
 		void setdateCommande(DateTime^);
