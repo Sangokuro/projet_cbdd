@@ -39,10 +39,14 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ id_article_txt;
+	private: System::Windows::Forms::TextBox^ nom_txt;
+	private: System::Windows::Forms::TextBox^ nature_article_txt;
+	private: System::Windows::Forms::TextBox^ couleur_article_txt;
+
+
+
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::Button^ button1;
@@ -72,10 +76,10 @@ namespace projet_cbdd {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->id_article_txt = (gcnew System::Windows::Forms::TextBox());
+			this->nom_txt = (gcnew System::Windows::Forms::TextBox());
+			this->nature_article_txt = (gcnew System::Windows::Forms::TextBox());
+			this->couleur_article_txt = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -127,33 +131,33 @@ namespace projet_cbdd {
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Couleur";
 			// 
-			// textBox1
+			// id_article_txt
 			// 
-			this->textBox1->Location = System::Drawing::Point(33, 60);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 22);
-			this->textBox1->TabIndex = 4;
+			this->id_article_txt->Location = System::Drawing::Point(33, 60);
+			this->id_article_txt->Name = L"id_article_txt";
+			this->id_article_txt->Size = System::Drawing::Size(100, 22);
+			this->id_article_txt->TabIndex = 4;
 			// 
-			// textBox2
+			// nom_txt
 			// 
-			this->textBox2->Location = System::Drawing::Point(33, 117);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 22);
-			this->textBox2->TabIndex = 5;
+			this->nom_txt->Location = System::Drawing::Point(33, 117);
+			this->nom_txt->Name = L"nom_txt";
+			this->nom_txt->Size = System::Drawing::Size(100, 22);
+			this->nom_txt->TabIndex = 5;
 			// 
-			// textBox3
+			// nature_article_txt
 			// 
-			this->textBox3->Location = System::Drawing::Point(33, 173);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 22);
-			this->textBox3->TabIndex = 6;
+			this->nature_article_txt->Location = System::Drawing::Point(33, 173);
+			this->nature_article_txt->Name = L"nature_article_txt";
+			this->nature_article_txt->Size = System::Drawing::Size(100, 22);
+			this->nature_article_txt->TabIndex = 6;
 			// 
-			// textBox4
+			// couleur_article_txt
 			// 
-			this->textBox4->Location = System::Drawing::Point(33, 227);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 22);
-			this->textBox4->TabIndex = 7;
+			this->couleur_article_txt->Location = System::Drawing::Point(33, 227);
+			this->couleur_article_txt->Name = L"couleur_article_txt";
+			this->couleur_article_txt->Size = System::Drawing::Size(100, 22);
+			this->couleur_article_txt->TabIndex = 7;
 			// 
 			// label5
 			// 
@@ -270,10 +274,10 @@ namespace projet_cbdd {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->couleur_article_txt);
+			this->Controls->Add(this->nature_article_txt);
+			this->Controls->Add(this->nom_txt);
+			this->Controls->Add(this->id_article_txt);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -287,6 +291,30 @@ namespace projet_cbdd {
 
 		}
 #pragma endregion
+		//s'éxécute au démarrage
+	private: System::Void FRM_Principal_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->mode = "RIEN";
+		this->ds = gcnew Data::DataSet();
+		this->processusPersonnes = gcnew NS_Svc::CL_svc_gestionStock();
+		this->loadData(this->index);
+		loadDataGridView();
+		this->txt_message->Text = "Data chargées";
+
+		this->index = 0;
+	}
+	 private: void loadData(int index) {
+		this->ds->Clear();
+			   //si exception ici il faut remplir la table
+		this->ds = this->processusCommande->listeCommande("liste");
+		this->txt_idCommande->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+	    this->txt_dateCommande->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+		this->txt_dateLivraison->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+		this->txt_datePaiement->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+	    this->txt_moyenPaiement->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[4]);
+		this->txt_refCommande->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[5]);
+		   }
+
 	private: System::Void Stock_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {

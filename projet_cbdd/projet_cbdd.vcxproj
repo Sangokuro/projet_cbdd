@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdresseCommande.cpp" />
+    <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CL_CAD.cpp" />
     <ClCompile Include="CL_map_gestionStock.cpp" />
@@ -144,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdresseCommande.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Catalogue.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Client.h">
@@ -182,6 +186,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AdresseCommande.resx">
       <DependentUpon>AdresseCommande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogue.resx">
+      <DependentUpon>Catalogue.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.h</DependentUpon>
