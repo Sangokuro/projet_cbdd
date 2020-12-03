@@ -45,8 +45,8 @@ namespace NS_Composants {
 
 	String^ CL_map_TBCOMMANDE::DELETE(void)
 	{
-		return "DELETE FROM Commande " +
-			"WHERE(id_commande=" + this->getId() + ");";
+		return "DELETE FROM Contient WHERE id_commande=" + getId() + "; DELETE FROM Facture WHERE id_commande=" + getId() +
+			"; DELETE FROM Commande WHERE id_commande=" + getId() + ";";
 	}
 
 	void CL_map_TBCOMMANDE::setIDcommande(int id_commandes)

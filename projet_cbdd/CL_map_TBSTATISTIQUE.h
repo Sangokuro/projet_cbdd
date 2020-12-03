@@ -6,7 +6,7 @@ namespace NS_Composants {
 
 	ref class CL_map_TBSTATISTIQUE
 	{
-	public:
+	public:/*
 		CL_map_TBSTATISTIQUE();
 		String^ PanierMoyen();
 		String^ CAMois(String^);
@@ -17,7 +17,7 @@ namespace NS_Composants {
 		String^ ValeurCommercial();
 		String^ ValeurStock();
 		String^ SimulerVariations(int, float, float, float, float);
-
+		*/
 	};
 
 }
