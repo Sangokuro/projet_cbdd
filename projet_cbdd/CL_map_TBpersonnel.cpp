@@ -21,9 +21,10 @@ namespace NS_Composants {
     String^ CL_map_TBpersonnel1::INSERT(void)
     {
         return "INSERT INTO Personnel " +
-            "(nom_personnel,prenom_personnel ,nom_superieur, adresse_personnel,code_postal,ville,date_embauche) " +
+            "(nom_personnel,prenom_personnel ,nom_superieur, adresse_personnel,code_postal,ville,date_embauche,id_personnel_dirige) " +
             "VALUES('" + this->getNompersonnel()  + "', '" + this->getPrenompersonnel() + "', '" + this->getNomsuperieure() + "', '" + this->getAdressepersonnel() +
-            "', '" + this->getcodepostal() + "', '" + this->getville() + "', '" + this->getdateembauche() + "');SELECT @@IDENTITY;";
+            "', '" + this->getcodepostal() + "', '" + this->getville() + "', '" + this->getdateembauche() + "', "+ "(SELECT id_personnel FROM Personnel WHERE (nom_personnel='"+
+            this->getNomsuperieure() + "')));SELECT @@IDENTITY;";
     }
 
     String^ CL_map_TBpersonnel1::UPDATE(void)

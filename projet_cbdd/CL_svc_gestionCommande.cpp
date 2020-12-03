@@ -49,7 +49,7 @@ namespace NS_Svc {
 
 	void NS_Svc::CL_svc_gestionCommande::modifier(int id_commande, DateTime^ date1, DateTime^ date2, DateTime^ date3, String^ paiement, String^ reference)
 	{
-		this->commande->setID(id_commande);
+		this->commande->setIDcommande(id_commande);
 		this->commande->setdateCommande(date1);
 		this->commande->setdateLivraison(date2);
 		this->commande->setdatePaiement(date3);
@@ -61,7 +61,7 @@ namespace NS_Svc {
 
 	void CL_svc_gestionCommande::supprimer(int id_commande)
 	{
-		this->commande->setID(id_commande);
+		this->commande->setIDcommande(id_commande);
 		this->cad->actionRows(this->commande->DELETE());
 	}
 }

@@ -359,7 +359,7 @@ namespace projet_cbdd {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(571, 318);
+			this->label9->Location = System::Drawing::Point(660, 314);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(109, 17);
 			this->label9->TabIndex = 27;
@@ -367,7 +367,7 @@ namespace projet_cbdd {
 			// 
 			// txt_dateEmbauche
 			// 
-			this->txt_dateEmbauche->Location = System::Drawing::Point(548, 343);
+			this->txt_dateEmbauche->Location = System::Drawing::Point(663, 338);
 			this->txt_dateEmbauche->Name = L"txt_dateEmbauche";
 			this->txt_dateEmbauche->Size = System::Drawing::Size(196, 22);
 			this->txt_dateEmbauche->TabIndex = 28;
@@ -375,7 +375,7 @@ namespace projet_cbdd {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(560, 368);
+			this->label10->Location = System::Drawing::Point(660, 363);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(125, 17);
 			this->label10->TabIndex = 29;
@@ -383,7 +383,7 @@ namespace projet_cbdd {
 			// 
 			// txt_personnelDirige
 			// 
-			this->txt_personnelDirige->Location = System::Drawing::Point(548, 388);
+			this->txt_personnelDirige->Location = System::Drawing::Point(663, 383);
 			this->txt_personnelDirige->Name = L"txt_personnelDirige";
 			this->txt_personnelDirige->Size = System::Drawing::Size(196, 22);
 			this->txt_personnelDirige->TabIndex = 30;
