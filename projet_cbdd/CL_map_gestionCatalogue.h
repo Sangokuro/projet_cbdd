@@ -1,7 +1,7 @@
 #pragma once
 using namespace System;
 
-
+#include "TestCatalogue.h"
 namespace NS_Composants {
 	ref class CL_map_TBGESTIONCATALOGUE
 	{
@@ -12,6 +12,7 @@ namespace NS_Composants {
 		int seuil_rea;
 		int taux_tva;
 		int id_article;
+		TestCatalogue1^ TestCatalogue2;
 
 	public:
 		CL_map_TBGESTIONCATALOGUE(void);
