@@ -16,12 +16,12 @@ namespace NS_Composants {
 		return "SELECT id_catalogue,prix_articleht,quantite_stock,seuil_rea,taux_tva " +
 			"FROM Catalogue;";
 	}
-	String^ CL_map_TBGESTIONCATALOGUE::INSERT(void)
+	String^ CL_map_TBGESTIONCATALOGUE::INSERT(String^ nomArticle)
 	{
 		return "INSERT INTO Catalogue " +
 			"(prix_articleht,quantite_stock,seuil_rea,taux_tva, id_article) " +
-			"VALUES('" + this->getprixArticle() + "', '" + this->getquantiteStock() + "', '" + this->getseuilRea() + "', '" + this->gettauxTva() + "', (SELECT id_article FROM Article WHERE nom_article=" +
-			/*nom*/ + ");SELECT @@IDENTITY;";
+			"VALUES('" + this->getprixArticle() + "', '" + this->getquantiteStock() + "', '" + this->getseuilRea() + "', '" + this->gettauxTva() + "', (SELECT id_article FROM Article WHERE (nom_article='" +
+			nomArticle + "')));SELECT @@IDENTITY;";
 	}
 	String^ CL_map_TBGESTIONCATALOGUE::UPDATE(void)
 	{

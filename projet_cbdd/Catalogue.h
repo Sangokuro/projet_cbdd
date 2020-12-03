@@ -471,7 +471,7 @@ namespace projet_cbdd {
 			int Id;
 			//utilise le nom et le prénom entré pour faire un id
 			Id = this->processusCatalogue->ajouter(Convert::ToInt32(this->txt_prixarticleht->Text), Convert::ToInt32(this->txt_quantiteStock->Text)
-				, Convert::ToInt32(this->txt_seuilRea->Text), Convert::ToInt32(this->txt_tauxTva->Text));
+				, Convert::ToInt32(this->txt_seuilRea->Text), Convert::ToInt32(this->txt_tauxTva->Text), this->txt_nomArticle->Text);
 			this->txt_message->Text = "L'ID généré est le : " + Id + ". ";
 		}
 

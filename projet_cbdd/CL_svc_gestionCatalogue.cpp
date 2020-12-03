@@ -15,7 +15,7 @@ namespace NS_Svc {
 
 		return ds;
 	}
-	int CL_svc_gestionCatalogue::ajouter(int prix, int quantite, int seuil, int tauxtva)
+	int CL_svc_gestionCatalogue::ajouter(int prix, int quantite, int seuil, int tauxtva, String^ nomArticle)
 	{
 		int id_personne;
 		//référence null
@@ -23,7 +23,7 @@ namespace NS_Svc {
 		this->catalogue->setquantiteStock(quantite);
 		this->catalogue->setseuilRea(seuil);
 		this->catalogue->settauxTva(tauxtva);
-		id_personne = this->cad->actionRowsID(this->catalogue->INSERT());
+		id_personne = this->cad->actionRowsID(this->catalogue->INSERT(nomArticle));
 
 		/*this->TestCatalogue2->comparercatalogue1(this->catalogue->INSERT(), "INSERT INTO Catalogue " +
 			"(prix_articleht,quantite_stock,seuil_rea,taux_tva) " +

@@ -273,7 +273,7 @@ namespace projet_cbdd {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(310, 218);
 			this->dataGridView1->TabIndex = 18;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Stock::dataGridView1_CellContentClick);
+			this->dataGridView1->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &Stock::dataGridView1_CellContentClick);
 			// 
 			// Stock
 			// 
@@ -409,7 +409,7 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 	this->loadDataGridView();
 	this->message_txt->Text += "Traitement terminé.";
 }
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) {
 	//int a=this->dataGridView1->CurrentRow->Index;
 	int a = e->RowIndex;
 	//this->txt_idPersonne->Text = a.ToString();

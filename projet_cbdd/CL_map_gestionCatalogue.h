@@ -17,7 +17,7 @@ namespace NS_Composants {
 	public:
 		CL_map_TBGESTIONCATALOGUE(void);
 		String^ SELECT(void);
-		String^ INSERT(void);
+		String^ INSERT(String^);
 		String^ UPDATE(void);
 		String^ DELETE(void);
 		void setID(int);
