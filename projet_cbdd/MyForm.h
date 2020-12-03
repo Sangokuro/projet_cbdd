@@ -6,6 +6,7 @@
 #include "AdresseCommande.h"
 #include "Catalogue.h"
 #include"Stock.h"
+#include"Statistique.h"
 
 
 namespace projet_cbdd {
@@ -115,6 +116,7 @@ namespace projet_cbdd {
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"Gestion Statistique";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -215,6 +217,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	projet_cbdd::Catalogue^ f5 = gcnew projet_cbdd::Catalogue;
 	f5->ShowDialog();
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	projet_cbdd::Statistique^ f6 = gcnew projet_cbdd::Statistique;
+	f6->ShowDialog();
 }
 };
 }
