@@ -45,52 +45,52 @@ namespace NS_Composants {
 		}
 	}
 
-	void CL_map_TBCOMMANDE::setdateCommande(DateTime^ datecom)
+	void CL_map_TBCOMMANDE::setdateCommande(DateTime^ date_commande)
 	{
-			this->date_commande = datecom;
+			this->date_commande = date_commande;
 	}
 
-	void CL_map_TBCOMMANDE::setdateLivraison(DateTime^ dateliv)
+	void CL_map_TBCOMMANDE::setdateLivraison(DateTime^ date_livraison)
 	{
-			this->date_livraison = dateliv;
+			this->date_livraison = date_livraison;
 	}
 
-	void CL_map_TBCOMMANDE::setdatePaiement(DateTime^ datepaie)
+	void CL_map_TBCOMMANDE::setdatePaiement(DateTime^ date_paiement)
 	{
-			this->date_paiement = datepaie;
+			this->date_paiement = date_paiement;
 	}
 
-	void CL_map_TBCOMMANDE::setmoyenPaiement(String^ moypaie)
+	void CL_map_TBCOMMANDE::setmoyenPaiement(String^ moyen_paiement)
 	{
-		if (moypaie != "") {
-			this->moyen_paiement = moypaie;
+		if (moyen_paiement != "") {
+			this->moyen_paiement = moyen_paiement;
 		}
 	}
 
-	void CL_map_TBCOMMANDE::setreferenceCommande(String^ refcom)
+	void CL_map_TBCOMMANDE::setreferenceCommande(String^ reference_commande)
 	{
-		if (refcom != "") {
-			this->reference_commande = refcom;
+		if (reference_commande != "") {
+			this->reference_commande = reference_commande;
 		}
 	}
 
-	void CL_map_TBCOMMANDE::setidClient(int id_commande)
+	void CL_map_TBCOMMANDE::setidClient(int id_client)
 	{
-		if (id_commande > 0) {
-			this->id_client = id_commande;
+		if (id_client > 0) {
+			this->id_client = id_client;
 		}
 	}
 
-	void CL_map_TBCOMMANDE::setidFacture(int id_commande)
+	void CL_map_TBCOMMANDE::setidFacture(int id_facture)
 	{
-		if (id_commande > 0) {
-			this->id_facture = id_commande;
+		if (id_facture > 0) {
+			this->id_facture = id_facture;
 		}
 	}
 
 	int CL_map_TBCOMMANDE::getId(void)
 	{
-		return this->id_client;
+		return this->id_commande;
 	}
 
 	DateTime^ CL_map_TBCOMMANDE::getdateCommande(void)
