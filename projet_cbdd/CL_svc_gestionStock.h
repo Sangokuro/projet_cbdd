@@ -1,7 +1,7 @@
 #pragma once
 #include "CL_CAD.h"
 #include "CL_map_TBSTOCK.h"
-
+#include "TestStock.h"
 namespace NS_Svc {
 
 ref class CL_svc_gestionStock
@@ -10,6 +10,7 @@ private:
 	NS_Composants::CL_CAD^ cad;
 	NS_Composants::CL_map_TBSTOCK^ article;
 	DataSet^ ds;
+	TestStock1^ TestStock2;
 
 public:
 	CL_svc_gestionStock(void);

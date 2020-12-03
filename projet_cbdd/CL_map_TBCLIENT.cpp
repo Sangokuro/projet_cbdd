@@ -33,7 +33,7 @@ namespace NS_Composants {
 	String^ CL_map_TBCLIENT::DELETE(void)
 	{
 		return "DELETE FROM Client " +
-			"WHERE(id_client=" + this->getId() + ");";
+			"WHERE(id_client= " + this->getId() + ");";
 	}
 
 	String^ CL_map_TBCLIENT::JointureCommandeClient(void)
