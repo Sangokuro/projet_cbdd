@@ -12,16 +12,20 @@ namespace NS_Composants {
 
 	String^ CL_map_TBCOMMANDE::SELECT(void)
 	{
-		return "SELECT id_commande,date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande,id_client,id_facture " +
+		return "SELECT id_commande,date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande,montant_total_ht,quantite_article,id_client,id_facture " +
 			"FROM Commande;";
 	}
 
-	String^ CL_map_TBCOMMANDE::INSERT(void)
+	String^ CL_map_TBCOMMANDE::INSERT(String^ article)
 	{
 		return "INSERT INTO Commande " +
-			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande) " +
+			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande,montant_total_ht,montant_total_tva,montant_total_ttc,prix_special,quantite_article) " +
 			"VALUES('" + this->getdateCommande() + "', '" + this->getdateLivraison() + "', '" + this->getdatePaiement() + "', '" + this->getmoyenPaiement() + "', '" +
-			this->getreferenceCommande() + "' " + ");SELECT @@IDENTITY;";
+			this->getreferenceCommande() + "',"+ "(SELECT prix_articleht FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))," +
+			"(SELECT taux_tva FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))"+",8,8,"+ this->getquantite() +");SELECT @@IDENTITY;";
+	}
+	String^ CL_map_TBCOMMANDE::INSERTLIEN(String^ article, int commande) {
+		return "INSERT INTO Contient (id_article,id_commande) VALUES((SELECT id_article FROM Article WHERE nom_article='" + article + "')," + commande + ");";
 	}
 
 	String^ CL_map_TBCOMMANDE::UPDATE(void)
@@ -81,6 +85,13 @@ namespace NS_Composants {
 		}
 	}
 
+	void CL_map_TBCOMMANDE::setquantite(int quantite)
+	{
+		if (quantite > 0) {
+			this->quantite = quantite;
+		}
+	}
+
 	void CL_map_TBCOMMANDE::setidClient(int id_client)
 	{
 		if (id_client > 0) {
@@ -123,6 +134,11 @@ namespace NS_Composants {
 	String^ CL_map_TBCOMMANDE::getreferenceCommande(void)
 	{
 		return this->reference_commande;
+	}
+
+	int CL_map_TBCOMMANDE::getquantite(void)
+	{
+		return this->quantite;
 	}
 
 	int CL_map_TBCOMMANDE::getidClient(void)

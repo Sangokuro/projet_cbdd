@@ -19,7 +19,7 @@ namespace NS_Svc {
 		return ds;
 	}
 
-	int CL_svc_gestionCommande::ajouter(DateTime^ date1, DateTime^ date2, DateTime^ date3, String^ paiement, String^ reference)
+	int CL_svc_gestionCommande::ajouter(DateTime^ date1, DateTime^ date2, DateTime^ date3, String^ paiement, String^ reference, int quantite, String^ article)
 	{
 		int id_commande;
 		//référence null
@@ -28,9 +28,11 @@ namespace NS_Svc {
 		this->commande->setdatePaiement(date3);
 		this->commande->setmoyenPaiement(paiement);
 		this->commande->setreferenceCommande(reference);
+		this->commande->setquantite(quantite);
 		this->commande->setidClient(0);
 		this->commande->setidFacture(0);
-		id_commande = this->cad->actionRowsID(this->commande->INSERT());
+		id_commande = this->cad->actionRowsID(this->commande->INSERT(article));
+		this->cad->actionRows(this->commande->INSERTLIEN(article, id_commande));
 
 		//NS_Svc::CL_svc_gestionFacture^ processusFacture;
 		//processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
@@ -62,13 +64,14 @@ namespace NS_Svc {
 		
 	}
 
-	void NS_Svc::CL_svc_gestionCommande::modifier(int id_commande, DateTime^ date1, DateTime^ date2, DateTime^ date3, String^ paiement, String^ reference)
+	void NS_Svc::CL_svc_gestionCommande::modifier(int id_commande, DateTime^ date1, DateTime^ date2, DateTime^ date3, String^ paiement, int quantite, String^ reference)
 	{
 		this->commande->setIDcommande(id_commande);
 		this->commande->setdateCommande(date1);
 		this->commande->setdateLivraison(date2);
 		this->commande->setdatePaiement(date3);
 		this->commande->setmoyenPaiement(paiement);
+		this->commande->setquantite(quantite);
 		this->commande->setreferenceCommande(reference);
 
 		this->cad->actionRows(this->commande->UPDATE());

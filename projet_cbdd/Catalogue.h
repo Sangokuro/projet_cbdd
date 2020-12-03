@@ -408,7 +408,7 @@ namespace projet_cbdd {
 		this->txt_quantiteStock->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[2]);
 		this->txt_seuilRea->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[3]);
 		this->txt_tauxTva->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[4]);
-		//this->txt_idArticle->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[5]);
+		//this->txt_idArticle->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[7]);
 	}
 	private: void loadDataGridView() {
 		dataGridView1->DataSource = this->processusCatalogue->listeCatalogue("liste2");
