@@ -10,7 +10,7 @@ namespace NS_Composants {
 		String^ prenom_personnel;
 		String^ nom_superieur;
 		String^ adresse_personnel;
-		String^ code_postal;
+		int code_postal;
 		String^ ville;
 		DateTime^ date_embauche;
 		int id_personnel_dirige;
@@ -35,7 +35,7 @@ namespace NS_Composants {
 		String^ getPrenompersonnel(void);
 		String^ getNomsuperieure(void);
 		String^ getAdressepersonnel(void);
-		String^ getcodepostal(void);
+		int getcodepostal(void);
 		String^ getville(void);
 		DateTime^ getdateembauche(void);
 	    int getIDpersonnelsuperieure(void);

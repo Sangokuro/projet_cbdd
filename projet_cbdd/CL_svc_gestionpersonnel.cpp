@@ -24,8 +24,8 @@ namespace NS_Svc {
         {
             int id_personnel;
             //référence null
-            this->personnel->setNompersonnel("dji");
-            this->personnel->setPrenompersonnel("oua");
+            this->personnel->setNompersonnel(nom_personnel);
+            this->personnel->setPrenompersonnel(prenom_personnel);
             this->personnel->setNomsuperieure(nom_superieur);
             this->personnel->setAdressepersonnel(adresse_personnel);
             this->personnel->setcodepostal(code_postal);

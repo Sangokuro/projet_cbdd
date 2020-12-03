@@ -22,7 +22,7 @@ namespace NS_Composants {
     {
         return "INSERT INTO Personnel " +
             "(nom_personnel,prenom_personnel ,nom_superieur, adresse_personnel,code_postal,ville,date_embauche) " +
-            "VALUES('" + "yass" + "', '" + this->getPrenompersonnel() + "', '" + this->getNomsuperieure() + "', '" + this->getAdressepersonnel() +
+            "VALUES('" + this->getNompersonnel()  + "', '" + this->getPrenompersonnel() + "', '" + this->getNomsuperieure() + "', '" + this->getAdressepersonnel() +
             "', '" + this->getcodepostal() + "', '" + this->getville() + "', '" + this->getdateembauche() + "');SELECT @@IDENTITY;";
     }
 
@@ -37,69 +37,69 @@ namespace NS_Composants {
     String^ CL_map_TBpersonnel1::DELETE(void)
     {
         return "DELETE FROM Personnel " +
-            "WHERE(id_personnel = " + /*this->getIDpersonnel()*/4 + ");";
+            "WHERE(id_personnel = " + this->getIDpersonnel() + ");";
     }
 
-    void CL_map_TBpersonnel1::setIDpersonnel(int)
+    void CL_map_TBpersonnel1::setIDpersonnel(int id_personnel)
     {
         if (id_personnel > 0) {
             this->id_personnel = id_personnel;
         }
     }
 
-    void CL_map_TBpersonnel1::setNompersonnel(String^)
+    void CL_map_TBpersonnel1::setNompersonnel(String^ nom_personnel)
     {
         if (nom_personnel != "") {
             this->nom_personnel = nom_personnel;
         }
     }
 
-    void  CL_map_TBpersonnel1::setPrenompersonnel(String^)
+    void  CL_map_TBpersonnel1::setPrenompersonnel(String^ prenom_personnel)
       {
         if (prenom_personnel != "") {
             this->prenom_personnel = prenom_personnel;
         }
        }
-    void CL_map_TBpersonnel1::setNomsuperieure(String^)
+    void CL_map_TBpersonnel1::setNomsuperieure(String^ nom_superieur)
     {
         if (nom_superieur != "") {
             this->nom_superieur = nom_superieur;
         }
     }
 
-    void CL_map_TBpersonnel1::setAdressepersonnel(String^)
+    void CL_map_TBpersonnel1::setAdressepersonnel(String^ adresse_personnel)
     {
-        if (adresse_personnel != "") {
+       // if (adresse_personnel != "") {
             this->adresse_personnel = adresse_personnel;
-        }
+       // }
     }
 
-    void CL_map_TBpersonnel1::setcodepostal(int)
+    void CL_map_TBpersonnel1::setcodepostal(int code_postal)
     {
-        if (code_postal != "") {
+        //if (code_postal != "") {
             this->code_postal = code_postal;
-        }
+      //  }
     }
 
-    void CL_map_TBpersonnel1::setville(String^)
+    void CL_map_TBpersonnel1::setville(String^ ville)
     {
-        if (ville != "") {
+       // if (ville != "") {
             this->ville = ville;
-        }
+        //}
     }
 
-    void CL_map_TBpersonnel1::setdateembauche(DateTime^)
+    void CL_map_TBpersonnel1::setdateembauche(DateTime^ date_embauche)
     {
         this->date_embauche = date_embauche;
     }
 
 
 
-    void CL_map_TBpersonnel1::setIDpersonnelsuperieure(int)
+    void CL_map_TBpersonnel1::setIDpersonnelsuperieure(int id_personnel_dirige)
     {
-        if (id_personnel_dirige > 0) {
+        //if (id_personnel_dirige > 0) {
             this->id_personnel_dirige = id_personnel_dirige;
-        }
+       // }
     }
 
     int CL_map_TBpersonnel1::getIDpersonnel(void)
@@ -127,7 +127,7 @@ namespace NS_Composants {
         return this->adresse_personnel;
     }
 
-    String^ CL_map_TBpersonnel1::getcodepostal(void)
+    int CL_map_TBpersonnel1::getcodepostal(void)
     {
         return this->code_postal;
     }
