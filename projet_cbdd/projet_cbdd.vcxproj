@@ -177,6 +177,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TestPersonnel.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdresseCommande.resx">
