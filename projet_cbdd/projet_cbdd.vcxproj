@@ -141,6 +141,7 @@
     <ClCompile Include="Facture.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Statistique.cpp" />
     <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +170,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Facture.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Statistique.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Stock.h">
@@ -204,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel.resx">
       <DependentUpon>Personnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistique.resx">
+      <DependentUpon>Statistique.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock.resx">
       <DependentUpon>Stock.h</DependentUpon>
