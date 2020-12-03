@@ -28,8 +28,8 @@ namespace NS_Composants {
 	{
 		return "UPDATE Commande " +
 			"SET date_commande = '" + this->getdateCommande() + "', date_livraison = '" + this->getdateLivraison() + "', date_paiement = '" + this->getdatePaiement() + "', moyen_paiement = '" + this->getmoyenPaiement() +
-			"', reference_commande = '" + this->getreferenceCommande() + "', id_client = '" + this->getidClient() + "', id_facture = '" + this->getidFacture() + "' " +
-			"WHERE(id_commande = " + this->getId() + ");";
+			"', reference_commande = '" + this->getreferenceCommande() + "' "
+			"WHERE(id_commande = " + 20/*this->getId()*/ + ");";
 	}
 
 	String^ CL_map_TBCOMMANDE::DELETE(void)
@@ -38,10 +38,10 @@ namespace NS_Composants {
 			"WHERE(id_commande=" + this->getId() + ");";
 	}
 
-	void CL_map_TBCOMMANDE::setID(int id_commande)
+	void CL_map_TBCOMMANDE::setIDcommande(int id_commandes)
 	{
-		if (id_commande > 0) {
-			this->id_commande = id_commande;
+		if (id_commandes > 0) {
+			this->id_commande = id_commandes;
 		}
 	}
 

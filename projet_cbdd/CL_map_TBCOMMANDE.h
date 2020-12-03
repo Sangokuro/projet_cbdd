@@ -21,7 +21,7 @@ namespace NS_Composants {
 		String^ INSERT(void);
 		String^ UPDATE1(void);
 		String^ DELETE(void);
-		void setID(int);
+		void setIDcommande(int);
 		void setdateCommande(DateTime^);
 		void setdateLivraison(DateTime^);
 		void setdatePaiement(DateTime^);

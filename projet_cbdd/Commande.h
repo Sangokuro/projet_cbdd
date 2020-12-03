@@ -45,6 +45,8 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Button^ nextButton;
 	private: System::Windows::Forms::Button^ previousButton;
 	private: System::Windows::Forms::TextBox^ txt_idCommande;
+
+
 	private: System::Windows::Forms::TextBox^ txt_dateCommande;
 	private: System::Windows::Forms::TextBox^ txt_dateLivraison;
 
