@@ -126,12 +126,14 @@
     <ClCompile Include="Catalogue.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CL_CAD.cpp" />
+    <ClCompile Include="CL_map_gestionCatalogue.cpp" />
     <ClCompile Include="CL_map_gestionStock.cpp" />
     <ClCompile Include="CL_map_TBCLIENT.cpp" />
     <ClCompile Include="CL_map_TBCOMMANDE.cpp" />
     <ClCompile Include="CL_map_TBFACTURE.cpp" />
     <ClCompile Include="CL_map_TBpersonnel.cpp" />
     <ClCompile Include="CL_map_TBSTOCK.cpp" />
+    <ClCompile Include="CL_svc_gestionCatalogue.cpp" />
     <ClCompile Include="CL_svc_gestionClient.cpp" />
     <ClCompile Include="CL_svc_gestionCommande.cpp" />
     <ClCompile Include="CL_svc_gestionFacture.cpp" />
@@ -155,12 +157,14 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CL_CAD.h" />
+    <ClInclude Include="CL_map_gestionCatalogue.h" />
     <ClInclude Include="CL_map_gestionStock.h" />
     <ClInclude Include="CL_map_TBCLIENT.h" />
     <ClInclude Include="CL_map_TBCOMMANDE.h" />
     <ClInclude Include="CL_map_TBFACTURE.h" />
     <ClInclude Include="CL_map_TBpersonnel.h" />
     <ClInclude Include="CL_map_TBSTOCK.h" />
+    <ClInclude Include="CL_svc_gestionCatalogue.h" />
     <ClInclude Include="CL_svc_gestionClient.h" />
     <ClInclude Include="CL_svc_gestionCommande.h" />
     <ClInclude Include="CL_svc_gestionFacture.h" />

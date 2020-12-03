@@ -17,7 +17,7 @@ namespace NS_Composants {
 	CL_CAD::CL_CAD(void)
 	{
 		this->rq_sql = "RIEN";
-		this->cnx = "Data Source=.;Initial Catalog=database2;Integrated Security=True";
+		this->cnx = "Data Source=.;Initial Catalog=database3;Integrated Security=True";
 		this->CNX = gcnew SqlConnection(this->cnx);
 		this->CMD = gcnew SqlCommand(this->rq_sql, this->CNX);
 		//spécifie la facon dont une chaine de commande est interprétée
