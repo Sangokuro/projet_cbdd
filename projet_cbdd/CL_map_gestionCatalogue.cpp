@@ -19,8 +19,9 @@ namespace NS_Composants {
 	String^ CL_map_TBGESTIONCATALOGUE::INSERT(void)
 	{
 		return "INSERT INTO Catalogue " +
-			"(prix_articleht,quantite_stock,seuil_rea,taux_tva) " +
-			"VALUES('" + this->getprixArticle() + "', '" + this->getquantiteStock() + "', '" + this->getseuilRea() + "', '" + this->gettauxTva() + "');SELECT @@IDENTITY;";
+			"(prix_articleht,quantite_stock,seuil_rea,taux_tva, id_article) " +
+			"VALUES('" + this->getprixArticle() + "', '" + this->getquantiteStock() + "', '" + this->getseuilRea() + "', '" + this->gettauxTva() + "', (SELECT id_article FROM Article WHERE nom_article=" +
+			/*nom*/ + ");SELECT @@IDENTITY;";
 	}
 	String^ CL_map_TBGESTIONCATALOGUE::UPDATE(void)
 	{

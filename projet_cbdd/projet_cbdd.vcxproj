@@ -127,7 +127,6 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="CL_CAD.cpp" />
     <ClCompile Include="CL_map_gestionCatalogue.cpp" />
-    <ClCompile Include="CL_map_gestionStock.cpp" />
     <ClCompile Include="CL_map_TBCLIENT.cpp" />
     <ClCompile Include="CL_map_TBCOMMANDE.cpp" />
     <ClCompile Include="CL_map_TBFACTURE.cpp" />
@@ -158,7 +157,6 @@
     </ClInclude>
     <ClInclude Include="CL_CAD.h" />
     <ClInclude Include="CL_map_gestionCatalogue.h" />
-    <ClInclude Include="CL_map_gestionStock.h" />
     <ClInclude Include="CL_map_TBCLIENT.h" />
     <ClInclude Include="CL_map_TBCOMMANDE.h" />
     <ClInclude Include="CL_map_TBFACTURE.h" />

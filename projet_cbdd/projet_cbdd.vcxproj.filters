@@ -1,159 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Fichiers de ressources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="AdresseCommande.cpp" />
+    <ClCompile Include="Catalogue.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="CL_CAD.cpp" />
+    <ClCompile Include="CL_map_gestionCatalogue.cpp" />
+    <ClCompile Include="CL_map_TBCLIENT.cpp" />
+    <ClCompile Include="CL_map_TBCOMMANDE.cpp" />
+    <ClCompile Include="CL_map_TBFACTURE.cpp" />
+    <ClCompile Include="CL_map_TBpersonnel.cpp" />
+    <ClCompile Include="CL_map_TBSTOCK.cpp" />
+    <ClCompile Include="CL_svc_gestionCatalogue.cpp" />
+    <ClCompile Include="CL_svc_gestionClient.cpp" />
+    <ClCompile Include="CL_svc_gestionCommande.cpp" />
+    <ClCompile Include="CL_svc_gestionFacture.cpp" />
+    <ClCompile Include="CL_svc_gestionpersonnel.cpp" />
+    <ClCompile Include="CL_svc_gestionStock.cpp" />
+    <ClCompile Include="Commande.cpp" />
+    <ClCompile Include="Facture.cpp" />
+    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Statistique.cpp" />
+    <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyForm.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_CAD.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_map_TBCLIENT.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_svc_gestionClient.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Client.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Commande.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_svc_gestionCommande.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_map_TBCOMMANDE.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_map_TBFACTURE.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_svc_gestionFacture.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Facture.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_svc_gestionpersonnel.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_map_TBpersonnel.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Personnel.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="AdresseCommande.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Stock.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_map_TBSTOCK.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_map_gestionStock.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_svc_gestionStock.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Catalogue.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_map_gestionCatalogue.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CL_svc_gestionCatalogue.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="MyForm.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_CAD.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_map_TBCLIENT.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_svc_gestionClient.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Client.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="Commande.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_svc_gestionCommande.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_map_TBCOMMANDE.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_map_TBFACTURE.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_svc_gestionFacture.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Facture.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_svc_gestionpersonnel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_map_TBpersonnel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Personnel.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="TestClient.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="AdresseCommande.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="Stock.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_map_TBSTOCK.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_map_gestionStock.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_svc_gestionStock.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="TestPersonnel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Catalogue.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_map_gestionCatalogue.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CL_svc_gestionCatalogue.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
+    <ClInclude Include="AdresseCommande.h" />
+    <ClInclude Include="Catalogue.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="CL_CAD.h" />
+    <ClInclude Include="CL_map_gestionCatalogue.h" />
+    <ClInclude Include="CL_map_TBCLIENT.h" />
+    <ClInclude Include="CL_map_TBCOMMANDE.h" />
+    <ClInclude Include="CL_map_TBFACTURE.h" />
+    <ClInclude Include="CL_map_TBpersonnel.h" />
+    <ClInclude Include="CL_map_TBSTOCK.h" />
+    <ClInclude Include="CL_svc_gestionCatalogue.h" />
+    <ClInclude Include="CL_svc_gestionClient.h" />
+    <ClInclude Include="CL_svc_gestionCommande.h" />
+    <ClInclude Include="CL_svc_gestionFacture.h" />
+    <ClInclude Include="CL_svc_gestionpersonnel.h" />
+    <ClInclude Include="CL_svc_gestionStock.h" />
+    <ClInclude Include="Commande.h" />
+    <ClInclude Include="Facture.h" />
+    <ClInclude Include="Statistique.h" />
+    <ClInclude Include="Stock.h" />
+    <ClInclude Include="TestClient.h" />
+    <ClInclude Include="Personnel.h" />
+    <ClInclude Include="MyForm.h" />
+    <ClInclude Include="TestPersonnel.h" />
+    <ClInclude Include="TestStock.h" />
   </ItemGroup>
 </Project>

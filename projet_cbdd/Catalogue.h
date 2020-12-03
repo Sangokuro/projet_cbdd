@@ -79,6 +79,8 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::TextBox^ txt_idArticle;
 
 	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::TextBox^ txt_nomArticle;
+	private: System::Windows::Forms::Label^ label8;
 
 
 	private:
@@ -112,6 +114,8 @@ namespace projet_cbdd {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->txt_idArticle = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->txt_nomArticle = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -325,11 +329,29 @@ namespace projet_cbdd {
 			this->label7->TabIndex = 24;
 			this->label7->Text = L"id article";
 			// 
+			// txt_nomArticle
+			// 
+			this->txt_nomArticle->Location = System::Drawing::Point(446, 418);
+			this->txt_nomArticle->Name = L"txt_nomArticle";
+			this->txt_nomArticle->Size = System::Drawing::Size(196, 22);
+			this->txt_nomArticle->TabIndex = 25;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(443, 398);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(92, 17);
+			this->label8->TabIndex = 26;
+			this->label8->Text = L"id nom article";
+			// 
 			// Catalogue
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1040, 466);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->txt_nomArticle);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->txt_idArticle);
 			this->Controls->Add(this->label6);
