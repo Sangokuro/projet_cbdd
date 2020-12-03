@@ -75,6 +75,9 @@
     <ClCompile Include="Catalogue.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Statistique.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -143,8 +146,8 @@
     <ClInclude Include="Catalogue.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
-    <ClInclude Include="TestStock.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="Statistique.h">
+      <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
