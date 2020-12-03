@@ -1,4 +1,4 @@
-#include "CL_map_TBSTATISTIQUE.h"
+/*#include "CL_map_TBSTATISTIQUE.h"
 
 namespace NS_Composants {
 /**

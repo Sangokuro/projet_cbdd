@@ -192,6 +192,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TestCommande.h" />
     <ClInclude Include="TestPersonnel.h" />
     <ClInclude Include="TestStock.h" />
   </ItemGroup>

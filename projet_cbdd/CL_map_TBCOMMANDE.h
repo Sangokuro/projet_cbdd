@@ -1,6 +1,6 @@
 #pragma once
 using namespace System;
-
+#include "TestCommande.h"
 namespace NS_Composants {
 	ref class CL_map_TBCOMMANDE
 	{
@@ -14,6 +14,7 @@ namespace NS_Composants {
 		int quantite;
 		int id_client;
 		int id_facture;
+		TestCommande1^ TestCommande2;
 
 
 	public:

@@ -1,18 +1,16 @@
 #pragma once
-
-#ifndef TestCatalogue
-#define TestCatalogue
+#ifndef TestCommande
+#define TestCommande
 using namespace System::ComponentModel;
 using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System;
-#include "CL_map_TBpersonnel.h"
 
-ref class TestCatalogue1
+ref class TestCommande1
 {
 public:
 
-	void comparercatalogue(String^ comparer1, String^ affirmer1)
+	void comparercommande(String^ comparer1, String^ affirmer1)
 	{
 		if (comparer1 == affirmer1)
 		{
@@ -24,7 +22,7 @@ public:
 			MessageBox::Show("Modification mal effectue");
 		}
 	}
-	void comparercatalogue1(String^ comparer2, String^ affirmer2)
+	void comparercommande1(String^ comparer2, String^ affirmer2)
 	{
 		if (comparer2 == affirmer2)
 		{
@@ -37,7 +35,7 @@ public:
 		}
 	}
 
-	void comparercatalogue2(String^ comparer3, String^ affirmer3)
+	void comparercommande2(String^ comparer3, String^ affirmer3)
 	{
 		if (comparer3 == affirmer3)
 		{
