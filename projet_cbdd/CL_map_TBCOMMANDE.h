@@ -11,6 +11,7 @@ namespace NS_Composants {
 		DateTime^ date_paiement;
 		String^ moyen_paiement;
 		String^ reference_commande;
+		int quantite;
 		int id_client;
 		int id_facture;
 
@@ -18,7 +19,8 @@ namespace NS_Composants {
 	public:
 		CL_map_TBCOMMANDE(void);
 		String^ SELECT(void);
-		String^ INSERT(void);
+		String^ INSERT(String^);
+		String^ INSERTLIEN(String^, int);
 		String^ UPDATE(void);
 		String^ UPDATEIDfacture(String^, String^);
 		String^ DELETE(void);
@@ -28,6 +30,7 @@ namespace NS_Composants {
 		void setdatePaiement(DateTime^);
 		void setmoyenPaiement(String^);
 		void setreferenceCommande(String^);
+		void setquantite(int);
 		void setidClient(int);
 		void setidFacture(int);
 
@@ -37,6 +40,7 @@ namespace NS_Composants {
 		DateTime^ getdatePaiement(void);
 		String^ getmoyenPaiement(void);
 		String^ getreferenceCommande(void);
+		int getquantite(void);
 		int getidClient(void);
 		int getidFacture(void);
 	};
