@@ -7,6 +7,7 @@ namespace NS_Svc {
 		this->cad = gcnew NS_Composants::CL_CAD();
 		this->catalogue = gcnew NS_Composants::CL_map_TBGESTIONCATALOGUE();
 		this->ds = gcnew Data::DataSet();
+		this->TestCatalogue2 = gcnew TestCatalogue1();
 	}
 	DataSet^ CL_svc_gestionCatalogue::listeCatalogue(String^ dataTableName)
 	{
@@ -24,9 +25,9 @@ namespace NS_Svc {
 		this->catalogue->settauxTva(tauxtva);
 		id_personne = this->cad->actionRowsID(this->catalogue->INSERT());
 
-		/*this->TestClient2->comparerstring2(this->personne->INSERT(), "INSERT INTO Client " +
-			"(nom_client, prenom_client, date_naissance, date_premier_achat) " +
-			"VALUES('Benzema', '" + this->personne->getPrenom() + "', '" + this->personne->getDateNaissance() + "', '" + this->personne->getDatePremierAchat() + "');SELECT @@IDENTITY;");*/
+		/*this->TestCatalogue2->comparercatalogue1(this->catalogue->INSERT(), "INSERT INTO Catalogue " +
+			"(prix_articleht,quantite_stock,seuil_rea,taux_tva) " +
+			"VALUES('500', '" + this->catalogue->getquantiteStock() + "', '" + this->catalogue->getseuilRea() + "', '" + this->catalogue->gettauxTva() + "');SELECT @@IDENTITY;");*/
 
 		return id_personne;
 	}
@@ -40,10 +41,15 @@ namespace NS_Svc {
 		this->catalogue->setidArticle(idarticle);
 
 		this->cad->actionRows(this->catalogue->UPDATE());
+		/*this->TestCatalogue2->comparercatalogue(this->catalogue->UPDATE(), "UPDATE Catalogue " +
+			"SET prix_articleht = '" + this->catalogue->getprixArticle() + "', quantite_stock = '5', seuil_rea = '" + this->catalogue->getseuilRea() + "', taux_tva = '" + this->catalogue->gettauxTva() + "' " +
+			"WHERE(id_catalogue = " + this->catalogue->getId() + ");");*/
 	}
 	void CL_svc_gestionCatalogue::supprimer(int id_catalogue)
 	{
 		this->catalogue->setID(id_catalogue);
 		this->cad->actionRows(this->catalogue->DELETE());
+		/*this->TestCatalogue2->comparercatalogue2(this->catalogue->DELETE(), "DELETE FROM Catalogue " +
+			"WHERE(id_catalogue=" + 5 + ");");*/
 	}
 }
