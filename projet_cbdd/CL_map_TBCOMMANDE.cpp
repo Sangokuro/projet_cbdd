@@ -32,10 +32,10 @@ namespace NS_Composants {
 			"' WHERE(id_commande = " + this->getId() + ");";
 	}
 
-	String^ CL_map_TBCOMMANDE::UPDATEIDfacture(void)
+	String^ CL_map_TBCOMMANDE::UPDATEIDfacture(String^ nom, String^ prenom)
 	{
 		return "UPDATE Commande " +
-			"SET id_facture =" + this->getidFacture() +
+			"SET id_facture =" + this->getidFacture() + ", id_client=(SELECT id_client FROM Client WHERE(nom_client='" + nom +"'))" +
 			" WHERE(id_commande = " + this->getId() + ");";
 	}
 

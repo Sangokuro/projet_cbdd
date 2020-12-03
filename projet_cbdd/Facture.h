@@ -1,5 +1,6 @@
 #pragma once
 #include "CL_svc_gestionFacture.h"
+#include "AdresseCommande.h"
 
 namespace projet_cbdd {
 
@@ -14,9 +15,11 @@ namespace projet_cbdd {
 	public ref class Facture : public System::Windows::Forms::Form
 	{
 	public:
-		Facture(int idCommande, int *idFacture)
+		Facture(int idCommande, int *idFacture, std::string* nom, std::string* prenom)
 		{
 			this->idCommande = idCommande;
+			this->nom2 = nom;
+			this->prenom2= prenom;
 			InitializeComponent();
 			this->idFacture2 = idFacture;
 		}
@@ -35,6 +38,8 @@ namespace projet_cbdd {
 
 	private: System::Windows::Forms::Button^ saveButton;
 	protected:
+		std::string* nom2;
+		std::string* prenom2;
 
 	protected:
 
@@ -407,6 +412,9 @@ namespace projet_cbdd {
 		Id = this->processusFacture->ajouter(this->txt_nom->Text, this->txt_adresse->Text, Convert::ToInt32(this->txt_codepostale->Text), this->txt_ville->Text, Convert::ToInt32(this->txt_serviceclient->Text), this->idCommande);
 		this->txt_message->Text = "L'ID généré est le : " + Id + ". ";
 		(*idFacture2) = Id;
+
+		projet_cbdd:AdresseCommande^ f6 = gcnew projet_cbdd::AdresseCommande(nom2, prenom2);
+		f6->ShowDialog();
 	}
 
 

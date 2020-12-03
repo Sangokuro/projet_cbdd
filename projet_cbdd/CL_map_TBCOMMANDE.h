@@ -20,7 +20,7 @@ namespace NS_Composants {
 		String^ SELECT(void);
 		String^ INSERT(void);
 		String^ UPDATE(void);
-		String^ UPDATEIDfacture(void);
+		String^ UPDATEIDfacture(String^, String^);
 		String^ DELETE(void);
 		void setIDcommande(int);
 		void setdateCommande(DateTime^);

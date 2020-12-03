@@ -1,6 +1,8 @@
 #include "CL_svc_gestionCommande.h"
 #include "CL_svc_gestionFacture.h"
 #include"Facture.h"
+#include "AdresseCommande.h"
+
 
 namespace NS_Svc {
 	CL_svc_gestionCommande::CL_svc_gestionCommande(void)
@@ -34,14 +36,27 @@ namespace NS_Svc {
 		//processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
 
 		int *id_facture = new int;
+		std::string* nom = new std::string;
+		std::string* prenom= new std::string;
 
-		projet_cbdd::Facture^ f5 = gcnew projet_cbdd::Facture(id_commande, id_facture);
+		
+
+		
+
+		projet_cbdd::Facture^ f5 = gcnew projet_cbdd::Facture(id_commande, id_facture,nom,prenom);
 		f5->ShowDialog();
 
+		String^ nom2 = gcnew String((*nom).c_str());
+		String^ prenom2 = gcnew String((*prenom).c_str());
+
+		//projet_cbdd::AdresseCommande^ f6 = gcnew projet_cbdd::AdresseCommande(nom, prenom);
+		//f6->ShowDialog();
+
 		this->commande->setIDcommande(id_commande);
+		this->commande->setmoyenPaiement(nom2);
 		this->commande->setidFacture(*id_facture);
 
-		this->cad->actionRows(this->commande->UPDATEIDfacture());
+		this->cad->actionRows(this->commande->UPDATEIDfacture(nom2, prenom2));
 
 		return id_commande;
 		

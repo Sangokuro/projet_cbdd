@@ -1,6 +1,8 @@
 #pragma once
+#include <string>
 #include "CL_CAD.h"
 #include "CL_map_TBCOMMANDE.h"
+
 
 namespace NS_Svc {
 
