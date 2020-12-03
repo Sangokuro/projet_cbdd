@@ -1,8 +1,9 @@
 #include "CL_svc_gestionpersonnel.h"
+#include "CL_CAD.h"
 
 
 namespace NS_Svc {
-    NS_Svc::CL_svc_gestionpersonnel1::CL_svc_gestionpersonnel1(void)
+    CL_svc_gestionpersonnel1::CL_svc_gestionpersonnel1(void)
     {
         this->cad = gcnew NS_Composants::CL_CAD();
         this->personnel = gcnew NS_Composants::CL_map_TBpersonnel1();
@@ -13,18 +14,18 @@ namespace NS_Svc {
 
         
 
-        DataSet^ NS_Svc::CL_svc_gestionpersonnel1::listePersonnel(String^ dataTableName)
+        DataSet^ CL_svc_gestionpersonnel1::listePersonnel(String^ dataTableName)
         {
             this->ds = this->cad->getRows(this->personnel->SELECT(), dataTableName);
             return ds;
         }
 
-        int NS_Svc::CL_svc_gestionpersonnel1::ajouter(String^ nom_personnel, String^ prenom_personnel, String^ nom_superieur, String^ adresse_personnel, int code_postal, String^ ville, DateTime^ date_embauche)
+        int CL_svc_gestionpersonnel1::ajouter(String^ nom_personnel, String^ prenom_personnel, String^ nom_superieur, String^ adresse_personnel, int code_postal, String^ ville, DateTime^ date_embauche)
         {
             int id_personnel;
             //référence null
-            this->personnel->setNompersonnel(nom_personnel);
-            this->personnel->setPrenompersonnel(prenom_personnel);
+            this->personnel->setNompersonnel("dji");
+            this->personnel->setPrenompersonnel("oua");
             this->personnel->setNomsuperieure(nom_superieur);
             this->personnel->setAdressepersonnel(adresse_personnel);
             this->personnel->setcodepostal(code_postal);
@@ -42,7 +43,7 @@ namespace NS_Svc {
             return id_personnel;
         }
 
-        void NS_Svc::CL_svc_gestionpersonnel1::modifier(int id_personnel, String^ nom_personnel, String^ prenom_personnel, String^ nom_superieur, String^ adresse_personnel, int code_postal, String^ ville, DateTime^ date_embauche, int id_personnel_dirige)
+        void CL_svc_gestionpersonnel1::modifier(int id_personnel, String^ nom_personnel, String^ prenom_personnel, String^ nom_superieur, String^ adresse_personnel, int code_postal, String^ ville, DateTime^ date_embauche, int id_personnel_dirige)
         {
             this->personnel->setIDpersonnel(id_personnel);
             this->personnel->setNompersonnel(nom_personnel);
@@ -57,8 +58,8 @@ namespace NS_Svc {
             this->cad->actionRows(this->personnel->UPDATE());
         }
 
-        void NS_Svc::CL_svc_gestionpersonnel1::supprimer(int id_personnel)
-        {
+        void CL_svc_gestionpersonnel1::supprimer(int id_personnel)
+        {//NE FAIT RIEN DU TOUT
             this->personnel->setIDpersonnel(id_personnel);
 
             this->cad->actionRows(this->personnel->DELETE());

@@ -53,7 +53,7 @@ namespace NS_Svc {
 
 	void CL_svc_gestionClient::supprimer(int id_personne)
 	{
-		this->personne->setID(id_personne);
+		this->personne->setID(7);
 		this->cad->actionRows(this->personne->DELETE());
 		/*this->teste->comparerstring3(this->personne->DELETE(), "DELETE FROM Client " +
 			"WHERE(id_client=" + 14 + ");");*/
