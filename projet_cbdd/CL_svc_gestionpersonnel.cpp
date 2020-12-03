@@ -8,6 +8,7 @@ namespace NS_Svc {
         this->cad = gcnew NS_Composants::CL_CAD();
         this->personnel = gcnew NS_Composants::CL_map_TBpersonnel1();
         this->ds = gcnew Data::DataSet();
+        this->testePersonnel2 = gcnew TestPersonnel1();
 
     }
 
@@ -17,6 +18,7 @@ namespace NS_Svc {
         DataSet^ CL_svc_gestionpersonnel1::listePersonnel(String^ dataTableName)
         {
             this->ds = this->cad->getRows(this->personnel->SELECT(), dataTableName);
+            
             return ds;
         }
 
@@ -35,10 +37,11 @@ namespace NS_Svc {
             
 
             id_personnel = this->cad->actionRowsID(this->personnel->INSERT());//manque id superieure
-
-            /*this->teste->comparerstring2(this->personne->INSERT(), "INSERT INTO Client " +
-                "(nom_client, prenom_client, date_naissance, date_premier_achat) " +
-                "VALUES('Benzema', '" + this->personne->getPrenom() + "', '" + this->personne->getDateNaissance() + "', '" + this->personne->getDatePremierAchat() + "');SELECT @@IDENTITY;");*/
+          /*this->testePersonnel2->comparerpersonnel1(this->personnel->INSERT(), "INSERT INTO Personnel " +
+                "(nom_personnel,prenom_personnel ,nom_superieur, adresse_personnel,code_postal,ville,date_embauche,id_personnel_dirige) " +
+                "VALUES('" + this->personnel->getNompersonnel() + "', '" + this->personnel->getPrenompersonnel() + "', '" + this->personnel->getNomsuperieure() + "', '" + this->personnel->getAdressepersonnel() +
+                "', '" + this->personnel->getcodepostal() + "', 'paris', '" + this->personnel->getdateembauche() + "', " + "(SELECT id_personnel FROM Personnel WHERE (nom_personnel='" +
+                this->personnel->getNomsuperieure() + "')));SELECT @@IDENTITY;");*/
 
             return id_personnel;
         }
@@ -54,8 +57,14 @@ namespace NS_Svc {
             this->personnel->setville(ville);
             this->personnel->setdateembauche(date_embauche);
             this->personnel->setIDpersonnelsuperieure(id_personnel_dirige);
+            
 
             this->cad->actionRows(this->personnel->UPDATE());
+           /* this->testePersonnel2->comparerpersonnel(this->personnel->UPDATE(), "UPDATE Personnel " +
+                "SET nom_personnel = 'matteo', prenom_personnel = '" + this->personnel->getPrenompersonnel() + "', nom_superieur = '" + this->personnel->getNomsuperieure() +
+                "', adresse_personnel = '" + this->personnel->getAdressepersonnel() + "', code_postal = '" + this->personnel->getcodepostal() + "',ville = '" + this->personnel->getville() + "',date_embauche = '" + this->personnel->getdateembauche() + "' " +
+                "WHERE(id_personnel = " + this->personnel->getIDpersonnel() + ");");*/
+            
         }
 
         void CL_svc_gestionpersonnel1::supprimer(int id_personnel)
@@ -63,6 +72,8 @@ namespace NS_Svc {
             this->personnel->setIDpersonnel(id_personnel);
 
             this->cad->actionRows(this->personnel->DELETE());
+           /* this->testePersonnel2->comparerpersonnel2(this->personnel->DELETE(), "DELETE FROM Personnel " +
+                "WHERE(id_personnel = " + 5 + ");");*/
         }
     
 }
