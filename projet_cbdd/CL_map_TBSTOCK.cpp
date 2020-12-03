@@ -13,12 +13,12 @@ namespace NS_Composants {
 	String^ CL_map_TBSTOCK::SELECT(void)
 	{
 		return "SELECT id_article, nom_article,nature_article,couleur_article" +
-			"FROM Article;";
+			" FROM Article;";
 	}
 	String^ CL_map_TBSTOCK::INSERT(void)
 	{
 		return "INSERT INTO Article " +
-			"(id_article, nom_article,nature_article,couleur_article) " +
+			"(nom_article,nature_article,couleur_article) " +
 			"VALUES('" + this->getNomarticle() + "', '" + this->getNaturearticle() + "', '" + this->getCouleurarticle() + "');SELECT @@IDENTITY;";
 	}
 

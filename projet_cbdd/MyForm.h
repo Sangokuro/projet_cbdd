@@ -4,6 +4,7 @@
 #include"Personnel.h"
 #include"Facture.h"
 #include "AdresseCommande.h"
+#include"Stock.h"
 
 
 namespace projet_cbdd {
@@ -194,6 +195,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 			f4->ShowDialog();
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		projet_cbdd::Stock^ f5 = gcnew projet_cbdd::Stock;
+		f5->ShowDialog();
 }
 };
 }
