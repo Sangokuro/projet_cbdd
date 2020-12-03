@@ -4,6 +4,7 @@
 #include"Personnel.h"
 #include"Facture.h"
 #include "AdresseCommande.h"
+#include "Catalogue.h"
 
 
 namespace projet_cbdd {
@@ -48,6 +49,7 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Button^ button7;
 	protected:
 
 	private:
@@ -71,6 +73,7 @@ namespace projet_cbdd {
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -154,11 +157,22 @@ namespace projet_cbdd {
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"Que souhaitez-vous faire \?";
 			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(399, 280);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(152, 39);
+			this->button7->TabIndex = 8;
+			this->button7->Text = L"Catalogue";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(641, 505);
+			this->Controls->Add(this->button7);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button6);
@@ -194,6 +208,10 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 			f4->ShowDialog();
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	projet_cbdd::Catalogue^ f5 = gcnew projet_cbdd::Catalogue;
+	f5->ShowDialog();
 }
 };
 }

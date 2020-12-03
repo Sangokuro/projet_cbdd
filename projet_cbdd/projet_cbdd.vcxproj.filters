@@ -75,6 +75,12 @@
     <ClCompile Include="Catalogue.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="CL_map_gestionCatalogue.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CL_svc_gestionCatalogue.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -142,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="Catalogue.h">
       <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_map_gestionCatalogue.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CL_svc_gestionCatalogue.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
