@@ -19,6 +19,7 @@ namespace NS_Svc {
 		DataSet^ valeurduCommerce(String^);
 		DataSet^ topdesventes(String^);
 		DataSet^ topdesinvendus(String^);
+		DataSet^ depensedesclients(String^);
 	};
 
 

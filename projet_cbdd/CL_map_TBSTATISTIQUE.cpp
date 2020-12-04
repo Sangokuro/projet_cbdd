@@ -36,10 +36,12 @@ namespace NS_Composants {
     {
         return "SELECT nom_article FROM Article INNER JOIN Catalogue ON Article.id_article=Catalogue.id_article WHERE seuil_rea>quantite_stock";
     }
-    String^ CL_map_TBSTATISTIQUE::Client(String^)
+    String^ CL_map_TBSTATISTIQUE::Client()//calculer le montant total par personne
     {
-        return "SELECT Client.Id_client, Client.Nom_client, Client.Prenom_client, SUM(TOTAL_TTC) as TotalPaye FROM Client LEFT JOIN Commande " +
-            "ON Commande.Id_client = Client.Id_client WHERE Client.Nom_client=' ' GROUP BY Client.Id_client,Client.Nom_client, Client.Prenom_client";
+        return /*"SELECT Client.Id_client, Client.Nom_client, Client.Prenom_client, SUM(TOTAL_TTC) as TotalPaye FROM Client LEFT JOIN Commande " +
+            "ON Commande.Id_client = Client.Id_client WHERE Client.Nom_client=' ' GROUP BY Client.Id_client,Client.Nom_client, Client.Prenom_client";*/
+
+        "SELECT nom_client,prenom_client, SUM(montant_total_ttc) as Total FROM Commande LEFT JOIN Client ON Commande.id_client=Client.id_client GROUP BY nom_client,prenom_client";
         
     }
     String^ CL_map_TBSTATISTIQUE::PlusVendu()

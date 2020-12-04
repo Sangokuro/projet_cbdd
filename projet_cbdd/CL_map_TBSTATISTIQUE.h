@@ -13,7 +13,7 @@ namespace NS_Composants {
 		String^ PanierMoyen();
 		String^ CAMois(String^);
 		String^ ProduitSousSeuil();
-		String^ Client(String^);
+		String^ Client();
 		String^ PlusVendu();
 		String^ MoinsVendu();
 		String^ ValeurCommercial();
