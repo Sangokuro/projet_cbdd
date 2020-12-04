@@ -47,6 +47,12 @@ namespace NS_Svc{
             "GROUP BY Article.id_article, Article.nom_article ORDER BY NombreVendu DESC");
         return ds;
     }
+    DataSet^ CL_svc_gestionStatistique::topdesinvendus(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->MoinsVendu(), dataTableName);
+
+        return ds;
+    }
 
     
 
