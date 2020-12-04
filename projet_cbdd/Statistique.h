@@ -53,6 +53,9 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Button^ topdesventes;
 	private: System::Windows::Forms::Button^ topdesinvendus;
 	private: System::Windows::Forms::Button^ depense_client;
+	private: System::Windows::Forms::Button^ panier_moyen;
+	private: System::Windows::Forms::Button^ ca_mois;
+
 
 
 
@@ -78,6 +81,8 @@ namespace projet_cbdd {
 			this->topdesventes = (gcnew System::Windows::Forms::Button());
 			this->topdesinvendus = (gcnew System::Windows::Forms::Button());
 			this->depense_client = (gcnew System::Windows::Forms::Button());
+			this->panier_moyen = (gcnew System::Windows::Forms::Button());
+			this->ca_mois = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -179,11 +184,33 @@ namespace projet_cbdd {
 			this->depense_client->UseVisualStyleBackColor = true;
 			this->depense_client->Click += gcnew System::EventHandler(this, &Statistique::depense_client_Click);
 			// 
+			// panier_moyen
+			// 
+			this->panier_moyen->Location = System::Drawing::Point(23, 79);
+			this->panier_moyen->Name = L"panier_moyen";
+			this->panier_moyen->Size = System::Drawing::Size(98, 48);
+			this->panier_moyen->TabIndex = 27;
+			this->panier_moyen->Text = L"Panier Moyen";
+			this->panier_moyen->UseVisualStyleBackColor = true;
+			this->panier_moyen->Click += gcnew System::EventHandler(this, &Statistique::panier_moyen_Click);
+			// 
+			// ca_mois
+			// 
+			this->ca_mois->Location = System::Drawing::Point(23, 196);
+			this->ca_mois->Name = L"ca_mois";
+			this->ca_mois->Size = System::Drawing::Size(86, 44);
+			this->ca_mois->TabIndex = 28;
+			this->ca_mois->Text = L"CA sur un mois";
+			this->ca_mois->UseVisualStyleBackColor = true;
+			this->ca_mois->Click += gcnew System::EventHandler(this, &Statistique::ca_mois_Click);
+			// 
 			// Statistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(925, 456);
+			this->Controls->Add(this->ca_mois);
+			this->Controls->Add(this->panier_moyen);
 			this->Controls->Add(this->depense_client);
 			this->Controls->Add(this->topdesinvendus);
 			this->Controls->Add(this->topdesventes);
@@ -254,6 +281,16 @@ private: System::Void topdesinvendus_Click(System::Object^ sender, System::Event
 }
 private: System::Void depense_client_Click(System::Object^ sender, System::EventArgs^ e) {
 	dataGridView1->DataSource = this->processusStatistique->depensedesclients("liste2");
+	dataGridView1->DataMember = "liste2";
+	this->txt_message->Text += "Traitement terminé.";
+}
+private: System::Void panier_moyen_Click(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->DataSource = this->processusStatistique->paniermoyen("liste2");
+	dataGridView1->DataMember = "liste2";
+	this->txt_message->Text += "Traitement terminé.";
+}
+private: System::Void ca_mois_Click(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->DataSource = this->processusStatistique->camois("liste2");
 	dataGridView1->DataMember = "liste2";
 	this->txt_message->Text += "Traitement terminé.";
 }

@@ -20,6 +20,8 @@ namespace NS_Svc {
 		DataSet^ topdesventes(String^);
 		DataSet^ topdesinvendus(String^);
 		DataSet^ depensedesclients(String^);
+		DataSet^ paniermoyen(String^);
+		DataSet^ camois(String^);
 	};
 
 

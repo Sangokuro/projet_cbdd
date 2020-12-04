@@ -57,7 +57,16 @@ namespace NS_Svc{
         return ds;
     }
 
-    
+    DataSet^ CL_svc_gestionStatistique::paniermoyen(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->PanierMoyen(), dataTableName);
+        return ds;
+    }
 
+    DataSet^ CL_svc_gestionStatistique::camois(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->CAMois(), dataTableName);
+        return ds;
+    }
 
 }

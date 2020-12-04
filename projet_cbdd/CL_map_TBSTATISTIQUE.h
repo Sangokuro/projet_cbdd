@@ -11,7 +11,7 @@ namespace NS_Composants {
 	public:
 		CL_map_TBSTATISTIQUE();
 		String^ PanierMoyen();
-		String^ CAMois(String^);
+		String^ CAMois();
 		String^ ProduitSousSeuil();
 		String^ Client();
 		String^ PlusVendu();
