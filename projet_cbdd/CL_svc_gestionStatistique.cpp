@@ -21,7 +21,7 @@ namespace NS_Svc{
     DataSet^ CL_svc_gestionStatistique::valeurduStock(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->ValeurStock(), dataTableName);
-       /* this->test14->comparercommande(this->statistique->ValeurStock(), "SELECT SUM(prix_articleht*quantite_stock) as ValeurStock " +
+        /*this->test14->comparercommande(this->statistique->ValeurStock(), "SELECT SUM(prix_articleht*quantite_stock) as ValeurStock " +
             "FROM Catalogue");*/
 
         return ds;
