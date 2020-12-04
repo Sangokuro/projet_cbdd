@@ -20,6 +20,7 @@ namespace NS_Svc{
     DataSet^ CL_svc_gestionStatistique::listeSousSeuil(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->ProduitSousSeuil(), dataTableName);
+        this->test14->comparercommande1(this->statistique->ProduitSousSeuil(), "SELECT nom_article FROM Article INNER JOIN Catalogue ON Article.id_article=Catalogue.id_article WHERE seuil_rea>quantite_stock");
 
         return ds;
     }
@@ -34,13 +35,15 @@ namespace NS_Svc{
     DataSet^ CL_svc_gestionStatistique::valeurduCommerce(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->ValeurCommercial(), dataTableName);
+        this->test14->comparercommande2(this->statistique->ValeurCommercial(), "SELECT SUM((prix_articleht*taux_tva)*quantite_stock) as ValeurCommercial " +
+            "FROM Catalogue");
 
         return ds;
     }
     DataSet^ CL_svc_gestionStatistique::topdesventes(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->PlusVendu(), dataTableName);
-
+        this->test14->comparercommande3(this->statistique->PlusVendu(),)
         return ds;
     }
     DataSet^ CL_svc_gestionStatistique::topdesinvendus(String^ dataTableName)
