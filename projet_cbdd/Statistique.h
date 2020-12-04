@@ -48,9 +48,12 @@ namespace projet_cbdd {
 
 	private: System::Windows::Forms::Button^ sous_seuil;
 	private: System::Windows::Forms::Button^ valeurstock;
-	private: System::Windows::Forms::Button^ valeurcommercial;
+	private: System::Windows::Forms::Button^ valeurcommerciale;
+
 	private: System::Windows::Forms::Button^ topdesventes;
 	private: System::Windows::Forms::Button^ topdesinvendus;
+	private: System::Windows::Forms::Button^ depense_client;
+
 
 
 
@@ -71,9 +74,10 @@ namespace projet_cbdd {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->sous_seuil = (gcnew System::Windows::Forms::Button());
 			this->valeurstock = (gcnew System::Windows::Forms::Button());
-			this->valeurcommercial = (gcnew System::Windows::Forms::Button());
+			this->valeurcommerciale = (gcnew System::Windows::Forms::Button());
 			this->topdesventes = (gcnew System::Windows::Forms::Button());
 			this->topdesinvendus = (gcnew System::Windows::Forms::Button());
+			this->depense_client = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -135,15 +139,15 @@ namespace projet_cbdd {
 			this->valeurstock->UseVisualStyleBackColor = true;
 			this->valeurstock->Click += gcnew System::EventHandler(this, &Statistique::valeurstock_Click);
 			// 
-			// valeurcommercial
+			// valeurcommerciale
 			// 
-			this->valeurcommercial->Location = System::Drawing::Point(326, 101);
-			this->valeurcommercial->Name = L"valeurcommercial";
-			this->valeurcommercial->Size = System::Drawing::Size(132, 47);
-			this->valeurcommercial->TabIndex = 23;
-			this->valeurcommercial->Text = L"Valeur commercial";
-			this->valeurcommercial->UseVisualStyleBackColor = true;
-			this->valeurcommercial->Click += gcnew System::EventHandler(this, &Statistique::valeurcommercial_Click);
+			this->valeurcommerciale->Location = System::Drawing::Point(326, 101);
+			this->valeurcommerciale->Name = L"valeurcommerciale";
+			this->valeurcommerciale->Size = System::Drawing::Size(132, 47);
+			this->valeurcommerciale->TabIndex = 23;
+			this->valeurcommerciale->Text = L"Valeur commerciale";
+			this->valeurcommerciale->UseVisualStyleBackColor = true;
+			this->valeurcommerciale->Click += gcnew System::EventHandler(this, &Statistique::valeurcommercial_Click);
 			// 
 			// topdesventes
 			// 
@@ -165,14 +169,25 @@ namespace projet_cbdd {
 			this->topdesinvendus->UseVisualStyleBackColor = true;
 			this->topdesinvendus->Click += gcnew System::EventHandler(this, &Statistique::topdesinvendus_Click);
 			// 
+			// depense_client
+			// 
+			this->depense_client->Location = System::Drawing::Point(157, 65);
+			this->depense_client->Name = L"depense_client";
+			this->depense_client->Size = System::Drawing::Size(123, 44);
+			this->depense_client->TabIndex = 26;
+			this->depense_client->Text = L"Depense client";
+			this->depense_client->UseVisualStyleBackColor = true;
+			this->depense_client->Click += gcnew System::EventHandler(this, &Statistique::depense_client_Click);
+			// 
 			// Statistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(925, 456);
+			this->Controls->Add(this->depense_client);
 			this->Controls->Add(this->topdesinvendus);
 			this->Controls->Add(this->topdesventes);
-			this->Controls->Add(this->valeurcommercial);
+			this->Controls->Add(this->valeurcommerciale);
 			this->Controls->Add(this->valeurstock);
 			this->Controls->Add(this->sous_seuil);
 			this->Controls->Add(this->dataGridView1);
@@ -234,6 +249,11 @@ private: System::Void topdesventes_Click(System::Object^ sender, System::EventAr
 }
 private: System::Void topdesinvendus_Click(System::Object^ sender, System::EventArgs^ e) {
 	dataGridView1->DataSource = this->processusStatistique->topdesinvendus("liste2");
+	dataGridView1->DataMember = "liste2";
+	this->txt_message->Text += "Traitement terminé.";
+}
+private: System::Void depense_client_Click(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->DataSource = this->processusStatistique->depensedesclients("liste2");
 	dataGridView1->DataMember = "liste2";
 	this->txt_message->Text += "Traitement terminé.";
 }

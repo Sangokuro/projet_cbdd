@@ -49,6 +49,13 @@ namespace NS_Svc{
         return ds;
     }
 
+    DataSet^ CL_svc_gestionStatistique::depensedesclients(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->Client(), dataTableName);
+
+        return ds;
+    }
+
     
 
 
