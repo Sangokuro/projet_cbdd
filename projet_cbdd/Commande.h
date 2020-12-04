@@ -558,6 +558,7 @@ namespace projet_cbdd {
 		this->txt_datePaiement->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[3]);
 		this->txt_moyenPaiement->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[4]);
 		this->txt_refCommande->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[5]);
+		this->txt_quantite->Text = Convert::ToString(this->ds->Tables["liste"]->Rows[this->index]->ItemArray[7]);
 	}
 	private: void loadDataGridView() {
 		dataGridView1->DataSource = this->processusCommande->listeCommande("liste2");

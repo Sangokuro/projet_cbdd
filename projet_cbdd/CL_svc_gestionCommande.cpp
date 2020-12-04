@@ -34,11 +34,11 @@ namespace NS_Svc {
 		this->commande->setidFacture(0);
 		id_commande = this->cad->actionRowsID(this->commande->INSERT(article));
 		this->cad->actionRows(this->commande->INSERTLIEN(article, id_commande));
-		this->TestCommande2->comparercommande1(this->commande->INSERT(article), "INSERT INTO Commande " +
+		/*this->TestCommande2->comparercommande1(this->commande->INSERT(article), "INSERT INTO Commande " +
 			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande,montant_total_ht,montant_total_tva,montant_total_ttc,prix_special,quantite_article) " +
-			"VALUES('" + this->commande->getdateCommande() + "', '" + this->commande->getdateLivraison() + "', '" + this->commande->getdatePaiement() + "', '" + this->commande->getmoyenPaiement() + "', '" +
+			"VALUES('" + this->commande->getdateCommande() + "', '" + this->commande->getdateLivraison() + "', '" + this->commande->getdatePaiement() + "', 'carte bancaire', '" +
 			this->commande->getreferenceCommande() + "'," + "(SELECT prix_articleht FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))," +
-			"(SELECT taux_tva FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))" + ",8,8," + this->commande->getquantite() + ");SELECT @@IDENTITY;");
+			"(SELECT taux_tva FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))" + ",8,8," + this->commande->getquantite() + ");SELECT @@IDENTITY;");*/
 
 		//NS_Svc::CL_svc_gestionFacture^ processusFacture;
 		//processusFacture->ajouter("aaa", "eee", "e", "e", "e", id_commande, 8);
@@ -81,6 +81,12 @@ namespace NS_Svc {
 		this->commande->setreferenceCommande(reference);
 
 		this->cad->actionRows(this->commande->UPDATE());
+
+
+		/*this->TestCommande2->comparercommande(this->commande->UPDATE(), "UPDATE Commande " +
+			"SET date_commande = '" + this->commande->getdateCommande() + "', date_livraison = '" + this->commande->getdateLivraison() + "', date_paiement = '" + this->commande->getdatePaiement() + "', moyen_paiement = 'cheque', reference_commande = '" + this->commande->getreferenceCommande() +/* "', id_client= " + this->getidClient() + ", id_facture=" + this->getidFacture() +
+			"' WHERE(id_commande = " + this->commande->getId() + ");");*/
+
 	}
 
 	void CL_svc_gestionCommande::supprimer(int id_commande)

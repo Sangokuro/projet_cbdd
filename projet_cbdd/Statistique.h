@@ -1,4 +1,5 @@
 #pragma once
+#include "CL_svc_gestionStatistique.h"
 
 namespace projet_cbdd {
 
@@ -9,24 +10,18 @@ namespace projet_cbdd {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Description résumée de Statistique
-	/// </summary>
+
 	public ref class Statistique : public System::Windows::Forms::Form
 	{
 	public:
 		Statistique(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: ajoutez ici le code du constructeur
-			//
+
 		}
 
 	protected:
-		/// <summary>
-		/// Nettoyage des ressources utilisées.
-		/// </summary>
+
 		~Statistique()
 		{
 			if (components)
@@ -34,144 +29,136 @@ namespace projet_cbdd {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
+
+	private: System::Windows::Forms::Button^ saveButton;
 	protected:
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::Button^ button9;
+
+	protected:
+
+	private: System::Windows::Forms::TextBox^ txt_message;
+
+
+	private: System::Windows::Forms::Label^ label4;
+
+	private: NS_Svc::CL_svc_gestionStatistique^ processusStatistique;
+
+	private: Data::DataSet^ ds;
+	private: Data::DataSet^ ds2;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Button^ base;
+
+
+
+
+
 
 	private:
-		/// <summary>
-		/// Variable nécessaire au concepteur.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-		/// le contenu de cette méthode avec l'éditeur de code.
-		/// </summary>
+
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->saveButton = (gcnew System::Windows::Forms::Button());
+			this->txt_message = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->base = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(39, 36);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(190, 47);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Panier moyen";
-			this->button1->UseVisualStyleBackColor = true;
+			// txt_message
 			// 
-			// button2
+			this->txt_message->Location = System::Drawing::Point(38, 343);
+			this->txt_message->Multiline = true;
+			this->txt_message->Name = L"txt_message";
+			this->txt_message->Size = System::Drawing::Size(343, 85);
+			this->txt_message->TabIndex = 17;
+			this->txt_message->TextChanged += gcnew System::EventHandler(this, &Statistique::txt_message_TextChanged);
 			// 
-			this->button2->Location = System::Drawing::Point(39, 89);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(190, 40);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"CA sur un mois";
-			this->button2->UseVisualStyleBackColor = true;
+			// label4
 			// 
-			// button3
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(44, 314);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(65, 17);
+			this->label4->TabIndex = 18;
+			this->label4->Text = L"Message";
 			// 
-			this->button3->Location = System::Drawing::Point(39, 135);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(190, 47);
-			this->button3->TabIndex = 2;
-			this->button3->Text = L"Produit sous seuil de réaprovisionnement";
-			this->button3->UseVisualStyleBackColor = true;
+			// dataGridView1
 			// 
-			// button4
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(484, 42);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->Size = System::Drawing::Size(416, 386);
+			this->dataGridView1->TabIndex = 2;
 			// 
-			this->button4->Location = System::Drawing::Point(39, 188);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(190, 49);
-			this->button4->TabIndex = 3;
-			this->button4->Text = L"Montant total des achats d\'un client";
-			this->button4->UseVisualStyleBackColor = true;
+			// base
 			// 
-			// button5
+			this->base->Location = System::Drawing::Point(283, 259);
+			this->base->Name = L"base";
+			this->base->Size = System::Drawing::Size(110, 46);
+			this->base->TabIndex = 19;
+			this->base->Text = L"base";
+			this->base->UseVisualStyleBackColor = true;
+			this->base->Click += gcnew System::EventHandler(this, &Statistique::base_Click);
 			// 
-			this->button5->Location = System::Drawing::Point(39, 243);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(190, 50);
-			this->button5->TabIndex = 4;
-			this->button5->Text = L"Les 10 articles les plus vendus";
-			this->button5->UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(39, 299);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(190, 42);
-			this->button6->TabIndex = 5;
-			this->button6->Text = L"Les 10 articles les moins vendus";
-			this->button6->UseVisualStyleBackColor = true;
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(39, 347);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(190, 41);
-			this->button7->TabIndex = 6;
-			this->button7->Text = L"Valeur commercial du stock";
-			this->button7->UseVisualStyleBackColor = true;
-			// 
-			// button8
-			// 
-			this->button8->Location = System::Drawing::Point(39, 394);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(190, 45);
-			this->button8->TabIndex = 7;
-			this->button8->Text = L"Valeur d\'achat du stock";
-			this->button8->UseVisualStyleBackColor = true;
-			// 
-			// button9
-			// 
-			this->button9->Location = System::Drawing::Point(39, 445);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(190, 47);
-			this->button9->TabIndex = 8;
-			this->button9->Text = L"Simulation des variations de valeurs";
-			this->button9->UseVisualStyleBackColor = true;
-			// 
-			// Statistique
+			// Client
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1075, 551);
-			this->Controls->Add(this->button9);
-			this->Controls->Add(this->button8);
-			this->Controls->Add(this->button7);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Name = L"Statistique";
-			this->Text = L"Statistique";
-			this->Load += gcnew System::EventHandler(this, &Statistique::Statistique_Load);
+			this->ClientSize = System::Drawing::Size(925, 456);
+			this->Controls->Add(this->base);
+			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->txt_message);
+			this->Controls->Add(this->saveButton);
+			this->Name = L"Client";
+			this->Text = L"Form1";
+			this->Load += gcnew System::EventHandler(this, &Statistique::FRM_Principal_Load);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void Statistique_Load(System::Object^ sender, System::EventArgs^ e) {
+
+
+		//s'éxécute au démarrage
+	private: System::Void FRM_Principal_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->ds = gcnew Data::DataSet();
+		this->processusStatistique = gcnew NS_Svc::CL_svc_gestionStatistique();
+		//this->loadData(this->index);
+		loadDataGridView();
+		this->txt_message->Text = "Data chargées";
 	}
-	};
+
+	/*private: void loadData(int index) {
+		this->ds->Clear();
+		//si exception ici il faut remplir la table
+		this->ds = this->processusPersonnes->listePersonnel("liste");
+	}*/
+	private: void loadDataGridView() {
+		dataGridView1->DataSource = this->processusStatistique->listePersonnel("liste2");
+		dataGridView1->DataMember = "liste2";
+	}
+
+
+
+	private: System::Void base_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		this->loadDataGridView();
+		this->txt_message->Text += "Traitement terminé.";
+	}
+		   private: System::Void txt_message_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		   }
+};
 }
