@@ -38,8 +38,9 @@ namespace NS_Composants {
     }
     String^ CL_map_TBSTATISTIQUE::Client(String^)
     {
-        throw gcnew System::NotImplementedException();
-        // TODO: insérer une instruction return ici
+        return "SELECT Client.Id_client, Client.Nom_client, Client.Prenom_client, SUM(TOTAL_TTC) as TotalPaye FROM Client LEFT JOIN Commande " +
+            "ON Commande.Id_client = Client.Id_client WHERE Client.Nom_client='" + NomClient + "' GROUP BY Client.Id_client,Client.Nom_client, Client.Prenom_client";
+        
     }
     String^ CL_map_TBSTATISTIQUE::PlusVendu()
     {
