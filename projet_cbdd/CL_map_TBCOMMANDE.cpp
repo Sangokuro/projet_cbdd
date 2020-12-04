@@ -21,8 +21,12 @@ namespace NS_Composants {
 		return "INSERT INTO Commande " +
 			"(date_commande,date_livraison,date_paiement,moyen_paiement,reference_commande,montant_total_ht,montant_total_tva,montant_total_ttc,prix_special,quantite_article) " +
 			"VALUES('" + this->getdateCommande() + "', '" + this->getdateLivraison() + "', '" + this->getdatePaiement() + "', '" + this->getmoyenPaiement() + "', '" +
-			this->getreferenceCommande() + "',"+ "(SELECT prix_articleht FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))," +
-			"(SELECT taux_tva FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))"+",8,8,"+ this->getquantite() +");SELECT @@IDENTITY;";
+			this->getreferenceCommande() + "',"+ 
+			"(SELECT prix_articleht*"+ this->getquantite() + " FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))," +
+			"(SELECT prix_articleht * taux_tva * "+this->getquantite()+ " FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "'))),"+
+			"(SELECT prix_articleht * taux_tva * " + this->getquantite() + "+" + this->getquantite() + "*prix_articleht" + " FROM Catalogue WHERE (id_article=(SELECT id_article FROM Article WHERE nom_article='" + article + "')))," +
+			"8,"
+			+ this->getquantite() +");SELECT @@IDENTITY;";
 	}
 	String^ CL_map_TBCOMMANDE::INSERTLIEN(String^ article, int commande) {
 		return "INSERT INTO Contient (id_article,id_commande) VALUES((SELECT id_article FROM Article WHERE nom_article='" + article + "')," + commande + ");";
