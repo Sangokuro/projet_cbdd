@@ -8,6 +8,7 @@ namespace NS_Svc{
         this->cad = gcnew NS_Composants::CL_CAD();
         this->statistique = gcnew NS_Composants::CL_map_TBSTATISTIQUE();
         this->ds = gcnew Data::DataSet();
+        this->test14 = gcnew testeStatistique1();
     }
 
     DataSet^ CL_svc_gestionStatistique::listePersonnel(String^ dataTableName)
@@ -25,6 +26,8 @@ namespace NS_Svc{
     DataSet^ CL_svc_gestionStatistique::valeurduStock(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->ValeurStock(), dataTableName);
+        this->test14->comparercommande(this->statistique->ValeurStock(), "SELECT SUM(prix_articleht*quantite_stock) as ValeurStock " +
+            "FROM Catalogue");
 
         return ds;
     }
