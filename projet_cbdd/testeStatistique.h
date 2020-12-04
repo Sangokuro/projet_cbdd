@@ -59,6 +59,32 @@ public:
 			MessageBox::Show("Produit les plus vendu pas a jour");
 		}
 	}
+
+	void comparercommande4(String^ comparer4, String^ affirmer4)
+	{
+		if (comparer4 == affirmer4)
+		{
+			MessageBox::Show("Produit les moins vendu a jour");
+
+		}
+		else
+		{
+			MessageBox::Show("Produit les moins vendu pas a jour");
+		}
+	}
+
+	void comparercommande5(String^ comparer5, String^ affirmer5)
+	{
+		if (comparer5 == affirmer5)
+		{
+			MessageBox::Show("Produit les moins vendu a jour");
+
+		}
+		else
+		{
+			MessageBox::Show("Produit les moins vendu pas a jour");
+		}
+	}
 	
 
 
