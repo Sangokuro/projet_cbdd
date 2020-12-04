@@ -47,8 +47,13 @@ namespace NS_Composants {
     }
     String^ CL_map_TBSTATISTIQUE::PlusVendu()
     {
-        return "SELECT TOP 10 nom_article, sum(quantite_article) AS NombreVendu FROM ((SELECT * Commande RIGHT JOIN Contient ON id_commande=id_commande)AS TABLE" +
-            "LEFT JOINT Article ON TABLE.id_article=Article.id_article ORDER BY NombreVendu DESC) AS TABLE2";
+        return "SELECT TOP 10 Article.id_article,Article.nom_article, COUNT(*) as NombreVendu FROM contient LEFT JOIN Article ON contient.id_article = Article.id_article " + 
+            "GROUP BY Article.id_article, Article.nom_article ORDER BY NombreVendu DESC";
+            
+            
+            
+            /*"SELECT TOP 10 nom_article, sum(quantite_article) AS NombreVendu FROM ((SELECT * Commande RIGHT JOIN Contient ON id_commande=id_commande)AS TABLE" +
+            "LEFT JOINT Article ON TABLE.id_article=Article.id_article ORDER BY NombreVendu DESC) AS TABLE2";*/
     }
     String^ CL_map_TBSTATISTIQUE::MoinsVendu()
     {
