@@ -21,7 +21,7 @@ namespace NS_Svc{
     DataSet^ CL_svc_gestionStatistique::valeurduStock(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->ValeurStock(), dataTableName);
-       /* this->test14->comparercommande(this->statistique->ValeurStock(), "SELECT SUM(prix_articleht*quantite_stock) as ValeurStock " +
+        /*this->test14->comparercommande(this->statistique->ValeurStock(), "SELECT SUM(prix_articleht*quantite_stock) as ValeurStock " +
             "FROM Catalogue");*/
 
         return ds;
@@ -57,7 +57,29 @@ namespace NS_Svc{
         return ds;
     }
 
-    
+    DataSet^ CL_svc_gestionStatistique::paniermoyen(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->PanierMoyen(), dataTableName);
+       /* this->test14->comparercommande6(this->statistique->PanierMoyen(), "SELECT ROUND(AVG([montant_total_ttc]), 2) as panierMoyen from Commande");*/
+        return ds;
+    }
 
+    DataSet^ CL_svc_gestionStatistique::camois(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->CAMois(), dataTableName);
+       /* this->test14->comparercommande7(this->statistique->CAMois(), "SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/01/2020' AND '30/01/2020')GROUP BY MONTH(date_commande)" +
+            " UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/02/2020' AND '28/02/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/03/2020' AND '30/03/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/04/2020' AND '30/04/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/05/2020' AND '30/05/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/06/2020' AND '30/06/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/07/2020' AND '30/07/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/08/2020' AND '30/08/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/09/2020' AND '30/09/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/10/2020' AND '30/10/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/11/2020' AND '30/11/2020')GROUP BY MONTH(date_commande)" +
+            "UNION SELECT MONTH(date_commande) AS Mois, SUM ((montant_total_ttc)) AS montant_total_ttc FROM Commande WHERE(Commande.date_commande BETWEEN '01/12/2020' AND '30/12/2020')GROUP BY MONTH(date_commande)");*/
+        return ds;
+    }
 
 }

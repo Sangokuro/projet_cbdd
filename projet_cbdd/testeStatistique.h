@@ -85,6 +85,30 @@ public:
 			MessageBox::Show("Depense par client pas a jour");
 		}
 	}
+	void comparercommande6(String^ comparer6, String^ affirmer6)
+	{
+		if (comparer6 == affirmer6)
+		{
+			MessageBox::Show("Panier moyen a jour");
+
+		}
+		else
+		{
+			MessageBox::Show("Panier moyen pas a jour");
+		}
+	}
+	void comparercommande7(String^ comparer7, String^ affirmer7)
+	{
+		if (comparer7 == affirmer7)
+		{
+			MessageBox::Show("Chiffre d'affaire moyen a jour");
+
+		}
+		else
+		{
+			MessageBox::Show("Chiffre d'affaire errone");
+		}
+	}
 	
 
 

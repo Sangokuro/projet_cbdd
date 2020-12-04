@@ -6,12 +6,15 @@ namespace NS_Svc {
 		this->cad = gcnew NS_Composants::CL_CAD();
 		this->facture = gcnew NS_Composants::CL_map_TBFACTURE();
 		this->ds = gcnew Data::DataSet();
+		this->Test12 = gcnew TestFacture1();
 	}
 
 	DataSet^ CL_svc_gestionFacture::listeFacture(String^ dataTableName)
 	{
 		//this->ds->Clear();
 		this->ds = this->cad->getRows(this->facture->SELECT(), dataTableName);
+		/*this->Test12->comparerfacture(this->facture->SELECT(), "SELECT id_facture,nom_societe,adresse_societe,code_postal,ville,numero_service_client,id_commande " +
+			"FROM Facture;");*/
 		return ds;
 	}
 

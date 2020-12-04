@@ -1,6 +1,6 @@
 #pragma once
 using namespace System;
-
+#include "TestFacture.h"
 namespace NS_Composants {
 	ref class CL_map_TBFACTURE
 	{
@@ -12,6 +12,7 @@ namespace NS_Composants {
 		String^ ville;
 		float numero_service_client;
 		int id_commande;
+		TestFacture1^ Test12;
 
 
 	public:

@@ -1,6 +1,7 @@
 #pragma once
 #include "CL_CAD.h"
 #include "CL_map_TBFACTURE.h"
+#include"TestFacture.h"
 
 namespace NS_Svc {
 
@@ -10,6 +11,7 @@ namespace NS_Svc {
 		NS_Composants::CL_CAD^ cad;
 		NS_Composants::CL_map_TBFACTURE^ facture;
 		DataSet^ ds;
+		TestFacture1^ Test12;
 	public:
 		CL_svc_gestionFacture(void);
 		DataSet^ listeFacture(String^);
