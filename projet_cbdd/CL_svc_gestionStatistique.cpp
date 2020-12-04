@@ -43,7 +43,8 @@ namespace NS_Svc{
     DataSet^ CL_svc_gestionStatistique::topdesventes(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->PlusVendu(), dataTableName);
-        this->test14->comparercommande3(this->statistique->PlusVendu(),)
+        this->test14->comparercommande3(this->statistique->PlusVendu(), "SELECT TOP 10 Article.id_article,Article.nom_article, COUNT(*) as NombreVendu FROM contient LEFT JOIN Article ON contient.id_article = Article.id_article " +
+            "GROUP BY Article.id_article, Article.nom_article ORDER BY NombreVendu DESC");
         return ds;
     }
     DataSet^ CL_svc_gestionStatistique::topdesinvendus(String^ dataTableName)

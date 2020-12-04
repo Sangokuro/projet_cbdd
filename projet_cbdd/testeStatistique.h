@@ -51,12 +51,12 @@ public:
 	{
 		if (comparer4 == affirmer4)
 		{
-			MessageBox::Show("Valeur commercial a jour");
+			MessageBox::Show("Produit les plus vendu a jour");
 
 		}
 		else
 		{
-			MessageBox::Show("Valeur commercial pas a jour");
+			MessageBox::Show("Produit les plus vendu pas a jour");
 		}
 	}
 	
