@@ -14,12 +14,12 @@ public:
 	{
 		if (comparer1 == affirmer1)
 		{
-			MessageBox::Show("Modificataion bien effectue");
+			MessageBox::Show("Valeur du stock juste");
 
 		}
 		else
 		{
-			MessageBox::Show("Modification mal effectue");
+			MessageBox::Show("Valeur du stock faux");
 		}
 	}
 	

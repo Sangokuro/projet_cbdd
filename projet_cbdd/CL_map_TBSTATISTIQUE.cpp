@@ -3,7 +3,7 @@
 namespace NS_Composants {
     CL_map_TBSTATISTIQUE::CL_map_TBSTATISTIQUE()
     {
-        this->test14 = gcnew testeStatistique1();
+       
     }
     String^ CL_map_TBSTATISTIQUE::SELECT(void)
     {
@@ -13,8 +13,9 @@ namespace NS_Composants {
 
     String^ CL_map_TBSTATISTIQUE::PanierMoyen()
     {
-        this->test14->comparercommande("SELECT AVG(Total_TTC) as panierMoyen from Commande", "SELECT AVG(Total_TTC) as panierMoyen from Commande");
+        
         return "SELECT AVG(Total_TTC) as panierMoyen from Commande";
+       
         
     }
     String^ CL_map_TBSTATISTIQUE::CAMois(String^ NomMois)
