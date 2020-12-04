@@ -77,12 +77,12 @@ public:
 	{
 		if (comparer5 == affirmer5)
 		{
-			MessageBox::Show("Produit les moins vendu a jour");
+			MessageBox::Show("Depense par client a jour");
 
 		}
 		else
 		{
-			MessageBox::Show("Produit les moins vendu pas a jour");
+			MessageBox::Show("Depense par client pas a jour");
 		}
 	}
 	

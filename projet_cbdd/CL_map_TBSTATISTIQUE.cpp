@@ -42,6 +42,7 @@ namespace NS_Composants {
             "ON Commande.Id_client = Client.Id_client WHERE Client.Nom_client=' ' GROUP BY Client.Id_client,Client.Nom_client, Client.Prenom_client";*/
 
         "SELECT nom_client,prenom_client, SUM(montant_total_ttc) as Total FROM Commande LEFT JOIN Client ON Commande.id_client=Client.id_client GROUP BY nom_client,prenom_client";
+
         
     }
     String^ CL_map_TBSTATISTIQUE::PlusVendu()

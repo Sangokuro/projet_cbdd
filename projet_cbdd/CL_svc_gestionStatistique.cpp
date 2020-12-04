@@ -52,6 +52,7 @@ namespace NS_Svc{
     DataSet^ CL_svc_gestionStatistique::depensedesclients(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->Client(), dataTableName);
+       /* this->test14->comparercommande5(this->statistique->Client(), "SELECT nom_client,prenom_client, SUM(montant_total_ttc) as Total FROM Commande LEFT JOIN Client ON Commande.id_client=Client.id_client GROUP BY nom_client,prenom_client");*/
 
         return ds;
     }
