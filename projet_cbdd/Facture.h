@@ -325,7 +325,7 @@ namespace projet_cbdd {
 			this->Controls->Add(this->beginButton);
 			this->Controls->Add(this->saveButton);
 			this->Name = L"Facture";
-			this->Text = L"Form1";
+			this->Text = L"Facture";
 			this->Load += gcnew System::EventHandler(this, &Facture::FRM_Principal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

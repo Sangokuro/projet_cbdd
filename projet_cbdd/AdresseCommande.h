@@ -143,7 +143,7 @@ namespace projet_cbdd {
 			this->Controls->Add(this->txt_nom);
 			this->Controls->Add(this->saveButton);
 			this->Name = L"AdresseCommande";
-			this->Text = L"Form1";
+			this->Text = L"Identification";
 			this->Load += gcnew System::EventHandler(this, &AdresseCommande::FRM_Principal_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

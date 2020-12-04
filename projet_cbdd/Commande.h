@@ -424,7 +424,7 @@ namespace projet_cbdd {
 			this->Controls->Add(this->saveButton);
 			this->Controls->Add(this->newButton);
 			this->Name = L"Commande";
-			this->Text = L"Form1";
+			this->Text = L"Commande";
 			this->Load += gcnew System::EventHandler(this, &Commande::FRM_Principal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -500,6 +500,7 @@ namespace projet_cbdd {
 		this->txt_datePaiement->Clear();
 		this->txt_moyenPaiement->Clear();
 		this->txt_refCommande->Clear();
+		this->txt_quantite->Clear();
 		this->mode = "nouv";
 		this->txt_message->Text = "Veuillez saisir les information de la nouvelle personne et enregistrer";
 	}

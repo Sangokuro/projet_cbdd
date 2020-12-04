@@ -76,9 +76,9 @@ namespace projet_cbdd {
 
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ txt_idArticle;
 
-	private: System::Windows::Forms::Label^ label7;
+
+
 	private: System::Windows::Forms::TextBox^ txt_nomArticle;
 	private: System::Windows::Forms::Label^ label8;
 
@@ -112,8 +112,6 @@ namespace projet_cbdd {
 			this->txt_tauxTva = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->txt_idArticle = (gcnew System::Windows::Forms::TextBox());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->txt_nomArticle = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -313,22 +311,6 @@ namespace projet_cbdd {
 			this->label6->TabIndex = 22;
 			this->label6->Text = L"Taux tva";
 			// 
-			// txt_idArticle
-			// 
-			this->txt_idArticle->Location = System::Drawing::Point(164, 273);
-			this->txt_idArticle->Name = L"txt_idArticle";
-			this->txt_idArticle->Size = System::Drawing::Size(196, 22);
-			this->txt_idArticle->TabIndex = 23;
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(161, 253);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(61, 17);
-			this->label7->TabIndex = 24;
-			this->label7->Text = L"id article";
-			// 
 			// txt_nomArticle
 			// 
 			this->txt_nomArticle->Location = System::Drawing::Point(446, 418);
@@ -341,9 +323,9 @@ namespace projet_cbdd {
 			this->label8->AutoSize = true;
 			this->label8->Location = System::Drawing::Point(443, 398);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(92, 17);
+			this->label8->Size = System::Drawing::Size(142, 17);
 			this->label8->TabIndex = 26;
-			this->label8->Text = L"id nom article";
+			this->label8->Text = L"Nom article concerné";
 			// 
 			// Catalogue
 			// 
@@ -352,8 +334,6 @@ namespace projet_cbdd {
 			this->ClientSize = System::Drawing::Size(1040, 466);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->txt_nomArticle);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->txt_idArticle);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->txt_tauxTva);
@@ -376,7 +356,7 @@ namespace projet_cbdd {
 			this->Controls->Add(this->saveButton);
 			this->Controls->Add(this->newButton);
 			this->Name = L"Catalogue";
-			this->Text = L"Form1";
+			this->Text = L"Catalogue";
 			this->Load += gcnew System::EventHandler(this, &Catalogue::FRM_Principal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -450,7 +430,6 @@ namespace projet_cbdd {
 		this->txt_quantiteStock->Clear();
 		this->txt_seuilRea->Clear();
 		this->txt_tauxTva->Clear();
-		this->txt_idArticle->Clear();
 		this->mode = "nouv";
 		this->txt_message->Text = "Veuillez saisir les information de la nouvelle personne et enregistrer";
 	}

@@ -195,7 +195,7 @@ namespace projet_cbdd {
 			this->Controls->Add(this->txt_message);
 			this->Controls->Add(this->saveButton);
 			this->Name = L"Statistique";
-			this->Text = L"Form1";
+			this->Text = L"Statistiques";
 			this->Load += gcnew System::EventHandler(this, &Statistique::FRM_Principal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

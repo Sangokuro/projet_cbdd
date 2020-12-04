@@ -423,7 +423,7 @@ namespace projet_cbdd {
 			this->Controls->Add(this->saveButton);
 			this->Controls->Add(this->newButton);
 			this->Name = L"Personnel";
-			this->Text = L"Form1";
+			this->Text = L"Personnel";
 			this->Load += gcnew System::EventHandler(this, &Personnel::FRM_Principal_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
