@@ -47,6 +47,19 @@ public:
 			MessageBox::Show("Supression mal effectue");
 		}
 	}
+	/*void comparercommande5(String^ comparer5, String^ affirmer5)
+	{
+		if (comparer5 == affirmer5)
+		{
+			MessageBox::Show("Facture datant de 10ans");
+
+		}
+		else
+		{
+			MessageBox::Show("Supression mal effectue");
+		}
+	}*/
+	
 
 };
 #endif // !TestPersonnel

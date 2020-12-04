@@ -194,6 +194,7 @@
     </ClInclude>
     <ClInclude Include="TestCommande.h" />
     <ClInclude Include="testeStatistique.h" />
+    <ClInclude Include="TestFacture.h" />
     <ClInclude Include="TestPersonnel.h" />
     <ClInclude Include="TestStock.h" />
   </ItemGroup>
