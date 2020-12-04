@@ -11,12 +11,6 @@ namespace NS_Svc{
         this->test14 = gcnew testeStatistique1();
     }
 
-    DataSet^ CL_svc_gestionStatistique::listePersonnel(String^ dataTableName)
-    {
-        this->ds = this->cad->getRows(this->statistique->SELECT(), dataTableName);
-
-        return ds;
-    }
     DataSet^ CL_svc_gestionStatistique::listeSousSeuil(String^ dataTableName)
     {
         this->ds = this->cad->getRows(this->statistique->ProduitSousSeuil(), dataTableName);
