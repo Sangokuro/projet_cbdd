@@ -43,6 +43,12 @@ namespace NS_Svc{
 
         return ds;
     }
+    DataSet^ CL_svc_gestionStatistique::topdesinvendus(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->MoinsVendu(), dataTableName);
+
+        return ds;
+    }
 
     
 

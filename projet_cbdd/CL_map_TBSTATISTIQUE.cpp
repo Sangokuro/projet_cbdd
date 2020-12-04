@@ -5,11 +5,6 @@ namespace NS_Composants {
     {
        
     }
-    String^ CL_map_TBSTATISTIQUE::SELECT(void)
-    {
-        return "SELECT id_personnel, nom_personnel,prenom_personnel,nom_superieur,adresse_personnel,code_postal,ville,date_embauche,id_personnel_dirige " +
-            "FROM Personnel;";
-    }
 
     String^ CL_map_TBSTATISTIQUE::PanierMoyen()
     {
@@ -51,15 +46,11 @@ namespace NS_Composants {
         return "SELECT TOP 10 Article.id_article,Article.nom_article, COUNT(*) as NombreVendu FROM contient LEFT JOIN Article ON contient.id_article = Article.id_article " + 
             "GROUP BY Article.id_article, Article.nom_article ORDER BY NombreVendu DESC";
             
-            
-            
-            /*"SELECT TOP 10 nom_article, sum(quantite_article) AS NombreVendu FROM ((SELECT * Commande RIGHT JOIN Contient ON id_commande=id_commande)AS TABLE" +
-            "LEFT JOINT Article ON TABLE.id_article=Article.id_article ORDER BY NombreVendu DESC) AS TABLE2";*/
     }
     String^ CL_map_TBSTATISTIQUE::MoinsVendu()
     {
-        throw gcnew System::NotImplementedException();
-        // TODO: insérer une instruction return ici
+        return "SELECT TOP 10 Article.id_article,Article.nom_article, COUNT(*) as NombreVendu FROM contient LEFT JOIN Article ON contient.id_article = Article.id_article " +
+            "GROUP BY Article.id_article, Article.nom_article ORDER BY NombreVendu ASC";
     }
     String^ CL_map_TBSTATISTIQUE::ValeurCommercial()
     {

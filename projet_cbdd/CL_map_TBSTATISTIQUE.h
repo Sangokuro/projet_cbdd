@@ -10,7 +10,6 @@ namespace NS_Composants {
 		testeStatistique1^ test14;
 	public:
 		CL_map_TBSTATISTIQUE();
-		String^ SELECT();
 		String^ PanierMoyen();
 		String^ CAMois(String^);
 		String^ ProduitSousSeuil();
