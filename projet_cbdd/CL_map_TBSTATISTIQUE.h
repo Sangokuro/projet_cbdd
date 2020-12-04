@@ -1,11 +1,13 @@
 #pragma once
 
 using namespace System;
-
+#include "testeStatistique.h"
 namespace NS_Composants {
 
 	ref class CL_map_TBSTATISTIQUE
 	{
+	private:
+		testeStatistique1^ test14;
 	public:
 		CL_map_TBSTATISTIQUE();
 		String^ SELECT();
