@@ -14,6 +14,10 @@ namespace NS_Svc {
 	public:
 		CL_svc_gestionStatistique(void);
 		DataSet^ listePersonnel(String^);
+		DataSet^ listeSousSeuil(String^);
+		DataSet^ valeurduStock(String^);
+		DataSet^ valeurduCommerce(String^);
+		DataSet^ topdesventes(String^);
 	};
 
 

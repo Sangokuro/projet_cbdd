@@ -36,8 +36,7 @@ namespace NS_Composants {
     }
     String^ CL_map_TBSTATISTIQUE::ProduitSousSeuil()
     {
-        throw gcnew System::NotImplementedException();
-        // TODO: insérer une instruction return ici
+        return "SELECT nom_article FROM Article INNER JOIN Catalogue ON Article.id_article=Catalogue.id_article WHERE seuil_rea>quantite_stock";
     }
     String^ CL_map_TBSTATISTIQUE::Client(String^)
     {
@@ -46,8 +45,8 @@ namespace NS_Composants {
     }
     String^ CL_map_TBSTATISTIQUE::PlusVendu()
     {
-        throw gcnew System::NotImplementedException();
-        // TODO: insérer une instruction return ici
+        return "SELECT TOP 10 nom_article, sum(quantite_article) AS NombreVendu FROM ((SELECT * Commande RIGHT JOIN Contient ON id_commande=id_commande)AS TABLE" +
+            "LEFT JOINT Article ON TABLE.id_article=Article.id_article ORDER BY NombreVendu DESC) AS TABLE2";
     }
     String^ CL_map_TBSTATISTIQUE::MoinsVendu()
     {
@@ -56,13 +55,13 @@ namespace NS_Composants {
     }
     String^ CL_map_TBSTATISTIQUE::ValeurCommercial()
     {
-        throw gcnew System::NotImplementedException();
-        // TODO: insérer une instruction return ici
+        return "SELECT SUM((prix_articleht*taux_tva)*quantite_stock) as ValeurCommercial " +
+            "FROM Catalogue";
     }
     String^ CL_map_TBSTATISTIQUE::ValeurStock()
     {
-        throw gcnew System::NotImplementedException();
-        // TODO: insérer une instruction return ici
+        return "SELECT SUM(prix_articleht*quantite_stock) as ValeurStock " +
+            "FROM Catalogue";
     }
     String^ CL_map_TBSTATISTIQUE::SimulerVariations(int, float, float, float, float)
     {

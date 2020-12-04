@@ -16,6 +16,30 @@ namespace NS_Svc{
 
         return ds;
     }
+    DataSet^ CL_svc_gestionStatistique::listeSousSeuil(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->ProduitSousSeuil(), dataTableName);
+
+        return ds;
+    }
+    DataSet^ CL_svc_gestionStatistique::valeurduStock(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->ValeurStock(), dataTableName);
+
+        return ds;
+    }
+    DataSet^ CL_svc_gestionStatistique::valeurduCommerce(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->ValeurCommercial(), dataTableName);
+
+        return ds;
+    }
+    DataSet^ CL_svc_gestionStatistique::topdesventes(String^ dataTableName)
+    {
+        this->ds = this->cad->getRows(this->statistique->PlusVendu(), dataTableName);
+
+        return ds;
+    }
 
     
 
