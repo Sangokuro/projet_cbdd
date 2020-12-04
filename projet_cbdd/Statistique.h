@@ -30,7 +30,7 @@ namespace projet_cbdd {
 			}
 		}
 
-	private: System::Windows::Forms::Button^ saveButton;
+
 	protected:
 
 	protected:
@@ -71,7 +71,6 @@ namespace projet_cbdd {
 
 		void InitializeComponent(void)
 		{
-			this->saveButton = (gcnew System::Windows::Forms::Button());
 			this->txt_message = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -85,13 +84,6 @@ namespace projet_cbdd {
 			this->ca_mois = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// saveButton
-			// 
-			this->saveButton->Location = System::Drawing::Point(0, 0);
-			this->saveButton->Name = L"saveButton";
-			this->saveButton->Size = System::Drawing::Size(75, 23);
-			this->saveButton->TabIndex = 20;
 			// 
 			// txt_message
 			// 
@@ -126,9 +118,9 @@ namespace projet_cbdd {
 			// 
 			// sous_seuil
 			// 
-			this->sous_seuil->Location = System::Drawing::Point(283, 249);
+			this->sous_seuil->Location = System::Drawing::Point(159, 142);
 			this->sous_seuil->Name = L"sous_seuil";
-			this->sous_seuil->Size = System::Drawing::Size(98, 37);
+			this->sous_seuil->Size = System::Drawing::Size(111, 68);
 			this->sous_seuil->TabIndex = 21;
 			this->sous_seuil->Text = L"sous_seuil";
 			this->sous_seuil->UseVisualStyleBackColor = true;
@@ -136,9 +128,9 @@ namespace projet_cbdd {
 			// 
 			// valeurstock
 			// 
-			this->valeurstock->Location = System::Drawing::Point(298, 175);
+			this->valeurstock->Location = System::Drawing::Point(290, 142);
 			this->valeurstock->Name = L"valeurstock";
-			this->valeurstock->Size = System::Drawing::Size(124, 35);
+			this->valeurstock->Size = System::Drawing::Size(118, 68);
 			this->valeurstock->TabIndex = 22;
 			this->valeurstock->Text = L"Valeur du stock";
 			this->valeurstock->UseVisualStyleBackColor = true;
@@ -146,9 +138,9 @@ namespace projet_cbdd {
 			// 
 			// valeurcommerciale
 			// 
-			this->valeurcommerciale->Location = System::Drawing::Point(326, 101);
+			this->valeurcommerciale->Location = System::Drawing::Point(290, 51);
 			this->valeurcommerciale->Name = L"valeurcommerciale";
-			this->valeurcommerciale->Size = System::Drawing::Size(132, 47);
+			this->valeurcommerciale->Size = System::Drawing::Size(118, 65);
 			this->valeurcommerciale->TabIndex = 23;
 			this->valeurcommerciale->Text = L"Valeur commerciale";
 			this->valeurcommerciale->UseVisualStyleBackColor = true;
@@ -156,9 +148,9 @@ namespace projet_cbdd {
 			// 
 			// topdesventes
 			// 
-			this->topdesventes->Location = System::Drawing::Point(135, 259);
+			this->topdesventes->Location = System::Drawing::Point(95, 229);
 			this->topdesventes->Name = L"topdesventes";
-			this->topdesventes->Size = System::Drawing::Size(96, 46);
+			this->topdesventes->Size = System::Drawing::Size(106, 69);
 			this->topdesventes->TabIndex = 24;
 			this->topdesventes->Text = L"Top des ventes";
 			this->topdesventes->UseVisualStyleBackColor = true;
@@ -166,9 +158,9 @@ namespace projet_cbdd {
 			// 
 			// topdesinvendus
 			// 
-			this->topdesinvendus->Location = System::Drawing::Point(135, 166);
+			this->topdesinvendus->Location = System::Drawing::Point(230, 229);
 			this->topdesinvendus->Name = L"topdesinvendus";
-			this->topdesinvendus->Size = System::Drawing::Size(122, 53);
+			this->topdesinvendus->Size = System::Drawing::Size(111, 69);
 			this->topdesinvendus->TabIndex = 25;
 			this->topdesinvendus->Text = L"Top des invendus";
 			this->topdesinvendus->UseVisualStyleBackColor = true;
@@ -176,9 +168,9 @@ namespace projet_cbdd {
 			// 
 			// depense_client
 			// 
-			this->depense_client->Location = System::Drawing::Point(157, 65);
+			this->depense_client->Location = System::Drawing::Point(159, 51);
 			this->depense_client->Name = L"depense_client";
-			this->depense_client->Size = System::Drawing::Size(123, 44);
+			this->depense_client->Size = System::Drawing::Size(111, 65);
 			this->depense_client->TabIndex = 26;
 			this->depense_client->Text = L"Depense client";
 			this->depense_client->UseVisualStyleBackColor = true;
@@ -186,9 +178,9 @@ namespace projet_cbdd {
 			// 
 			// panier_moyen
 			// 
-			this->panier_moyen->Location = System::Drawing::Point(23, 79);
+			this->panier_moyen->Location = System::Drawing::Point(23, 51);
 			this->panier_moyen->Name = L"panier_moyen";
-			this->panier_moyen->Size = System::Drawing::Size(98, 48);
+			this->panier_moyen->Size = System::Drawing::Size(105, 65);
 			this->panier_moyen->TabIndex = 27;
 			this->panier_moyen->Text = L"Panier Moyen";
 			this->panier_moyen->UseVisualStyleBackColor = true;
@@ -196,9 +188,9 @@ namespace projet_cbdd {
 			// 
 			// ca_mois
 			// 
-			this->ca_mois->Location = System::Drawing::Point(23, 196);
+			this->ca_mois->Location = System::Drawing::Point(23, 142);
 			this->ca_mois->Name = L"ca_mois";
-			this->ca_mois->Size = System::Drawing::Size(86, 44);
+			this->ca_mois->Size = System::Drawing::Size(105, 68);
 			this->ca_mois->TabIndex = 28;
 			this->ca_mois->Text = L"CA sur un mois";
 			this->ca_mois->UseVisualStyleBackColor = true;
@@ -220,7 +212,6 @@ namespace projet_cbdd {
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->txt_message);
-			this->Controls->Add(this->saveButton);
 			this->Name = L"Statistique";
 			this->Text = L"Statistiques";
 			this->Load += gcnew System::EventHandler(this, &Statistique::FRM_Principal_Load);

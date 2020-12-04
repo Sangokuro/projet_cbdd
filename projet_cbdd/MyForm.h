@@ -48,10 +48,11 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Label^ label1;
+
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Label^ label3;
 	protected:
 
 	private:
@@ -72,10 +73,9 @@ namespace projet_cbdd {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -100,7 +100,7 @@ namespace projet_cbdd {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(399, 349);
+			this->button3->Location = System::Drawing::Point(399, 437);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(152, 43);
 			this->button3->TabIndex = 2;
@@ -128,41 +128,20 @@ namespace projet_cbdd {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(399, 439);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(152, 41);
-			this->button6->TabIndex = 5;
-			this->button6->Text = L"Facture";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F));
-			this->label1->ForeColor = System::Drawing::Color::CornflowerBlue;
-			this->label1->Location = System::Drawing::Point(39, 30);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(572, 24);
-			this->label1->TabIndex = 6;
-			this->label1->Text = L"Bienvenue dans votre application qui gère votre base de données !";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
-			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F));
-			this->label2->Location = System::Drawing::Point(198, 199);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(271, 114);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(233, 24);
+			this->label2->Size = System::Drawing::Size(66, 30);
 			this->label2->TabIndex = 7;
-			this->label2->Text = L"Que souhaitez-vous faire \?";
+			this->label2->Text = L"CYC";
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(399, 280);
+			this->button7->Location = System::Drawing::Point(399, 349);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(152, 39);
 			this->button7->TabIndex = 8;
@@ -170,15 +149,26 @@ namespace projet_cbdd {
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label3->Location = System::Drawing::Point(144, 185);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(306, 20);
+			this->label3->TabIndex = 9;
+			this->label3->Text = L"Control Your Company in One Click";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(641, 505);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);

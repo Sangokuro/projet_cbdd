@@ -85,8 +85,8 @@ namespace projet_cbdd {
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::TextBox^ txt_dateEmbauche;
 
-	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::TextBox^ txt_personnelDirige;
+
+
 
 
 
@@ -125,14 +125,12 @@ namespace projet_cbdd {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->txt_dateEmbauche = (gcnew System::Windows::Forms::TextBox());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->txt_personnelDirige = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// newButton
 			// 
-			this->newButton->Location = System::Drawing::Point(263, 77);
+			this->newButton->Location = System::Drawing::Point(348, 247);
 			this->newButton->Name = L"newButton";
 			this->newButton->Size = System::Drawing::Size(79, 36);
 			this->newButton->TabIndex = 0;
@@ -142,9 +140,9 @@ namespace projet_cbdd {
 			// 
 			// saveButton
 			// 
-			this->saveButton->Location = System::Drawing::Point(348, 67);
+			this->saveButton->Location = System::Drawing::Point(326, 62);
 			this->saveButton->Name = L"saveButton";
-			this->saveButton->Size = System::Drawing::Size(129, 171);
+			this->saveButton->Size = System::Drawing::Size(129, 153);
 			this->saveButton->TabIndex = 3;
 			this->saveButton->Text = L"ENREGISTRER";
 			this->saveButton->UseVisualStyleBackColor = true;
@@ -152,7 +150,7 @@ namespace projet_cbdd {
 			// 
 			// modifButton
 			// 
-			this->modifButton->Location = System::Drawing::Point(263, 135);
+			this->modifButton->Location = System::Drawing::Point(348, 299);
 			this->modifButton->Name = L"modifButton";
 			this->modifButton->Size = System::Drawing::Size(79, 36);
 			this->modifButton->TabIndex = 4;
@@ -162,7 +160,7 @@ namespace projet_cbdd {
 			// 
 			// deleteButton
 			// 
-			this->deleteButton->Location = System::Drawing::Point(263, 195);
+			this->deleteButton->Location = System::Drawing::Point(348, 352);
 			this->deleteButton->Name = L"deleteButton";
 			this->deleteButton->Size = System::Drawing::Size(79, 36);
 			this->deleteButton->TabIndex = 5;
@@ -172,7 +170,7 @@ namespace projet_cbdd {
 			// 
 			// beginButton
 			// 
-			this->beginButton->Location = System::Drawing::Point(12, 257);
+			this->beginButton->Location = System::Drawing::Point(22, 414);
 			this->beginButton->Name = L"beginButton";
 			this->beginButton->Size = System::Drawing::Size(57, 30);
 			this->beginButton->TabIndex = 6;
@@ -182,7 +180,7 @@ namespace projet_cbdd {
 			// 
 			// endButton
 			// 
-			this->endButton->Location = System::Drawing::Point(211, 257);
+			this->endButton->Location = System::Drawing::Point(251, 414);
 			this->endButton->Name = L"endButton";
 			this->endButton->Size = System::Drawing::Size(57, 30);
 			this->endButton->TabIndex = 8;
@@ -192,7 +190,7 @@ namespace projet_cbdd {
 			// 
 			// nextButton
 			// 
-			this->nextButton->Location = System::Drawing::Point(148, 257);
+			this->nextButton->Location = System::Drawing::Point(176, 414);
 			this->nextButton->Name = L"nextButton";
 			this->nextButton->Size = System::Drawing::Size(57, 30);
 			this->nextButton->TabIndex = 9;
@@ -202,7 +200,7 @@ namespace projet_cbdd {
 			// 
 			// previousButton
 			// 
-			this->previousButton->Location = System::Drawing::Point(75, 257);
+			this->previousButton->Location = System::Drawing::Point(90, 414);
 			this->previousButton->Name = L"previousButton";
 			this->previousButton->Size = System::Drawing::Size(57, 30);
 			this->previousButton->TabIndex = 10;
@@ -261,7 +259,7 @@ namespace projet_cbdd {
 			// 
 			// txt_message
 			// 
-			this->txt_message->Location = System::Drawing::Point(38, 343);
+			this->txt_message->Location = System::Drawing::Point(548, 366);
 			this->txt_message->Multiline = true;
 			this->txt_message->Name = L"txt_message";
 			this->txt_message->Size = System::Drawing::Size(343, 85);
@@ -271,7 +269,7 @@ namespace projet_cbdd {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(44, 314);
+			this->label4->Location = System::Drawing::Point(545, 337);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(65, 17);
 			this->label4->TabIndex = 18;
@@ -282,12 +280,12 @@ namespace projet_cbdd {
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(548, 77);
+			this->dataGridView1->Location = System::Drawing::Point(508, 22);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(326, 218);
+			this->dataGridView1->Size = System::Drawing::Size(383, 281);
 			this->dataGridView1->TabIndex = 2;
 			this->dataGridView1->RowHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &Personnel::dataGridView1_CellContentClick);
 			// 
@@ -326,14 +324,14 @@ namespace projet_cbdd {
 			// 
 			// txt_codePostal
 			// 
-			this->txt_codePostal->Location = System::Drawing::Point(321, 273);
+			this->txt_codePostal->Location = System::Drawing::Point(19, 261);
 			this->txt_codePostal->Name = L"txt_codePostal";
 			this->txt_codePostal->Size = System::Drawing::Size(196, 22);
 			this->txt_codePostal->TabIndex = 23;
 			// 
 			// txt_ville
 			// 
-			this->txt_ville->Location = System::Drawing::Point(321, 315);
+			this->txt_ville->Location = System::Drawing::Point(22, 306);
 			this->txt_ville->Name = L"txt_ville";
 			this->txt_ville->Size = System::Drawing::Size(196, 22);
 			this->txt_ville->TabIndex = 24;
@@ -341,7 +339,7 @@ namespace projet_cbdd {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(318, 253);
+			this->label7->Location = System::Drawing::Point(16, 241);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(84, 17);
 			this->label7->TabIndex = 25;
@@ -350,7 +348,7 @@ namespace projet_cbdd {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(318, 295);
+			this->label8->Location = System::Drawing::Point(16, 286);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(34, 17);
 			this->label8->TabIndex = 26;
@@ -359,7 +357,7 @@ namespace projet_cbdd {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(660, 314);
+			this->label9->Location = System::Drawing::Point(19, 337);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(109, 17);
 			this->label9->TabIndex = 27;
@@ -367,34 +365,16 @@ namespace projet_cbdd {
 			// 
 			// txt_dateEmbauche
 			// 
-			this->txt_dateEmbauche->Location = System::Drawing::Point(663, 338);
+			this->txt_dateEmbauche->Location = System::Drawing::Point(19, 366);
 			this->txt_dateEmbauche->Name = L"txt_dateEmbauche";
 			this->txt_dateEmbauche->Size = System::Drawing::Size(196, 22);
 			this->txt_dateEmbauche->TabIndex = 28;
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(660, 363);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(125, 17);
-			this->label10->TabIndex = 29;
-			this->label10->Text = L"Id personnel dirige";
-			// 
-			// txt_personnelDirige
-			// 
-			this->txt_personnelDirige->Location = System::Drawing::Point(663, 383);
-			this->txt_personnelDirige->Name = L"txt_personnelDirige";
-			this->txt_personnelDirige->Size = System::Drawing::Size(196, 22);
-			this->txt_personnelDirige->TabIndex = 30;
 			// 
 			// Personnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(925, 456);
-			this->Controls->Add(this->txt_personnelDirige);
-			this->Controls->Add(this->label10);
 			this->Controls->Add(this->txt_dateEmbauche);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
@@ -503,7 +483,6 @@ namespace projet_cbdd {
 		this->txt_codePostal-> Clear();
 		this->txt_ville->Clear();
 		this->txt_dateEmbauche->Clear();
-		this->txt_personnelDirige->Clear();
 		this->mode = "nouv";
 		this->txt_message->Text = "Veuillez saisir les information de la nouvelle personne et enregistrer";
 	}
